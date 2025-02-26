@@ -1,0 +1,745 @@
+<!-- -&#45;&#45;-->
+<!--import Layout from '../../layouts/Layout.astro';-->
+<!--import { getCourseById, getAllCourses } from '../../lib/firebase.js';-->
+
+<!--// Esta función es necesaria para rutas dinámicas-->
+<!--export async function getStaticPaths() {-->
+<!--    // Obtener todos los cursos para generar las rutas-->
+<!--    const courses = await getAllCourses();-->
+
+<!--    // Crear un path para cada curso-->
+<!--    return courses.map(course => ({-->
+<!--        params: { id: course.id },-->
+<!--        props: { course }-->
+<!--    }));-->
+<!--}-->
+
+<!--// Los datos del curso vienen como props desde getStaticPaths-->
+<!--const { course } = Astro.props;-->
+
+<!--// Si prefieres no usar getStaticPaths y quieres renderizado del lado del servidor-->
+<!--// puedes descomentar la siguiente línea y comentar getStaticPaths:-->
+<!--// export const prerender = false;-->
+
+<!--// Función para formatear precio-->
+<!--const formatPrice = (price) => {-->
+<!--    return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(price);-->
+<!--};-->
+
+<!--// Formatear fecha si existe-->
+<!--const formatDate = (dateString) => {-->
+<!--    if (!dateString) return "Próximamente";-->
+
+<!--    const date = new Date(dateString);-->
+<!--    return new Intl.DateTimeFormat('es-ES', {-->
+<!--        day: 'numeric',-->
+<!--        month: 'long',-->
+<!--        year: 'numeric'-->
+<!--    }).format(date);-->
+<!--};-->
+<!-- -&#45;&#45;-->
+
+
+
+
+
+<!--<Layout-->
+<!--        title={`${course.title} | CEMAPO - Cursos y Capacitaciones`}-->
+<!--        description={course.description || "Curso de formación profesional de CEMAPO, especialistas en desarrollo del talento humano."}-->
+<!--        ogImage={course.imageUrl || "/assets/images/default-course-image.jpg"}-->
+<!--&gt;-->
+<!--    &lt;!&ndash; Breadcrumbs &ndash;&gt;-->
+<!--    <div class="bg-gray-100 py-3 border-b">-->
+<!--        <div class="container mx-auto px-4">-->
+<!--            <div class="flex items-center text-sm">-->
+<!--                <a href="/" class="text-gray-600 hover:text-blue-600">Inicio</a>-->
+<!--                <span class="mx-2 text-gray-400">/</span>-->
+<!--                <a href="/cursos" class="text-gray-600 hover:text-blue-600">Cursos</a>-->
+<!--                <span class="mx-2 text-gray-400">/</span>-->
+<!--                <span class="text-gray-800 font-medium truncate">{course.title}</span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Detalles del curso &ndash;&gt;-->
+<!--    <section class="py-12 bg-white">-->
+<!--        <div class="container mx-auto px-4">-->
+<!--            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">-->
+<!--                &lt;!&ndash; Información principal &ndash;&gt;-->
+<!--                <div class="lg:col-span-2">-->
+<!--                    <div class="mb-6">-->
+<!--                        {course.category && (-->
+<!--                                <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded mb-2">-->
+<!--                {course.category}-->
+<!--              </span>-->
+<!--                        )}-->
+<!--                        <h1 class="text-3xl md:text-4xl font-heading font-bold text-blue-900 mb-4">{course.title}</h1>-->
+<!--                        <p class="text-xl text-gray-700 mb-6">{course.shortDescription || course.description}</p>-->
+
+<!--                        <div class="flex flex-wrap gap-6 mb-8">-->
+<!--                            &lt;!&ndash; Duración &ndash;&gt;-->
+<!--                            {course.duration && (-->
+<!--                                    <div class="flex items-center">-->
+<!--                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-blue-600 mr-2">-->
+<!--                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+<!--                                        </svg>-->
+<!--                                        <span class="text-gray-700">{course.duration}</span>-->
+<!--                                    </div>-->
+<!--                            )}-->
+
+<!--                            &lt;!&ndash; Modalidad &ndash;&gt;-->
+<!--                            {course.modalidad && (-->
+<!--                                    <div class="flex items-center">-->
+<!--                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-blue-600 mr-2">-->
+<!--                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />-->
+<!--                                        </svg>-->
+<!--                                        <span class="text-gray-700">{course.modalidad}</span>-->
+<!--                                    </div>-->
+<!--                            )}-->
+
+<!--                            &lt;!&ndash; Fecha de inicio &ndash;&gt;-->
+<!--                            {course.startDate && (-->
+<!--                                    <div class="flex items-center">-->
+<!--                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-blue-600 mr-2">-->
+<!--                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />-->
+<!--                                        </svg>-->
+<!--                                        <span class="text-gray-700">Inicia: {formatDate(course.startDate)}</span>-->
+<!--                                    </div>-->
+<!--                            )}-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    &lt;!&ndash; Imagen en móvil &ndash;&gt;-->
+<!--                    <div class="lg:hidden mb-8">-->
+<!--                        {course.imageUrl ? (-->
+<!--                                <img-->
+<!--                                        src={course.imageUrl}-->
+<!--                                        alt={course.title}-->
+<!--                                        class="w-full h-auto rounded-lg shadow-lg"-->
+<!--                                />-->
+<!--                        ) : (-->
+<!--                                <div class="w-full h-64 flex items-center justify-center bg-blue-100 text-blue-500 rounded-lg">-->
+<!--                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">-->
+<!--                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />-->
+<!--                                    </svg>-->
+<!--                                </div>-->
+<!--                        )}-->
+<!--                    </div>-->
+
+<!--                    &lt;!&ndash; Descripción detallada &ndash;&gt;-->
+<!--                    <div class="prose prose-lg max-w-none">-->
+<!--                        {course.fullDescription ? (-->
+<!--                                <div set:html={course.fullDescription} />-->
+<!--                        ) : (-->
+<!--                                <p>{course.description}</p>-->
+<!--                        )}-->
+<!--                    </div>-->
+
+<!--                    &lt;!&ndash; Contenido del curso &ndash;&gt;-->
+<!--                    {course.content && course.content.length > 0 && (-->
+<!--                            <div class="mt-12">-->
+<!--                                <h2 class="text-2xl font-bold text-blue-900 mb-6">Contenido del curso</h2>-->
+<!--                                <div class="border rounded-lg overflow-hidden">-->
+<!--                                    {course.content.map((item, index) => (-->
+<!--                                            <div class={`border-b ${index === course.content.length - 1 ? 'border-b-0' : ''}`}>-->
+<!--                                                <div class="bg-gray-50 px-6 py-4 flex justify-between items-center cursor-pointer module-header">-->
+<!--                                                    <h3 class="font-medium text-gray-900">{item.title}</h3>-->
+<!--                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-500 module-icon">-->
+<!--                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />-->
+<!--                                                    </svg>-->
+<!--                                                </div>-->
+<!--                                                <div class="px-6 py-4 hidden module-content">-->
+<!--                                                    <p class="text-gray-700 mb-4">{item.description}</p>-->
+<!--                                                    {item.topics && item.topics.length > 0 && (-->
+<!--                                                            <ul class="list-disc pl-5 space-y-2 text-gray-700">-->
+<!--                                                                {item.topics.map((topic) => (-->
+<!--                                                                        <li>{topic}</li>-->
+<!--                                                                ))}-->
+<!--                                                            </ul>-->
+<!--                                                    )}-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                    ))}-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                    )}-->
+
+<!--                    &lt;!&ndash; Instructor del curso &ndash;&gt;-->
+<!--                    {course.instructor && (-->
+<!--                            <div class="mt-12">-->
+<!--                                <h2 class="text-2xl font-bold text-blue-900 mb-6">Instructor</h2>-->
+<!--                                <div class="bg-gray-50 rounded-lg p-6 flex flex-col md:flex-row items-center md:items-start gap-6">-->
+<!--                                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">-->
+<!--                                        {course.instructor.photoUrl ? (-->
+<!--                                                <img-->
+<!--                                                        src={course.instructor.photoUrl}-->
+<!--                                                        alt={course.instructor.name}-->
+<!--                                                        class="w-full h-full object-cover"-->
+<!--                                                />-->
+<!--                                        ) : (-->
+<!--                                                <div class="w-full h-full bg-blue-100 flex items-center justify-center text-blue-500">-->
+<!--                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">-->
+<!--                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />-->
+<!--                                                    </svg>-->
+<!--                                                </div>-->
+<!--                                        )}-->
+<!--                                    </div>-->
+<!--                                    <div class="text-center md:text-left">-->
+<!--                                        <h3 class="text-xl font-bold text-blue-900 mb-2">{course.instructor.name}</h3>-->
+<!--                                        <p class="text-blue-600 font-medium mb-3">{course.instructor.title}</p>-->
+<!--                                        <p class="text-gray-700 mb-4">{course.instructor.bio}</p>-->
+<!--                                        {course.instructor.socialLinks && (-->
+<!--                                                <div class="flex justify-center md:justify-start space-x-4">-->
+<!--                                                    {course.instructor.socialLinks.linkedin && (-->
+<!--                                                            <a href={course.instructor.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600">-->
+<!--                                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">-->
+<!--                                                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>-->
+<!--                                                                </svg>-->
+<!--                                                            </a>-->
+<!--                                                    )}-->
+<!--                                                    {course.instructor.socialLinks.twitter && (-->
+<!--                                                            <a href={course.instructor.socialLinks.twitter} target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-400">-->
+<!--                                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">-->
+<!--                                                                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>-->
+<!--                                                                </svg>-->
+<!--                                                            </a>-->
+<!--                                                    )}-->
+<!--                                                </div>-->
+<!--                                        )}-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                    )}-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Sidebar &ndash;&gt;-->
+<!--                <div>-->
+<!--                    &lt;!&ndash; Imagen de curso en desktop &ndash;&gt;-->
+<!--                    <div class="hidden lg:block mb-8">-->
+<!--                        {course.imageUrl ? (-->
+<!--                                <img-->
+<!--                                        src={course.imageUrl}-->
+<!--                                        alt={course.title}-->
+<!--                                        class="w-full h-auto rounded-lg shadow-lg"-->
+<!--                                />-->
+<!--                        ) : (-->
+<!--                                <div class="w-full h-64 flex items-center justify-center bg-blue-100 text-blue-500 rounded-lg">-->
+<!--                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">-->
+<!--                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />-->
+<!--                                    </svg>-->
+<!--                                </div>-->
+<!--                        )}-->
+<!--                    </div>-->
+
+<!--                    &lt;!&ndash; Tarjeta de inscripción &ndash;&gt;-->
+<!--                    <div class="bg-white rounded-lg border shadow-lg overflow-hidden sticky top-24">-->
+<!--                        <div class="p-6">-->
+<!--                            <div class="flex items-center justify-between mb-4">-->
+<!--                                <div class="text-2xl font-bold text-blue-900">-->
+<!--                                    {course.price ? formatPrice(course.price) : "Consultar precio"}-->
+<!--                                </div>-->
+<!--                                {course.discount && (-->
+<!--                                        <div class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">-->
+<!--                                            {course.discount}% descuento-->
+<!--                                        </div>-->
+<!--                                )}-->
+<!--                            </div>-->
+
+<!--                            <ul class="space-y-3 mb-6">-->
+<!--                                <li class="flex items-start">-->
+<!--                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-green-500 mr-2 mt-0.5">-->
+<!--                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+<!--                                    </svg>-->
+<!--                                    <span class="text-gray-700">{course.duration || "Duración flexible"}</span>-->
+<!--                                </li>-->
+<!--                                <li class="flex items-start">-->
+<!--                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-green-500 mr-2 mt-0.5">-->
+<!--                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+<!--                                    </svg>-->
+<!--                                    <span class="text-gray-700">{course.modalidad || "Múltiples modalidades disponibles"}</span>-->
+<!--                                </li>-->
+<!--                                <li class="flex items-start">-->
+<!--                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-green-500 mr-2 mt-0.5">-->
+<!--                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+<!--                                    </svg>-->
+<!--                                    <span class="text-gray-700">Certificado de finalización</span>-->
+<!--                                </li>-->
+<!--                                {course.startDate && (-->
+<!--                                        <li class="flex items-start">-->
+<!--                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-green-500 mr-2 mt-0.5">-->
+<!--                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+<!--                                            </svg>-->
+<!--                                            <span class="text-gray-700">Inicia: {formatDate(course.startDate)}</span>-->
+<!--                                        </li>-->
+<!--                                )}-->
+<!--                                {course.enrollmentLimit && (-->
+<!--                                        <li class="flex items-start">-->
+<!--                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-yellow-500 mr-2 mt-0.5">-->
+<!--                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />-->
+<!--                                            </svg>-->
+<!--                                            <span class="text-gray-700">¡Sólo {course.enrollmentLimit} lugares disponibles!</span>-->
+<!--                                        </li>-->
+<!--                                )}-->
+<!--                            </ul>-->
+
+<!--                            <a href="/contacto?curso={encodeURIComponent(course.title)}" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-4 rounded-md font-medium transition-colors mb-4">-->
+<!--                                Inscribirme ahora-->
+<!--                            </a>-->
+
+<!--                            <a href="https://wa.me/123456789?text=Hola,%20me%20interesa%20el%20curso%20de%20{encodeURIComponent(course.title)}" target="_blank" rel="noopener noreferrer" class="block w-full bg-green-500 hover:bg-green-600 text-white text-center py-3 px-4 rounded-md font-medium transition-colors flex items-center justify-center">-->
+<!--                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp mr-2" viewBox="0 0 16 16">-->
+<!--                                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>-->
+<!--                                </svg>-->
+<!--                                Consultar por WhatsApp-->
+<!--                            </a>-->
+<!--                        </div>-->
+
+<!--                        <div class="bg-gray-50 p-6 border-t">-->
+<!--                            <h4 class="font-medium text-gray-900 mb-4">Este curso incluye:</h4>-->
+<!--                            <ul class="space-y-3">-->
+<!--                                {(course.includes || [-->
+<!--                                    "Acceso a material didáctico",-->
+<!--                                    "Instructor especializado",-->
+<!--                                    "Certificado de finalización",-->
+<!--                                    "Soporte durante el curso"-->
+<!--                                ]).map((item) => (-->
+<!--                                        <li class="flex items-start">-->
+<!--                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-blue-600 mr-2 mt-0.5">-->
+<!--                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+<!--                                            </svg>-->
+<!--                                            <span class="text-gray-700">{item}</span>-->
+<!--                                        </li>-->
+<!--                                ))}-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+<!--    &lt;!&ndash; Cursos relacionados &ndash;&gt;-->
+<!--    {course.relatedCourses && course.relatedCourses.length > 0 && (-->
+<!--            <section class="py-16 bg-gray-50">-->
+<!--                <div class="container mx-auto px-4">-->
+<!--                    <h2 class="text-3xl font-bold text-blue-900 mb-10 text-center">Cursos relacionados</h2>-->
+
+<!--                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">-->
+<!--                        {course.relatedCourses.map((relatedCourse) => (-->
+<!--                                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:-translate-y-2">-->
+<!--                                    <div class="h-48 bg-gray-200 relative">-->
+<!--                                        {relatedCourse.imageUrl ? (-->
+<!--                                                <img-->
+<!--                                                        src={relatedCourse.imageUrl}-->
+<!--                                                        alt={relatedCourse.title}-->
+<!--                                                        class="w-full h-full object-cover"-->
+<!--                                                />-->
+<!--                                        ) : (-->
+<!--                                                <div class="w-full h-full flex items-center justify-center bg-blue-100 text-blue-500">-->
+<!--                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">-->
+<!--                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />-->
+<!--                                                    </svg>-->
+<!--                                                </div>-->
+<!--                                        )}-->
+<!--                                        {relatedCourse.category && (-->
+<!--                                                <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm text-blue-900 text-xs font-medium px-2 py-1 rounded">-->
+<!--                                                    {relatedCourse.category}-->
+<!--                                                </div>-->
+<!--                                        )}-->
+<!--                                    </div>-->
+<!--                                    <div class="p-6">-->
+<!--                                        <h3 class="text-xl font-bold text-blue-900 mb-2 line-clamp-2">{relatedCourse.title}</h3>-->
+<!--                                        <p class="text-gray-600 mb-4 line-clamp-3">{relatedCourse.description}</p>-->
+<!--                                        <div class="flex justify-between items-center mt-4">-->
+<!--                                            <div class="text-lg font-bold text-blue-600">-->
+<!--                                                {relatedCourse.price ? formatPrice(relatedCourse.price) : "Consultar"}-->
+<!--                                            </div>-->
+<!--                                            <a href={`/cursos/${relatedCourse.id}`} class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded text-sm font-medium transition-colors">-->
+<!--                                                Ver detalles-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                        ))}-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--    )}-->
+
+<!--    &lt;!&ndash; CTA final &ndash;&gt;-->
+<!--    <section class="py-16 bg-blue-900 text-white">-->
+<!--        <div class="container mx-auto px-4">-->
+<!--            <div class="max-w-3xl mx-auto text-center">-->
+<!--                <h2 class="text-3xl font-bold mb-4">¿Necesitas más información?</h2>-->
+<!--                <p class="text-xl text-white/80 mb-8">-->
+<!--                    Nuestro equipo está listo para resolver tus dudas y ayudarte a elegir-->
+<!--                    la mejor opción formativa para tus necesidades.-->
+<!--                </p>-->
+<!--                <div class="flex flex-col sm:flex-row gap-4 justify-center">-->
+<!--                    <a href="/contacto?curso={encodeURIComponent(course.title)}" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 rounded-md font-semibold transition-colors">-->
+<!--                        Solicitar información-->
+<!--                    </a>-->
+<!--                    <a href="tel:+123456789" class="bg-transparent hover:bg-white/10 border border-white px-8 py-3 rounded-md font-semibold transition-colors flex items-center justify-center">-->
+<!--                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">-->
+<!--                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />-->
+<!--                        </svg>-->
+<!--                        Llamar ahora-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--</Layout>-->
+
+<!--<script>-->
+<!--    // Script para manejar los acordeones del contenido del curso-->
+<!--    document.addEventListener('DOMContentLoaded', () => {-->
+<!--        const moduleHeaders = document.querySelectorAll('.module-header');-->
+
+<!--        moduleHeaders.forEach(header => {-->
+<!--            header.addEventListener('click', () => {-->
+<!--                const content = header.nextElementSibling;-->
+<!--                const icon = header.querySelector('.module-icon');-->
+
+<!--                // Toggle content visibility-->
+<!--                content.classList.toggle('hidden');-->
+
+<!--                // Rotate icon-->
+<!--                if (content.classList.contains('hidden')) {-->
+<!--                    icon.style.transform = 'rotate(0deg)';-->
+<!--                } else {-->
+<!--                    icon.style.transform = 'rotate(180deg)';-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
+
+
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCourseById, getAllCourses } from '../../lib/firebase.js';
+
+// Esta función es necesaria para rutas dinámicas en modo estático
+export async function getStaticPaths() {
+    // Obtener todos los cursos para generar las rutas
+  const courses = await getAllCourses();
+
+    // Crear un path para cada curso
+  return courses.map(course => ({
+    params: { id: course.id },
+    props: { course }
+    }));
+    }
+
+// Los datos del curso vienen como props desde getStaticPaths
+const { course } = Astro.props;
+
+// Formato para el WhatsApp
+const formatWhatsAppUrl = (number, courseName) => {
+    const message = `Hola, estoy interesado en el curso: ${courseName}. ¿Podría proporcionarme más información?`;
+    return `https://wa.me/${number || '123456789'}?text=${encodeURIComponent(message)}`;
+    };
+
+// Fecha formateada
+const formatDate = (timestamp) => {
+    if (!timestamp) return null;
+
+    try {
+    const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+    return new Intl.DateTimeFormat('es-ES', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+        }).format(date);
+    } catch (e) {
+    return "Fecha no disponible";
+    }
+    };
+
+// Nivel formateado
+const formatLevel = (level) => {
+    const levels = {
+    "beginner": "Principiante",
+    "intermediate": "Intermedio",
+    "advanced": "Avanzado"
+    };
+
+    return levels[level] || level;
+    };
+---
+
+<Layout
+        title={`${course.title || 'Curso'} | CEMAPO - Cursos y Capacitaciones`}
+        description={course.description || 'Curso de formación profesional de CEMAPO'}
+>
+    <!-- Breadcrumbs -->
+    <div class="bg-gray-100 py-3 border-b">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center text-sm">
+                <a href="/" class="text-gray-600 hover:text-blue-600">Inicio</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <a href="/cursos" class="text-gray-600 hover:text-blue-600">Cursos</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-gray-800 font-medium truncate">{course.title}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Información del curso -->
+                <div class="lg:col-span-2 order-2 lg:order-1">
+                    <!-- Nivel del curso -->
+                    {course.level && (
+                            <div class="mb-4">
+              <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">
+                {formatLevel(course.level)}
+              </span>
+                                {course.isPublished && (
+                                        <span class="inline-block bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded ml-2">
+                  Disponible
+                </span>
+                                )}
+                            </div>
+                    )}
+
+                    <!-- Título del curso -->
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{course.title}</h1>
+
+                    <!-- Imagen en móvil -->
+                    <div class="lg:hidden mb-8">
+                        {course.imageUrl ? (
+                                <img
+                                        src={course.imageUrl}
+                                        alt={course.title}
+                                        class="w-full h-auto rounded-lg shadow-lg"
+                                />
+                        ) : (
+                                <div class="w-full h-64 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 text-blue-500">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                    </svg>
+                                </div>
+                        )}
+                    </div>
+
+                    <!-- Instructor y duración -->
+                    <div class="flex flex-wrap gap-6 mb-8">
+                        {course.instructor && (
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-blue-600 mr-2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                    </svg>
+                                    <span class="text-gray-700">Instructor: <span class="font-medium">{course.instructor}</span></span>
+                                </div>
+                        )}
+
+                        {course.duration && (
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-blue-600 mr-2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="text-gray-700">{course.duration}</span>
+                                </div>
+                        )}
+
+                        {course.createdAt && (
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-blue-600 mr-2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                                    </svg>
+                                    <span class="text-gray-700">Publicado: {formatDate(course.createdAt)}</span>
+                                </div>
+                        )}
+                    </div>
+
+                    <!-- Descripción del curso -->
+                    <div class="prose prose-lg max-w-none mb-10">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Descripción del curso</h2>
+                        <p class="text-gray-700">{course.description}</p>
+                    </div>
+
+                    <!-- Video de YouTube si está disponible -->
+                    {course.youtubeUrl && (
+                            <div class="mb-10">
+                                <h2 class="text-2xl font-bold text-gray-900 mb-4">Video de presentación</h2>
+                                <div class="aspect-w-16 aspect-h-9">
+                                    <iframe
+                                            src={course.youtubeUrl.replace('watch?v=', 'embed/')}
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen
+                                            class="w-full h-96 rounded-lg"
+                                    ></iframe>
+                                </div>
+                            </div>
+                    )}
+
+                    <!-- Lo que aprenderás -->
+                    <div class="bg-blue-50 rounded-lg p-8 mb-10">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">¿Qué aprenderás en este curso?</h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span class="text-gray-700">Fundamentos de programación con Python</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span class="text-gray-700">Estructuras de datos y algoritmos básicos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span class="text-gray-700">Desarrollo de aplicaciones simples</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span class="text-gray-700">Proyectos prácticos para aplicar lo aprendido</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Columna lateral con CTA -->
+                <div class="lg:col-span-1 order-1 lg:order-2">
+                    <!-- Imagen de curso en desktop -->
+                    <div class="hidden lg:block mb-8">
+                        {course.imageUrl ? (
+                                <img
+                                        src={course.imageUrl}
+                                        alt={course.title}
+                                        class="w-full h-auto rounded-lg shadow-lg"
+                                />
+                        ) : (
+                                <div class="w-full h-64 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 text-blue-500">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                    </svg>
+                                </div>
+                        )}
+                    </div>
+
+                    <!-- Tarjeta de inscripción -->
+                    <div class="bg-white rounded-lg border shadow-lg overflow-hidden sticky top-24">
+                        <div class="p-6">
+                            <!-- Precio -->
+                            <div class="text-center mb-6">
+                                <div class="text-2xl font-bold text-blue-900">
+                                    {course.price === 0 ? "Gratis" : `$${course.price}`}
+                                </div>
+                            </div>
+
+                            <!-- Lo que incluye -->
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="text-gray-700">{course.duration || "Duración flexible"}</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="text-gray-700">Acceso a material didáctico</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="text-gray-700">Instructor {course.instructor}</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="text-gray-700">Certificado de finalización</span>
+                                </li>
+                            </ul>
+
+                            <!-- Botones CTA -->
+                            <a href="/contacto?curso={encodeURIComponent(course.title)}" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-4 rounded-md font-medium transition-colors mb-4">
+                                Inscribirme ahora
+                            </a>
+
+                            <a href={formatWhatsAppUrl(course.whatsappNumber, course.title)} target="_blank" rel="noopener noreferrer" class="block w-full bg-green-500 hover:bg-green-600 text-white text-center py-3 px-4 rounded-md font-medium transition-colors flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp mr-2" viewBox="0 0 16 16">
+                                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                                </svg>
+                                Consultar por WhatsApp
+                            </a>
+                        </div>
+
+                        <!-- Email de contacto -->
+                        {course.contactEmail && (
+                                <div class="bg-gray-50 p-4 border-t text-center">
+                                    <p class="text-sm text-gray-600 mb-1">¿Tienes preguntas?</p>
+                                    <a href={`mailto:${course.contactEmail}?subject=Consulta sobre ${encodeURIComponent(course.title)}`} class="text-blue-600 font-medium hover:underline">{course.contactEmail}</a>
+                                </div>
+                        )}
+                    </div>
+
+                    <!-- Compartir curso -->
+                    <div class="mt-6 bg-white rounded-lg border p-6 text-center">
+                        <h3 class="font-medium text-gray-900 mb-4">Comparte este curso</h3>
+                        <div class="flex justify-center space-x-4">
+                            <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.url)}`} target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                                </svg>
+                            </a>
+                            <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Mira este curso: ${course.title}`)}&url=${encodeURIComponent(Astro.url)}`} target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                                    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                                </svg>
+                            </a>
+                            <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url)}`} target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                                </svg>
+                            </a>
+                            <a href={`mailto:?subject=${encodeURIComponent(`Mira este curso: ${course.title}`)}&body=${encodeURIComponent(`Échale un vistazo a este curso: ${course.title}\n\n${Astro.url}`)}`} class="text-gray-500 hover:text-red-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA final -->
+    <section class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">¿Estás listo para aprender Python?</h2>
+                <p class="text-xl text-white/80 mb-8">
+                    Da el primer paso en tu camino hacia la programación con nuestro curso diseñado para principiantes.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contacto?curso={encodeURIComponent(course.title)}" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 rounded-md font-semibold transition-colors">
+                        Inscribirme ahora
+                    </a>
+                    <a href={formatWhatsAppUrl(course.whatsappNumber, course.title)} target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-md font-semibold transition-colors inline-flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp mr-2" viewBox="0 0 16 16">
+                            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                        </svg>
+                        Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>
