@@ -1,0 +1,147 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceCard from '../../components/services/ServiceCard.astro';
+---
+
+<Layout title="Nuestros Servicios | CEMAPO - Especialistas en Talento Humano">
+    <!-- Encabezado de la página -->
+    <section class="bg-gradient-to-r from-blue-900 to-blue-800 py-20 md:py-28">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+                    Nuestros Servicios
+                </h1>
+                <p class="text-lg md:text-xl text-white/90 mb-8">
+                    Descubre soluciones integrales diseñadas para potenciar el talento humano
+                    y maximizar el rendimiento de tu organización.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introducción a los servicios -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Soluciones completas para el desarrollo del talento</h2>
+                    <p class="text-lg text-gray-700 mb-8">
+                        En CEMAPO, ofrecemos un conjunto integral de servicios diseñados para optimizar
+                        el potencial humano tanto a nivel organizacional como individual. Nuestro enfoque
+                        combina las mejores prácticas en gestión de talento con metodologías innovadoras
+                        que garantizan resultados excepcionales.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                </svg>
+                            </div>
+                            <span class="font-medium">Profesionales certificados</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <span class="font-medium">Metodologías innovadoras</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                </svg>
+                            </div>
+                            <span class="font-medium">Excelencia garantizada</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img
+                            src="https://img.freepik.com/foto-gratis/alegre-joven-grupo-personas-pie-oficina-dando-choca-cinco_1153-3694.jpg"
+                            alt="Equipo de profesionales"
+                            class="rounded-lg shadow-xl"
+                    />
+                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-yellow-400 rounded-full opacity-50 z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gestión del Talento -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Gestión del Talento</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Ayudamos a empresas y profesionales a optimizar sus recursos humanos mediante estrategias
+                    innovadoras para atraer, desarrollar y retener al mejor talento.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <ServiceCard
+                        title="Reclutamiento y selección"
+                        description="Identificamos y atraemos a los profesionales más adecuados para cada posición, utilizando metodologías avanzadas de evaluación."
+                        icon="user-plus"
+                />
+                <ServiceCard
+                        title="Evaluación de desempeño"
+                        description="Implementamos sistemas efectivos para medir y mejorar el rendimiento de los colaboradores, alineados con los objetivos organizacionales."
+                        icon="chart-bar"
+                />
+                <ServiceCard
+                        title="Planes de desarrollo"
+                        description="Diseñamos estrategias personalizadas para potenciar las habilidades y competencias de los colaboradores en todos los niveles."
+                        icon="academic-cap"
+                />
+                <ServiceCard
+                        title="Retención de talento"
+                        description="Creamos programas efectivos para mantener a los mejores profesionales motivados y comprometidos con la organización."
+                        icon="heart"
+                />
+            </div>
+
+            <div class="mt-16 relative">
+                <img
+                        src="https://img.freepik.com/foto-gratis/hombre-negocios-aplicacion-humana-negocios-digital_1150-1729.jpg"
+                        alt="Gestión digital del talento humano"
+                        class="w-full h-80 object-cover rounded-xl shadow-lg"
+                />
+                <div class="absolute inset-0 bg-blue-900/30 rounded-xl flex items-center justify-center">
+                    <a href="/contacto" class="bg-white hover:bg-gray-100 text-blue-900 px-8 py-4 rounded-md font-semibold transition-all duration-300 shadow-xl text-lg transform hover:-translate-y-1">
+                        Solicitar asesoría
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- resto del código permanece igual -->
+</Layout>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Manejar FAQs
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('.faq-icon');
+
+                // Alternar visibilidad
+                content.classList.toggle('hidden');
+
+                // Rotar icono
+                if (content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    });
+</script>

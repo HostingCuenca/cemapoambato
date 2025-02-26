@@ -1,0 +1,100 @@
+---
+import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
+
+export interface Props {
+    courses: any[];
+}
+
+const { courses = [] } = Astro.props;
+---
+
+<section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Nuestros cursos destacados</h2>
+            <p class="text-gray-600">
+                Programas de capacitación diseñados para desarrollar competencias clave en tu equipo y potenciar el rendimiento organizacional.
+            </p>
+        </div>
+
+        <!-- Cursos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {courses.length > 0 ? (
+                courses.map((course) => (
+                        <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                            <div class="relative">
+                                <img
+                                        src={course.imageUrl || "/assets/images/course-placeholder.webp"}
+                                        alt={course.title}
+                                        class="w-full h-48 object-cover"
+                                />
+                                {course.level && (
+                                        <span class="absolute top-4 right-4 bg-white text-primary-600 px-3 py-1 text-xs font-medium rounded-full uppercase">
+                  {course.level === 'beginner' ? 'Básico' : course.level === 'intermediate' ? 'Intermedio' : 'Avanzado'}
+                </span>
+                                )}
+                            </div>
+
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 line-clamp-1">
+                                    {course.title}
+                                </h3>
+                                <p class="text-gray-600 mb-4 text-sm line-clamp-2">
+                                    {course.description}
+                                </p>
+
+                                <div class="flex justify-between items-center mb-4">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        <span class="text-gray-600 text-sm ml-1">{course.duration}</span>
+                                    </div>
+
+                                    {course.instructor && (
+                                            <div class="flex items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                                </svg>
+                                                <span class="text-gray-600 text-sm ml-1">{course.instructor}</span>
+                                            </div>
+                                    )}
+                                </div>
+
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        {course.price > 0 ? (
+                                                <span class="text-lg font-bold text-gray-800">${course.price.toLocaleString()}</span>
+                                        ) : (
+                                                <span class="text-sm font-medium text-green-600">Gratis</span>
+                                        )}
+                                    </div>
+                                    <a
+                                            href={`/cursos/${course.id}`}
+                                            class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
+                                    >
+                                        Ver curso
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                ))
+            ) : (
+                    <div class="col-span-3 text-center py-12">
+                        <p class="text-gray-500">No hay cursos disponibles en este momento.</p>
+                    </div>
+            )}
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 text-center">
+            <a href="/cursos" class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-md transition-colors">
+                Ver todos los cursos
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>

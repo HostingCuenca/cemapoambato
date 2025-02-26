@@ -1,0 +1,36 @@
+---
+// Definir las páginas actuales del sitio
+const navItems = [
+    { label: 'Inicio', url: '/' },
+    { label: 'Servicios', url: '/servicios' },
+    { label: 'Nosotros', url: '/nosotros' },
+    { label: 'Testimonios', url: '/testimonios' },
+    { label: 'Blog', url: '/blog' },
+    { label: 'Cursos', url: '/cursos' }
+];
+
+// Obtener la ruta actual
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="hidden md:flex items-center space-x-8 mr-8">
+    {navItems.map((item) => (
+<a
+        href={item.url}
+        class:list={[
+            'font-medium transition-colors text-sm hover:text-primary-600',
+        currentPath === item.url || (item.url !== '/' && currentPath.startsWith(item.url))
+        ? 'text-primary-600 font-semibold'
+        : 'text-gray-700'
+        ]}
+        >
+        {item.label}
+        </a>
+        ))}
+        </nav>
+
+        <style>
+            nav a {
+                font-family: 'Montserrat', sans-serif;
+            }
+        </style>

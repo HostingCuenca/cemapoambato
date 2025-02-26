@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/home/Hero.astro';
+import FeaturedServices from '../components/home/FeaturedServices.astro';
+import AboutPreview from '../components/home/AboutPreview.astro';
+import Testimonials from '../components/home/Testimonials.astro';
+import LatestBlog from '../components/home/LatestBlog.astro';
+import { getFeaturedCourses } from '../lib/firebase.js';
+
+// Obtener cursos destacados
+const featuredCourses = await getFeaturedCourses(3);
+---
+
+<Layout
+	title="CEMAPO TALENTO HUMANO | Gestión de Recursos Humanos y Desarrollo Organizacional"
+	description="Soluciones integrales para la gestión del talento humano y desarrollo empresarial. Consultoría, capacitación y servicios especializados en recursos humanos."
+>
+	<Hero />
+	<FeaturedServices />
+	<AboutPreview />
+	<Testimonials />
+	<LatestBlog courses={featuredCourses} />
+</Layout>
