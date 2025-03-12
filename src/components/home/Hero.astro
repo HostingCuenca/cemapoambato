@@ -1,4 +1,5 @@
 ---
+// src/components/home/Hero.astro
 ---
 
 <section class="relative min-h-[90vh] flex items-center overflow-hidden pt-16">
@@ -298,7 +299,9 @@
   }
 </style>
 
-<script>
+
+<script is:inline>
+  // Asegurarse de que el código se ejecute sólo en el cliente
   document.addEventListener('DOMContentLoaded', function() {
     // Variables para controlar slides
     const heroSlides = document.querySelectorAll('.hero-slide');
@@ -310,24 +313,24 @@
     let isHovered = false;
 
     // Iniciar contador de estadísticas cuando están visibles
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.2
-    };
+    try {
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startCounters();
+            statsObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.2 });
 
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          startCounters();
-          statsObserver.disconnect();
-        }
-      });
-    }, observerOptions);
-
-    const statsContainer = document.querySelector('.stats-grid');
-    if (statsContainer) {
-      statsObserver.observe(statsContainer);
+      const statsContainer = document.querySelector('.stats-grid');
+      if (statsContainer) {
+        statsObserver.observe(statsContainer);
+      }
+    } catch (e) {
+      console.warn('IntersectionObserver error, using fallback', e);
+      // Fallback para navegadores que no soportan IntersectionObserver
+      setTimeout(startCounters, 1000);
     }
 
     // Función para animar contadores
@@ -403,13 +406,15 @@
 
     // Detectar si el usuario está interactuando con el slider
     const heroContent = document.getElementById('hero-content');
-    heroContent.addEventListener('mouseenter', () => {
-      isHovered = true;
-    });
+    if (heroContent) {
+      heroContent.addEventListener('mouseenter', () => {
+        isHovered = true;
+      });
 
-    heroContent.addEventListener('mouseleave', () => {
-      isHovered = false;
-    });
+      heroContent.addEventListener('mouseleave', () => {
+        isHovered = false;
+      });
+    }
 
     // Iniciar intervalo de cambio de slides
     function startSlideInterval() {
@@ -423,14 +428,16 @@
 
     const heroSection = document.querySelector('section');
 
-    heroSection.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, {passive: true});
+    if (heroSection) {
+      heroSection.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, {passive: true});
 
-    heroSection.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, {passive: true});
+      heroSection.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, {passive: true});
+    }
 
     function handleSwipe() {
       if (isTransitioning) return;
