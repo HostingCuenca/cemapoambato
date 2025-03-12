@@ -3,13 +3,24 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout
-    title="Psicología Clínica | CEMAPO - Especialistas en Bienestar Mental"
-    description="Servicios especializados de psicología clínica en línea: terapia individual, evaluaciones psicológicas, atención en crisis y programas para empresas."
+        title="CEMAPO Psicología Clínica | Servicios de Psicología en Línea"
+        description="Servicios profesionales de psicología clínica, terapia individual, atención a empresas y evaluaciones psicológicas con profesionales altamente calificados."
 >
     <!-- Encabezado de la página -->
-    <section class="relative py-24 md:py-32 bg-gradient-to-r from-blue-900 to-blue-800 text-white overflow-hidden">
-        <!-- Patrón de fondo -->
-        <div class="absolute inset-0 opacity-10">
+    <!-- Encabezado de la página -->
+    <section class="relative min-h-[90vh] flex items-center py-24 md:py-32 overflow-hidden">
+        <!-- Imagen de fondo con overlay -->
+        <div class="absolute inset-0 z-0">
+            <img
+                    src="https://img.freepik.com/foto-gratis/mujer-haciendo-llamada-video-casa-dispositivo-portatil_23-2150764758.jpg?t=st=1741813148~exp=1741816748~hmac=968ead369ab3f188ae8008b3a51207f2d85d275e26e3a8b3c718fb308da4b21a&w=1060"
+                    alt="Consultorio de psicología online"
+                    class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-800/80"></div>
+        </div>
+
+        <!-- Patrón de fondo para añadir textura -->
+        <div class="absolute inset-0 opacity-5 z-10">
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <pattern id="small-grid" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -20,303 +31,294 @@ import Layout from '../../layouts/Layout.astro';
             </svg>
         </div>
 
-        <div class="container mx-auto px-4 relative z-10 text-center">
-            <h1 class="text-5xl md:text-6xl font-heading font-bold mb-6">Psicología Clínica</h1>
-            <p class="text-xl max-w-3xl mx-auto text-white/80 mb-8">
-                Servicios profesionales de salud mental con enfoque personalizado para acompañarte en tu bienestar emocional
-            </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center mt-10">
-                <a href="#servicios" class="bg-white hover:bg-gray-100 text-blue-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
-                    Conocer servicios
-                </a>
-                <a href="/contacto" class="bg-transparent hover:bg-white/10 border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
-                    Agendar consulta
-                </a>
+        <!-- Contenido del Hero -->
+        <div class="container mx-auto px-6 relative z-20">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="w-full lg:w-1/2 text-white mb-12 lg:mb-0">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-600/80 text-white text-sm font-semibold mb-6 backdrop-blur-sm">
+                    PSICOLOGÍA CLÍNICA ONLINE
+                </span>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
+                        Servicios de <span class="text-blue-300">Psicología</span> en Línea
+                    </h1>
+                    <p class="text-xl max-w-xl text-white/90 mb-10 leading-relaxed">
+                        Brindamos atención psicológica profesional 100% online y personalizada para ayudarte a superar desafíos emocionales y alcanzar un mayor bienestar mental.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-10">
+                        <a href="#servicios" class="bg-white hover:bg-gray-100 text-blue-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1 text-center">
+                            Nuestros Servicios
+                        </a>
+                        <a href="#contacto" class="bg-transparent hover:bg-white/10 border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1 backdrop-blur-sm text-center">
+                            Solicitar Consulta
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card flotante a la derecha -->
+                <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-2xl border border-white/20 max-w-md transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                        <div class="flex items-center mb-6">
+                            <div class="h-12 w-12 rounded-full bg-blue-600 flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Terapia psicológica online</h3>
+                        </div>
+                        <p class="text-white/90 mb-6">
+                            Accede a servicios de psicología profesional desde cualquier lugar, con la misma calidad que una sesión presencial pero con mayor flexibilidad y comodidad.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                <span class="text-white font-medium">Videollamada</span>
+                            </div>
+                            <div class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                <span class="text-white font-medium">Chat privado</span>
+                            </div>
+                            <div class="bg-blue-600 px-4 py-2 rounded-lg">
+                                <span class="text-white font-medium">100% online</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <!-- Decoración ondulada en la parte inferior -->
-        <div class="absolute bottom-0 left-0 right-0">
+        <div class="absolute bottom-0 left-0 right-0 z-10">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-white">
                 <path d="M0,96L80,85.3C160,75,320,53,480,53.3C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
             </svg>
         </div>
     </section>
-
-    <!-- Introducción -->
-    <section class="py-20 bg-white">
+    <!-- Servicios de Psicología -->
+    <section id="servicios" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-3">SALUD MENTAL</span>
-                    <h2 class="text-3xl font-heading font-bold text-blue-900 mb-6">Cuidamos tu bienestar emocional</h2>
-                    <p class="text-lg text-gray-700 mb-6">
-                        En CEMAPO contamos con un equipo de psicólogos altamente capacitados, comprometidos con proporcionar acompañamiento y apoyo emocional de alta calidad. Entendemos que cada persona es única, con experiencias y necesidades diferentes, por lo que ofrecemos un enfoque personalizado en cada intervención.
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-3">SERVICIOS DE PSICOLOGÍA</span>
+                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Transforma tu bienestar emocional con nuestros servicios</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Conoce cómo CEMAPO Psicología puede ayudarte a mejorar tu salud mental y desarrollar habilidades emocionales para afrontar los desafíos de la vida
+                </p>
+            </div>
+
+            <!-- Imagen principal -->
+            <div class="max-w-5xl mx-auto mb-20 relative">
+                <img
+                        src="https://images.unsplash.com/photo-1573497620290-18e0d4c317c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Servicio de psicología"
+                        class="w-full h-auto rounded-xl shadow-xl"
+                />
+                <!-- Elementos decorativos -->
+                <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-blue-100 rounded-xl -z-10 opacity-70 transform rotate-6 hidden md:block"></div>
+                <div class="absolute -top-6 -left-6 w-32 h-32 bg-yellow-100 rounded-xl -z-10 opacity-70 transform -rotate-6 hidden md:block"></div>
+            </div>
+
+            <!-- Áreas de servicios -->
+            <div class="max-w-5xl mx-auto mb-20">
+                <div class="text-center mb-10">
+                    <h3 class="text-2xl font-heading font-bold text-blue-900 mb-4">Nuestros servicios de psicología en línea</h3>
+                    <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                        Ofrecemos atención psicológica online adaptada a tus necesidades específicas
                     </p>
-                    <p class="text-lg text-gray-700 mb-6">
-                        Nuestros servicios de psicología en línea te permiten acceder a atención profesional desde cualquier lugar, con la misma calidad y confidencialidad que una consulta presencial, pero con la comodidad y flexibilidad que necesitas.
-                    </p>
-                    <div class="flex space-x-4 items-center">
-                        <div class="bg-blue-100 p-3 rounded-full">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Servicio 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">Terapia Individual</h4>
+                        <p class="text-gray-700">
+                            Sesiones personalizadas para tratar ansiedad, depresión, estrés, duelo, autoestima, etc. Disponible mediante videollamada, chat o llamadas telefónicas.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">Psicoterapia para Empresas</h4>
+                        <p class="text-gray-700">
+                            Programas de bienestar y salud mental para empleados, intervenciones en casos de estrés laboral y burnout, coaching emocional y desarrollo de habilidades de liderazgo.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">Atención en Crisis</h4>
+                        <p class="text-gray-700">
+                            Intervención inmediata en crisis emocionales, manejo de ataques de pánico, duelo, intentos suicidas, etc. Acceso rápido a profesionales capacitados.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">Evaluaciones Psicológicas</h4>
+                        <p class="text-gray-700">
+                            Diagnóstico de trastornos emocionales y de conducta, pruebas psicométricas y de personalidad, informes para escuelas, trabajo o procesos legales.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 5 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.25 2.25m-15.5 0c.51-.69 1.04-1.3 1.6-1.9m.48-1.9a48.416 48.416 0 013.03-1.95m0 0c1.53-.688 3.182-1.133 4.95-1.303m0 0c.685-.05 1.374-.072 2.065-.072m0 0c.69 0 1.38.022 2.065.072M10.5 1.5h3a5.65 5.65 0 0110.74 0h3a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25h-3A5.641 5.641 0 0119 20.25h-1.5a5.641 5.641 0 01-5.25-3.75h-3a5.65 5.65 0 01-10.74 0h-3A2.25 2.25 0 01.75 14.25V3.75A2.25 2.25 0 013 1.5h3a5.65 5.65 0 010 0" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">Asesoramiento Personal</h4>
+                        <p class="text-gray-700">
+                            Estrategias para el manejo del estrés y la ansiedad, técnicas de mindfulness y regulación emocional, orientación vocacional y toma de decisiones.
+                        </p>
+                    </div>
+                </div>
+
+                <p class="text-center text-gray-700 text-lg mt-10 max-w-3xl mx-auto">
+                    Con nuestros servicios de psicología online, mejorarás tu bienestar emocional y desarrollarás herramientas efectivas para enfrentar los desafíos de la vida cotidiana.
+                </p>
+            </div>
+
+            <!-- Beneficios de la Psicología Online -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto mb-16">
+                <div class="order-2 lg:order-1 relative">
+                    <img
+                            src="https://images.unsplash.com/photo-1547082299-de196ea013d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                            alt="Psicoterapia online"
+                            class="rounded-xl shadow-xl w-full h-auto"
+                    />
+                    <!-- Badge decorativa -->
+                    <div class="absolute -bottom-4 right-10 bg-white p-4 rounded-lg shadow-lg max-w-xs transform rotate-3 hidden md:flex items-center">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3 flex-shrink-0">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                             </svg>
                         </div>
-                        <span class="text-gray-700 font-medium">Profesionales certificados y con amplia experiencia</span>
+                        <p class="text-sm font-medium text-gray-800">Sesiones 100% online</p>
                     </div>
                 </div>
-                <div class="relative">
-                    <img
-                        src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                        alt="Psicología clínica" 
-                        class="rounded-lg shadow-xl w-full h-auto"
-                    />
-                    <!-- Elementos decorativos -->
-                    <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-blue-100 rounded-xl -z-10 opacity-70 transform rotate-6 hidden md:block"></div>
-                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-yellow-100 rounded-xl -z-10 opacity-70 transform -rotate-6 hidden md:block"></div>
+                <div class="order-1 lg:order-2">
+                    <h3 class="text-2xl font-heading font-bold text-blue-900 mb-4">Ventajas de la Psicología Online</h3>
+                    <h4 class="text-xl text-blue-600 font-semibold mb-4">Atención psicológica a un clic de distancia</h4>
+                    <p class="text-gray-700 mb-6 text-lg">
+                        Nuestros servicios de psicología online te ofrecen accesibilidad, flexibilidad y la misma calidad que las sesiones presenciales, adaptándonos a tu estilo de vida y necesidades específicas.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-700"><span class="font-semibold text-blue-900">Accesibilidad total</span> - Recibe atención desde cualquier lugar con conexión a internet.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-700"><span class="font-semibold text-blue-900">Flexibilidad horaria</span> - Adapta tus sesiones a tu agenda sin desplazamientos.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-700"><span class="font-semibold text-blue-900">Total confidencialidad</span> - Plataformas seguras que protegen tu privacidad.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a
+                            href="#contacto"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg"
+                    >
+                        Solicitar información
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Servicios de Psicología en Línea -->
-    <section id="servicios" class="py-20 bg-gray-50">
+    <!-- Separador curvo -->
+    <div class="bg-white relative">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-blue-50">
+            <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,69.3C1120,64,1280,64,1360,64L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+        </svg>
+    </div>
+
+    <!-- Formulario de Contacto -->
+    <section id="contacto" class="py-20 bg-blue-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-3">NUESTROS SERVICIOS</span>
-                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Servicios de Psicología en Línea</h2>
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-600 text-white text-sm font-semibold mb-3">CONTÁCTANOS</span>
+                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">¿Necesitas atención psicológica?</h2>
                 <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-                    Atención psicológica profesional accesible desde cualquier lugar
+                    Completa el formulario y nuestro equipo se pondrá en contacto contigo para brindarte toda la información que necesitas
                 </p>
             </div>
 
-            <div class="max-w-6xl mx-auto">
-                <!-- Terapia Individual -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-3">
-                        <div class="lg:col-span-1 bg-blue-600 text-white p-8 flex flex-col justify-center">
-                            <div class="mb-4">
-                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-4">1. Terapia Individual</h3>
-                            <p class="text-white/90">
-                                Sesiones personalizadas para abordar tus necesidades específicas en un espacio confidencial y seguro.
-                            </p>
-                        </div>
-                        <div class="lg:col-span-2 p-8">
-                            <h4 class="text-xl font-bold text-blue-900 mb-4">¿Qué ofrecemos?</h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl shadow-xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <form class="space-y-6">
                                 <div>
-                                    <h5 class="font-semibold text-gray-900 mb-2">Abordamos diversas problemáticas:</h5>
-                                    <ul class="space-y-2">
-                                        <li class="flex items-center">
-                                            <div class="h-5 w-5 text-blue-600 mr-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
-                                            <span class="text-gray-700">Ansiedad y depresión</span>
-                                        </li>
-                                        <li class="flex items-center">
-                                            <div class="h-5 w-5 text-blue-600 mr-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
-                                            <span class="text-gray-700">Estrés y manejo emocional</span>
-                                        </li>
-                                        <li class="flex items-center">
-                                            <div class="h-5 w-5 text-blue-600 mr-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
-                                            <span class="text-gray-700">Duelo y pérdidas</span>
-                                        </li>
-                                        <li class="flex items-center">
-                                            <div class="h-5 w-5 text-blue-600 mr-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
-                                            <span class="text-gray-700">Autoestima y desarrollo personal</span>
-                                        </li>
-                                    </ul>
+                                    <label for="nombre" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
+                                    <input type="text" id="nombre" name="nombre" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tu nombre" required />
                                 </div>
                                 <div>
-                                    <h5 class="font-semibold text-gray-900 mb-2">Enfoques terapéuticos:</h5>
-                                    <ul class="space-y-2">
-                                        <li class="flex items-center">
-                                            <div class="h-5 w-5 text-blue-600 mr-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
-                                            <span class="text-gray-700">Terapia cognitivo-conductual</span>
-                                        </li>
-                                        <li class="flex items-center">
-                                            <div class="h-5 w-5 text-blue-600 mr-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
-                                            <span class="text-gray-700">Enfoque humanista</span>
-                                        </li>
-                                        <li class="flex items-center">
-                                            <div class="h-5 w-5 text-blue-600 mr-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
-                                            <span class="text-gray-700">Psicoanálisis</span>
-                                        </li>
-                                        <li class="flex items-center">
-                                            <div class="h-5 w-5 text-blue-600 mr-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
-                                            <span class="text-gray-700">Terapia sistémica</span>
-                                        </li>
-                                    </ul>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="ejemplo@correo.com" required />
                                 </div>
-                            </div>
-                            <div class="mt-6 border-t border-gray-200 pt-6">
-                                <h5 class="font-semibold text-gray-900 mb-2">Modalidades disponibles:</h5>
-                                <div class="flex flex-wrap gap-4">
-                                    <div class="bg-blue-50 rounded-full px-4 py-2 text-blue-700 text-sm font-medium">
-                                        Videollamada
-                                    </div>
-                                    <div class="bg-blue-50 rounded-full px-4 py-2 text-blue-700 text-sm font-medium">
-                                        Chat
-                                    </div>
-                                    <div class="bg-blue-50 rounded-full px-4 py-2 text-blue-700 text-sm font-medium">
-                                        Llamada telefónica
-                                    </div>
+                                <div>
+                                    <label for="telefono" class="block text-gray-700 font-medium mb-2">Teléfono</label>
+                                    <input type="tel" id="telefono" name="telefono" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tu número de teléfono" />
                                 </div>
-                            </div>
+                                <div>
+                                    <label for="servicio" class="block text-gray-700 font-medium mb-2">Servicio de interés</label>
+                                    <select id="servicio" name="servicio" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">Selecciona un servicio</option>
+                                        <option value="terapia-individual">Terapia Individual</option>
+                                        <option value="terapia-empresarial">Psicoterapia para Empresas</option>
+                                        <option value="atencion-crisis">Atención en Crisis</option>
+                                        <option value="evaluaciones">Evaluaciones Psicológicas</option>
+                                        <option value="asesoramiento">Asesoramiento Personal</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                                    Solicitar información
+                                </button>
+                            </form>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Psicoterapia para Empresas -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-3">
-                        <div class="lg:col-span-1 bg-blue-700 text-white p-8 flex flex-col justify-center">
-                            <div class="mb-4">
-                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-4">2. Psicoterapia para Empresas</h3>
-                            <p class="text-white/90">
-                                Programas para el bienestar emocional de tu equipo, mejorando el clima laboral y la productividad.
-                            </p>
-                        </div>
-                        <div class="lg:col-span-2 p-8">
-                            <h4 class="text-xl font-bold text-blue-900 mb-4">Bienestar organizacional</h4>
-                            <p class="text-gray-700 mb-6">
-                                Desarrollamos programas integrales para fomentar la salud mental en el entorno laboral, atendiendo las necesidades específicas de cada organización y de sus colaboradores.
-                            </p>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="bg-gray-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-blue-800 mb-3">Programas de bienestar para empleados</h5>
-                                    <p class="text-gray-700 mb-3">
-                                        Implementamos estrategias para promover un ambiente laboral saludable y mejorar la calidad de vida de los colaboradores.
-                                    </p>
-                                </div>
-                                <div class="bg-gray-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-blue-800 mb-3">Intervención en estrés laboral y burnout</h5>
-                                    <p class="text-gray-700 mb-3">
-                                        Diseñamos soluciones para prevenir y tratar el desgaste profesional, mejorando la satisfacción y retención del talento.
-                                    </p>
-                                </div>
-                                <div class="bg-gray-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-blue-800 mb-3">Coaching emocional</h5>
-                                    <p class="text-gray-700 mb-3">
-                                        Acompañamos a los líderes en el desarrollo de habilidades emocionales para una gestión efectiva de equipos.
-                                    </p>
-                                </div>
-                                <div class="bg-gray-50 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-blue-800 mb-3">Talleres y capacitaciones</h5>
-                                    <p class="text-gray-700 mb-3">
-                                        Ofrecemos formación en inteligencia emocional, manejo del estrés y resolución de conflictos.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Atención en Crisis -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-3">
-                        <div class="lg:col-span-1 bg-blue-800 text-white p-8 flex flex-col justify-center">
-                            <div class="mb-4">
-                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-4">3. Atención en Crisis</h3>
-                            <p class="text-white/90">
-                                Intervención inmediata para situaciones de emergencia emocional, proporcionando apoyo cuando más lo necesitas.
-                            </p>
-                        </div>
-                        <div class="lg:col-span-2 p-8">
-                            <h4 class="text-xl font-bold text-blue-900 mb-4">Apoyo inmediato en momentos difíciles</h4>
-                            <p class="text-gray-700 mb-6">
-                                Contamos con un equipo de profesionales capacitados para intervenir en situaciones de crisis, ofreciéndote herramientas y estrategias para recuperar el equilibrio emocional.
-                            </p>
-                            
-                            <div class="space-y-4">
-                                <div class="flex">
-                                    <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium text-gray-900">Intervención inmediata en crisis emocionales</p>
-                                        <p class="text-gray-700">Respuesta rápida ante situaciones de urgencia psicológica.</p>
-                                    </div>
-                                </div>
-                                <div class="flex">
-                                    <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium text-gray-900">Manejo de ataques de pánico y ansiedad aguda</p>
-                                        <p class="text-gray-700">Técnicas efectivas para controlar episodios de ansiedad intensa.</p>
-                                    </div>
-                                </div>
-                                <div class="flex">
-                                    <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium text-gray-900">Apoyo en procesos de duelo</p>
-                                        <p class="text-gray-700">Acompañamiento en momentos de pérdida para facilitar el proceso de duelo.</p>
-                                    </div>
-                                </div>
-                                <div class="flex">
-                                    <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
+                        <div class="bg-blue-600 rounded-xl p-8 text-white flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">Contacto directo</h3>
 
 
 
@@ -328,371 +330,66 @@ import Layout from '../../layouts/Layout.astro';
 
 
 
-                                    <div>
-                                        <p class="font-medium text-gray-900">Prevención de conductas de riesgo</p>
-                                        <p class="text-gray-700">Intervención en situaciones que implican riesgo suicida o autolesiones.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-6 bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
-                                <div class="flex">
-                                    <div class="flex-shrink-0">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-yellow-500">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                                        </svg>
-                                    </div>
-                                    <div class="ml-3">
-                                        <p class="text-sm text-yellow-700">
-                                            Si experimentas una emergencia que pone en riesgo tu vida o la de otros, comunícate inmediatamente con los servicios de emergencia locales o acude al centro médico más cercano.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Evaluaciones Psicológicas -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-3">
-                        <div class="lg:col-span-1 bg-blue-600 text-white p-8 flex flex-col justify-center">
-                            <div class="mb-4">
-                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-4">4. Evaluaciones Psicológicas</h3>
-                            <p class="text-white/90">
-                                Valoraciones profesionales para identificar fortalezas, áreas de mejora y elaborar planes de intervención efectivos.
-                            </p>
-                        </div>
-                        <div class="lg:col-span-2 p-8">
-                            <h4 class="text-xl font-bold text-blue-900 mb-4">Diagnóstico y evaluación integral</h4>
-                            <p class="text-gray-700 mb-6">
-                                Realizamos evaluaciones psicológicas completas utilizando herramientas validadas científicamente para proporcionar diagnósticos precisos y planes de intervención personalizados.
-                            </p>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                <div class="border border-gray-200 rounded-lg p-4">
-                                    <h5 class="font-semibold text-blue-800 mb-3">Diagnóstico de trastornos emocionales</h5>
-                                    <p class="text-gray-700">
-                                        Evaluación de condiciones como ansiedad, depresión, trastorno bipolar y otros trastornos del estado de ánimo.
-                                    </p>
-                                </div>
-                                <div class="border border-gray-200 rounded-lg p-4">
-                                    <h5 class="font-semibold text-blue-800 mb-3">Pruebas psicométricas</h5>
-                                    <p class="text-gray-700">
-                                        Aplicación de tests estandarizados para medir inteligencia, personalidad, aptitudes y habilidades específicas.
-                                    </p>
-                                </div>
-                                <div class="border border-gray-200 rounded-lg p-4">
-                                    <h5 class="font-semibold text-blue-800 mb-3">Evaluación neuropsicológica</h5>
-                                    <p class="text-gray-700">
-                                        Valoración de funciones cognitivas como memoria, atención, lenguaje y funciones ejecutivas.
-                                    </p>
-                                </div>
-                                <div class="border border-gray-200 rounded-lg p-4">
-                                    <h5 class="font-semibold text-blue-800 mb-3">Informes profesionales</h5>
-                                    <p class="text-gray-700">
-                                        Elaboración de documentos para contextos educativos, laborales, legales o clínicos.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-blue-50 p-4 rounded-lg">
-                                <h5 class="font-semibold text-blue-800 mb-2">¿Para qué sirve una evaluación psicológica?</h5>
-                                <p class="text-gray-700">
-                                    Una evaluación psicológica proporciona información valiosa para entender mejor el funcionamiento emocional, cognitivo y conductual de una persona. Permite identificar fortalezas y áreas de mejora, establecer diagnósticos precisos y diseñar planes de intervención efectivos y personalizados.
+
+
+                                <p class="mb-8">
+                                    También puedes contactarnos directamente a través de WhatsApp o correo electrónico para una respuesta más rápida.
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Asesoramiento y Desarrollo Personal -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="grid grid-cols-1 lg:grid-cols-3">
-                        <div class="lg:col-span-1 bg-blue-700 text-white p-8 flex flex-col justify-center">
-                            <div class="mb-4">
-                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                                <div class="space-y-4 mb-8">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 h-10 w-10 bg-white/20 rounded-full flex items-center justify-center mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold">Email</h4>
+                                            <a href="mailto:psicologia@cemapo.com" class="text-white/90 hover:text-white transition-colors">psicologia@cemapo.com</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 h-10 w-10 bg-white/20 rounded-full flex items-center justify-center mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold">Teléfono / WhatsApp</h4>
+                                            <a href="tel:+593961870303" class="text-white/90 hover:text-white transition-colors">+593 96 187 0303</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a href="https://wa.me/593961870303" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md w-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                                     </svg>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-4">5. Asesoramiento y Desarrollo Personal</h3>
-                            <p class="text-white/90">
-                                Herramientas y estrategias para potenciar tu crecimiento personal y mejorar tu calidad de vida.
-                            </p>
-                        </div>
-                        <div class="lg:col-span-2 p-8">
-                            <h4 class="text-xl font-bold text-blue-900 mb-4">Potencia tu bienestar y desarrollo</h4>
-                            <p class="text-gray-700 mb-6">
-                                Te brindamos recursos y acompañamiento para que desarrolles habilidades que te permitan gestionar mejor tus emociones, tomar decisiones acertadas y mejorar tu calidad de vida.
-                            </p>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                                <div class="bg-gray-50 p-5 rounded-lg text-center">
-                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                    <h5 class="font-semibold text-blue-800 mb-2">Manejo del estrés</h5>
-                                    <p class="text-gray-700 text-sm">
-                                        Técnicas prácticas para reducir la ansiedad y manejar situaciones estresantes.
-                                    </p>
-                                </div>
-                                <div class="bg-gray-50 p-5 rounded-lg text-center">
-                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-                                        </svg>
-                                    </div>
-                                    <h5 class="font-semibold text-blue-800 mb-2">Mindfulness</h5>
-                                    <p class="text-gray-700 text-sm">
-                                        Prácticas de atención plena para mejorar tu concentración y bienestar general.
-                                    </p>
-                                </div>
-                                <div class="bg-gray-50 p-5 rounded-lg text-center">
-                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
-                                        </svg>
-                                    </div>
-                                    <h5 class="font-semibold text-blue-800 mb-2">Orientación vocacional</h5>
-                                    <p class="text-gray-700 text-sm">
-                                        Asesoramiento para identificar tus talentos y tomar decisiones profesionales.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex justify-center">
-                                <a 
-                                    href="/contacto" 
-                                    class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg"
-                                >
-                                    Agenda una sesión
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                    </svg>
+                                    Contactar por WhatsApp
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
-    <!-- Cómo funciona -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-3">PROCESO</span>
-                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">¿Cómo funciona?</h2>
-                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-                    Un proceso sencillo para comenzar tu camino hacia el bienestar emocional
-                </p>
-            </div>
-
-            <div class="max-w-5xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Paso 1 -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600 relative">
-                        <div class="absolute -top-5 -left-5 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">1</div>
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6 mt-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-blue-900 mb-3">Agenda tu cita</h3>
-                        <p class="text-gray-700">
-                            Contáctanos vía teléfono, correo electrónico o mediante nuestro formulario web para solicitar una cita con uno de nuestros psicólogos.
-                        </p>
-                    </div>
-                    
-                    <!-- Paso 2 -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600 relative">
-                        <div class="absolute -top-5 -left-5 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">2</div>
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6 mt-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-blue-900 mb-3">Evaluación inicial</h3>
-                        <p class="text-gray-700">
-                            En la primera sesión, el psicólogo realizará una evaluación para comprender tus necesidades y establecer objetivos terapéuticos.
-                        </p>
-                    </div>
-                    
-                    <!-- Paso 3 -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600 relative">
-                        <div class="absolute -top-5 -left-5 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">3</div>
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6 mt-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-blue-900 mb-3">Inicio del proceso</h3>
-                        <p class="text-gray-700">
-                            Comienza tu proceso terapéutico con sesiones regulares donde aprenderás herramientas y estrategias para mejorar tu bienestar emocional.
-                        </p>
-                    </div>
-                </div>
+    <!-- Llamado a la acción -->
+    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Listo para dar el primer paso hacia tu bienestar emocional?</h2>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto mb-10">
+                Nuestros servicios de psicología están diseñados para ayudarte a superar dificultades y mejorar tu calidad de vida
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contacto" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                    Solicitar información
+                </a>
+                <a href="/servicios" class="bg-transparent hover:bg-white/10 border-2 border-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                    Ver todos nuestros servicios
+                </a>
             </div>
         </div>
     </section>
-
-
-
-<!-- Preguntas Frecuentes -->
-<section class="py-20 bg-white">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-3">PREGUNTAS FRECUENTES</span>
-<h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Resolvemos tus dudas</h2>
-<p class="text-xl text-gray-700 max-w-3xl mx-auto">
-    Información importante sobre nuestros servicios de psicología
-</p>
-</div>
-
-<div class="max-w-4xl mx-auto">
-<!-- Preguntas -->
-<div class="space-y-6">
-    <!-- Pregunta 1 -->
-    <div class="bg-white rounded-xl shadow-sm border border-gray-200">
-        <button class="faq-button flex justify-between items-center w-full px-6 py-4 text-left" data-target="faq-1">
-            <span class="font-semibold text-lg text-gray-900">¿Cuánto dura una sesión de terapia?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-        </button>
-        <div id="faq-1" class="faq-content hidden px-6 pb-4">
-            <p class="text-gray-700">
-                Las sesiones de terapia individual tienen una duración aproximada de 45 a 50 minutos. En el caso de las evaluaciones psicológicas, la duración puede variar dependiendo del tipo de evaluación que se realice.
-            </p>
-        </div>
-    </div>
-    
-    <!-- Pregunta 2 -->
-    <div class="bg-white rounded-xl shadow-sm border border-gray-200">
-        <button class="faq-button flex justify-between items-center w-full px-6 py-4 text-left" data-target="faq-2">
-            <span class="font-semibold text-lg text-gray-900">¿Cómo se realizan las sesiones en línea?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-        </button>
-        <div id="faq-2" class="faq-content hidden px-6 pb-4">
-            <p class="text-gray-700">
-                Las sesiones en línea se realizan a través de plataformas seguras de videollamada como Zoom o Google Meet. Una vez agendada tu cita, recibirás un enlace para conectarte a la hora programada. Solo necesitas un dispositivo con conexión a internet y un lugar tranquilo donde puedas hablar con privacidad.
-            </p>
-        </div>
-    </div>
-    
-    <!-- Pregunta 3 -->
-    <div class="bg-white rounded-xl shadow-sm border border-gray-200">
-        <button class="faq-button flex justify-between items-center w-full px-6 py-4 text-left" data-target="faq-3">
-            <span class="font-semibold text-lg text-gray-900">¿Es confidencial la terapia en línea?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-        </button>
-        <div id="faq-3" class="faq-content hidden px-6 pb-4">
-            <p class="text-gray-700">
-                Sí, la confidencialidad es un principio fundamental en nuestra práctica. Toda la información compartida durante las sesiones es estrictamente confidencial y está protegida por el secreto profesional. Utilizamos plataformas seguras para las videollamadas y sistemas encriptados para el almacenamiento de información.
-            </p>
-        </div>
-    </div>
-    
-    <!-- Pregunta 4 -->
-    <div class="bg-white rounded-xl shadow-sm border border-gray-200">
-        <button class="faq-button flex justify-between items-center w-full px-6 py-4 text-left" data-target="faq-4">
-            <span class="font-semibold text-lg text-gray-900">¿Cuánto tiempo dura un proceso terapéutico?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-        </button>
-        <div id="faq-4" class="faq-content hidden px-6 pb-4">
-            <p class="text-gray-700">
-                La duración del proceso terapéutico varía según las necesidades específicas de cada persona, la naturaleza de la problemática y los objetivos establecidos. Algunas personas pueden experimentar mejorías significativas en pocas sesiones, mientras que otras pueden beneficiarse de un acompañamiento más prolongado. El psicólogo te proporcionará una estimación durante las primeras sesiones.
-            </p>
-        </div>
-    </div>
-    
-    <!-- Pregunta 5 -->
-    <div class="bg-white rounded-xl shadow-sm border border-gray-200">
-        <button class="faq-button flex justify-between items-center w-full px-6 py-4 text-left" data-target="faq-5">
-            <span class="font-semibold text-lg text-gray-900">¿Cómo puedo programar una cita?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-        </button>
-        <div id="faq-5" class="faq-content hidden px-6 pb-4">
-            <p class="text-gray-700">
-                Puedes programar una cita a través de nuestro formulario de contacto en la página web, llamando a nuestro número telefónico o enviando un correo electrónico. Nuestro equipo se pondrá en contacto contigo para confirmar la fecha y hora de tu sesión.
-            </p>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Llamado a la acción -->
-<section class="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
-<div class="container mx-auto px-4 text-center">
-<h2 class="text-3xl md:text-4xl font-bold mb-6">Comienza tu camino hacia el bienestar emocional</h2>
-<p class="text-xl text-white/90 max-w-3xl mx-auto mb-10">
-Nuestros psicólogos están listos para acompañarte en tu proceso de desarrollo personal y mejorar tu calidad de vida
-</p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
-<a href="/contacto" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
-    Agendar una consulta
-</a>
-<a href="/servicios" class="bg-transparent hover:bg-white/10 border-2 border-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-    Ver todos nuestros servicios
-</a>
-</div>
-</div>
-</section>
-
-<script>
-// Script para manejar el acordeón de preguntas frecuentes
-document.addEventListener('DOMContentLoaded', function() {
-const faqButtons = document.querySelectorAll('.faq-button');
-
-faqButtons.forEach(button => {
-button.addEventListener('click', () => {
-    const targetId = button.getAttribute('data-target');
-    const contentElement = document.getElementById(targetId);
-    const iconElement = button.querySelector('.faq-icon');
-    
-    // Toggle contenido
-    contentElement.classList.toggle('hidden');
-    
-    // Toggle icono
-    if (contentElement.classList.contains('hidden')) {
-        iconElement.style.transform = 'rotate(0deg)';
-    } else {
-        iconElement.style.transform = 'rotate(180deg)';
-    }
-});
-});
-});
-</script>
 </Layout>
-
-
-
-
-
-
-
-
-
-
-
