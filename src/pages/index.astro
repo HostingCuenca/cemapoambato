@@ -2,22 +2,29 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/home/Hero.astro';
 import FeaturedServices from '../components/home/FeaturedServices.astro';
-import AboutPreview from '../components/home/AboutPreview.astro';
+import WhatWeDo from '../components/home/WhatWeDo.astro';
+import ServicesShorcut from '../components/home/ServicesShorcut.astro';
 import Testimonials from '../components/home/Testimonials.astro';
 import LatestBlog from '../components/home/LatestBlog.astro';
-import { getFeaturedCourses } from '../lib/firebase.js';
+import CoursesSection from '../components/home/CoursesSection.astro';
+import OurServices from '../components/home/OurServices.astro';
+import WhyChooseCemapo from '../components/home/WhyChooseCemapo.astro';
+import { getAllCourses } from '../lib/airtable.js';
 
-// Obtener cursos destacados
-const featuredCourses = await getFeaturedCourses(3);
+// Obtener cursos (reemplaza a getFeaturedCourses)
+const allCourses = await getAllCourses();
+const featuredCourses = allCourses.slice(0, 3); // Tomar los primeros 3 como destacados
 ---
-
 <Layout
-	title="CEMAPO TALENTO HUMANO | Gestión de Recursos Humanos y Desarrollo Organizacional"
-	description="Soluciones integrales para la gestión del talento humano y desarrollo empresarial. Consultoría, capacitación y servicios especializados en recursos humanos."
+    title="CEMAPO TALENTO HUMANO | Gestión de Recursos Humanos y Desarrollo Organizacional"
+    description="Soluciones integrales para la gestión del talento humano y desarrollo empresarial. Consultoría, capacitación y servicios especializados en recursos humanos."
 >
-	<Hero />
-	<FeaturedServices />
-	<AboutPreview />
-	<Testimonials />
-	<LatestBlog courses={featuredCourses} />
+    <Hero />
+	<ServicesShorcut />
+    <WhyChooseCemapo />
+    <WhatWeDo />
+    <FeaturedServices />
+    <CoursesSection />
+    <Testimonials />
+    <LatestBlog courses={featuredCourses} />
 </Layout>

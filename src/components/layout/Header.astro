@@ -1,27 +1,46 @@
 ---
-import Navbar from './Navbar.astro';
+// Definir las páginas actuales del sitio
+const navItems = [
+    { label: 'Inicio', url: '/' },
+    { label: 'Servicios', url: '/servicios' },
+    { label: 'Nosotros', url: '/nosotros' },
+    { label: 'Testimonios', url: '/testimonios' },
+    { label: 'Blog', url: '/blog' },
+    { label: 'Cursos', url: '/cursos' }
+];
+
+// Obtener la ruta actual
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="fixed w-full bg-white border-b transition-all duration-300 z-50">
     <div class="container mx-auto px-4 py-3">
         <div class="flex justify-between items-center">
-            <!-- Logo con texto CEMAPO -->
-            <a href="/" class="flex items-center">
-                <img src="https://scontent-sea1-1.cdninstagram.com/v/t51.2885-19/450480877_369545166160084_5217621383701030870_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=104&ccb=1-7&_nc_sid=bf7eb4&_nc_ohc=mxtd7znk18MQ7kNvgFxNjE8&_nc_oc=AdjnvIKCHEqKdjyfuAD0ZPVKGiXCfS_-w95PBLT_Q4gv6Z3aHimIujVc-Yzh01uoh6U&_nc_zt=24&_nc_ht=scontent-sea1-1.cdninstagram.com&edm=AP4hL3IEAAAA&oh=00_AYBbb9CTlQBheXauDLxen0CqlyG1lnQDD0QT7ISe8V1x5A&oe=67C4FAF4" alt="CEMAPO Talento Humano" class="h-12 w-12 rounded-full object-cover" />
-                <div class="ml-3">
-                    <h1 class="font-cemapo text-xl font-bold text-primary-600 leading-tight">CEMAPO</h1>
-                    <p class="text-xs text-gray-600 font-medium leading-tight">Especialistas en Talento Humano</p>
-                </div>
+            <!-- Logo CEMAPO -->
+            <a href="/" class="flex items-center transition-all duration-300">
+                <img src="/CEMAPO-LOGO.png" alt="CEMAPO Talento Humano" class="h-16 object-contain transition-all duration-300" />
             </a>
-
             <!-- Navegación para desktop -->
             <div class="hidden md:flex items-center">
-                <Navbar />
+                <nav class="hidden md:flex items-center space-x-8 mr-8">
+                    {navItems.map((item) => (
+                        <a
+                            href={item.url}
+                            class:list={[
+                                'font-medium transition-colors text-sm hover:text-primary-600',
+                                currentPath === item.url || (item.url !== '/' && currentPath.startsWith(item.url))
+                                    ? 'text-primary-600 font-semibold'
+                                    : 'text-gray-700'
+                            ]}
+                        >
+                            {item.label}
+                        </a>
+                    ))}
+                </nav>
                 <a href="/contacto" class="bg-primary-600 hover:bg-primary-700 text-white py-2 px-5 rounded-md transition-colors text-sm font-medium">
                     Contactar
                 </a>
             </div>
-
             <!-- Botón de menú móvil -->
             <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none" aria-label="Abrir menú móvil">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -29,16 +48,22 @@ import Navbar from './Navbar.astro';
                 </svg>
             </button>
         </div>
-
         <!-- Menú móvil -->
         <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
             <nav class="flex flex-col space-y-4">
-                <a href="/" class="text-gray-700 hover:text-primary-600 py-2 border-b">Inicio</a>
-                <a href="/servicios" class="text-gray-700 hover:text-primary-600 py-2 border-b">Servicios</a>
-                <a href="/nosotros" class="text-gray-700 hover:text-primary-600 py-2 border-b">Nosotros</a>
-                <a href="/testimonios" class="text-gray-700 hover:text-primary-600 py-2 border-b">Testimonios</a>
-                <a href="/blog" class="text-gray-700 hover:text-primary-600 py-2 border-b">Blog</a>
-                <a href="/cursos" class="text-gray-700 hover:text-primary-600 py-2 border-b">Cursos</a>
+                {navItems.map((item) => (
+                    <a 
+                        href={item.url} 
+                        class:list={[
+                            'py-2 border-b hover:text-primary-600',
+                            currentPath === item.url || (item.url !== '/' && currentPath.startsWith(item.url))
+                                ? 'text-primary-600 font-semibold'
+                                : 'text-gray-700'
+                        ]}
+                    >
+                        {item.label}
+                    </a>
+                ))}
                 <a href="/contacto" class="bg-primary-600 text-white py-2 px-4 rounded-md text-center">Contactar</a>
             </nav>
         </div>
@@ -47,24 +72,78 @@ import Navbar from './Navbar.astro';
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
-
-    .font-cemapo {
+    
+    nav a {
         font-family: 'Montserrat', sans-serif;
-        letter-spacing: 0.5px;
     }
-
+    
+    header {
+        transform: translateZ(0); /* Activa la aceleración por hardware */
+        will-change: transform, background-color; /* Optimiza para animaciones */
+        transition: transform 0.3s ease, background-color 0.3s ease, height 0.3s ease;
+    }
+    
     header.scrolled {
         background-color: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(4px);
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 1px solid #e5e7eb;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
-
+    
+    /* Comentado para eliminar el efecto de minimización
+    header.scrolled img {
+        height: 3rem;
+    }
+    */
+    
     @media (max-width: 768px) {
         header {
             background-color: white;
         }
     }
 </style>
+
+<script>
+    // Script para manejar el menú móvil
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+    
+    // Script optimizado para detectar scroll y cambiar apariencia del header
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+    
+    function handleScroll() {
+        if (!header) return;
+        
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Añadir clase scrolled cuando el scroll supera 50px
+        if (scrollTop > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        lastScrollTop = scrollTop;
+    }
+    
+    // Usar requestAnimationFrame para optimizar el rendimiento
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+    
+    // Ejecutar al cargar la página para establecer el estado inicial
+    document.addEventListener('DOMContentLoaded', handleScroll);
+</script>

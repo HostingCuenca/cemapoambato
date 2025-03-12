@@ -1,0 +1,440 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+    title="CEMAPO Empresas | Soluciones para Organizaciones"
+    description="Ofrecemos programas de capacitación y desarrollo organizacional diseñados para potenciar el talento de tu empresa y mejorar los resultados de negocio."
+>
+    <!-- Encabezado de la página -->
+    <section class="relative py-24 md:py-32 bg-gradient-to-r from-blue-900 to-blue-800 text-white overflow-hidden">
+        <!-- Patrón de fondo -->
+        <div class="absolute inset-0 opacity-10">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="small-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#small-grid)" />
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-5xl md:text-6xl font-heading font-bold mb-6">CEMAPO Empresas</h1>
+            <p class="text-xl max-w-3xl mx-auto text-white/80 mb-8">
+                Soluciones integrales de capacitación y desarrollo organizacional adaptadas a las necesidades específicas de tu empresa
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center mt-10">
+                <a href="#capacitaciones" class="bg-white hover:bg-gray-100 text-blue-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                    Capacitaciones Online
+                </a>
+                <a href="#incompany" class="bg-transparent hover:bg-white/10 border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                    Servicios In Company
+                </a>
+            </div>
+        </div>
+        
+        <!-- Decoración ondulada en la parte inferior -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-white">
+                <path d="M0,96L80,85.3C160,75,320,53,480,53.3C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Capacitaciones Online -->
+    <section id="capacitaciones" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-3">CAPACITACIONES ONLINE</span>
+                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Transforma el talento de tu empresa</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Conoce cómo CEMAPO Empresas puede impulsar el desarrollo de habilidades y destrezas en la generación de conocimientos para el futuro de tu organización
+                </p>
+            </div>
+
+            <!-- Imagen principal -->
+            <div class="max-w-5xl mx-auto mb-20 relative">
+                <img 
+                    src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                    alt="Capacitación empresarial" 
+                    class="w-full h-auto rounded-xl shadow-xl"
+                />
+                <!-- Elementos decorativos -->
+                <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-blue-100 rounded-xl -z-10 opacity-70 transform rotate-6 hidden md:block"></div>
+                <div class="absolute -top-6 -left-6 w-32 h-32 bg-yellow-100 rounded-xl -z-10 opacity-70 transform -rotate-6 hidden md:block"></div>
+            </div>
+
+            <!-- Áreas de capacitación -->
+            <div class="max-w-5xl mx-auto mb-20">
+                <div class="text-center mb-10">
+                    <h3 class="text-2xl font-heading font-bold text-blue-900 mb-4">Capacitación para organizaciones de todos los tamaños</h3>
+                    <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                        Cientos de empresas están potenciando el talento de sus equipos con CEMAPO, ofreciendo capacitación en áreas esenciales
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Área 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">Recursos Humanos</h4>
+                        <p class="text-gray-700">
+                            Formación especializada en gestión del talento, reclutamiento, selección y desarrollo organizacional.
+                        </p>
+                    </div>
+
+                    <!-- Área 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">Finanzas</h4>
+                        <p class="text-gray-700">
+                            Capacitación en administración financiera, análisis contable y estrategias de inversión para empresas.
+                        </p>
+                    </div>
+
+                    <!-- Área 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">Inteligencia Artificial</h4>
+                        <p class="text-gray-700">
+                            Programas formativos en IA, machine learning y automatización de procesos empresariales.
+                        </p>
+                    </div>
+
+                    <!-- Área 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">Jurídico (legal)</h4>
+                        <p class="text-gray-700">
+                            Formación en legislación laboral, derecho empresarial y compliance para organizaciones.
+                        </p>
+                    </div>
+
+                    <!-- Área 5 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">Salud Ocupacional</h4>
+                        <p class="text-gray-700">
+                            Programas sobre prevención de riesgos laborales, bienestar en el trabajo y gestión del estrés.
+                        </p>
+                    </div>
+
+                    <!-- Área 6 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-2 border-t-4 border-blue-600">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">Liderazgo</h4>
+                        <p class="text-gray-700">
+                            Desarrollo de habilidades de liderazgo, gestión de equipos y comunicación efectiva.
+                        </p>
+                    </div>
+                </div>
+
+                <p class="text-center text-gray-700 text-lg mt-10 max-w-3xl mx-auto">
+                    Con nuestras capacitaciones 100% online, tu organización se convertirá en un referente del mercado laboral, desarrollando un equipo altamente capacitado y preparado para enfrentar los desafíos del futuro.
+                </p>
+            </div>
+
+            <!-- Instructores Expertos -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto mb-16">
+                <div class="order-2 lg:order-1 relative">
+                    <img 
+                        src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                        alt="Instructores expertos" 
+                        class="rounded-xl shadow-xl w-full h-auto"
+                    />
+                    <!-- Badge decorativa -->
+                    <div class="absolute -bottom-4 right-10 bg-white p-4 rounded-lg shadow-lg max-w-xs transform rotate-3 hidden md:flex items-center">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                            </svg>
+                        </div>
+                        <p class="text-sm font-medium text-gray-800">Profesionales certificados</p>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h3 class="text-2xl font-heading font-bold text-blue-900 mb-4">Instructores Expertos</h3>
+                    <h4 class="text-xl text-blue-600 font-semibold mb-4">Aprende de los mejores</h4>
+                    <p class="text-gray-700 mb-6 text-lg">
+                        Nuestras capacitaciones son impartidas por expertos que combinan habilidades prácticas con el conocimiento de las tendencias empresariales. Tu equipo será dirigido por profesionales con sólida experiencia que han sido seleccionados cuidadosamente por nuestro equipo de reclutamiento.
+                    </p>
+                    <a 
+                        href="/contacto" 
+                        class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg"
+                    >
+                        Quiero ser contactado
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separador curvo -->
+    <div class="bg-white relative">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-blue-50">
+            <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,69.3C1120,64,1280,64,1360,64L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+        </svg>
+    </div>
+
+    <!-- Servicios In Company -->
+    <section id="incompany" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-600 text-white text-sm font-semibold mb-3">IN COMPANY</span>
+                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Formación y transformación organizacional personalizada</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Creamos experiencias de formación adaptadas a las necesidades específicas de cada empresa
+                </p>
+            </div>
+
+            <!-- Banner principal -->
+            <div class="max-w-5xl mx-auto mb-20">
+                <div class="relative bg-gradient-to-r from-blue-900 to-blue-800 rounded-2xl overflow-hidden">
+                    <div class="absolute inset-0 z-0">
+                        <img
+                            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Formación in company"
+                            class="w-full h-full object-cover opacity-30"
+                        />
+                    </div>
+                    <div class="relative z-10 p-12 md:p-16">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 max-w-2xl">Diseñamos programas alineados con tus objetivos estratégicos</h3>
+                        <p class="text-lg text-white/90 mb-8 max-w-2xl">
+                            Nuestro enfoque a medida garantiza que cada formación responda a las necesidades reales de tu empresa, generando un impacto mensurable en el corto y largo plazo.
+                        </p>
+                        <a 
+                            href="/contacto" 
+                            class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-700 hover:bg-gray-100 font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg"
+                        >
+                            Quiero ser contactado
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beneficios -->
+            <div class="max-w-5xl mx-auto mb-16">
+                <div class="text-center mb-10">
+                    <h3 class="text-2xl font-heading font-bold text-blue-900 mb-4">¿Qué beneficios obtienes?</h3>
+                    <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                        Nuestras soluciones de formación In Company aportan ventajas competitivas reales a tu organización
+                    </p>
+                </div>
+
+                <div class="space-y-6 mb-12">
+                    <!-- Beneficio 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-blue-600 transform hover:-translate-x-2 hover:border-l-8 transition-all duration-300">
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">1. Mejorar la productividad y eficiencia</h4>
+                        <p class="text-gray-700">
+                            Capacitar a los empleados en nuevas herramientas, procesos y habilidades mejora su rendimiento y optimiza el uso de los recursos.
+                        </p>
+                    </div>
+                    
+                    <!-- Beneficio 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-blue-600 transform hover:-translate-x-2 hover:border-l-8 transition-all duration-300">
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">2. Desarrollar habilidades y competencias</h4>
+                        <p class="text-gray-700">
+                            Se enfocan en fortalecer habilidades técnicas (hard skills) y habilidades blandas (soft skills), alineadas con las necesidades de la empresa.
+                        </p>
+                    </div>
+                    
+                    <!-- Beneficio 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-blue-600 transform hover:-translate-x-2 hover:border-l-8 transition-all duration-300">
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">3. Aumentar la motivación y el compromiso</h4>
+                        <p class="text-gray-700">
+                            Los empleados valoran el desarrollo profesional, lo que incrementa su satisfacción laboral y reduce la rotación de personal.
+                        </p>
+                    </div>
+                    
+                    <!-- Beneficio 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-blue-600 transform hover:-translate-x-2 hover:border-l-8 transition-all duration-300">
+                        <h4 class="text-xl font-bold text-blue-900 mb-3">4. Adaptarse a cambios y nuevas tendencias</h4>
+                        <p class="text-gray-700">
+                            Mantiene a tu organización actualizada en temas relacionados con la innovación, tecnología y tendencias actuales, asegurando su competitividad.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a 
+                            href="/contacto" 
+                            class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg group"
+                        >
+                            Quiero ser contactado
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Socio estratégico -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto mb-20">
+                    <div>
+                        <h3 class="text-2xl font-heading font-bold text-blue-900 mb-6">Somos tu socio estratégico para impulsar el desarrollo del talento</h3>
+                        <p class="text-gray-700 mb-8 text-lg">
+                            Transformamos el potencial de tu organización en resultados tangibles, convirtiéndonos en tu socio estratégico para impulsar el desarrollo del talento y alcanzar el éxito colectivo, alineados con tus objetivos estratégicos.
+                        </p>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex">
+                                <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700">Consultoría estratégica en gestión del talento</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700">Formación personalizada según necesidades específicas</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700">Medición de resultados e impacto en el negocio</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative">
+                        <img 
+                            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+                            alt="Socios estratégicos" 
+                            class="rounded-xl shadow-xl w-full h-auto"
+                        />
+                        <!-- Elementos decorativos -->
+                        <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-white rounded-xl -z-10 opacity-70 transform rotate-6 hidden md:block"></div>
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-yellow-200 rounded-xl -z-10 opacity-70 transform -rotate-6 hidden md:block"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Testimonios -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-3">TESTIMONIOS</span>
+                    <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Lo que dicen nuestros clientes</h2>
+                    <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                        Empresas que han transformado su talento humano con nuestros servicios
+                    </p>
+                </div>
+    
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Testimonio 1 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg relative">
+                        <div class="absolute -top-5 left-8 text-blue-500 text-6xl opacity-20">"</div>
+                        <p class="text-gray-600 mb-6 relative z-10">
+                            Los programas de capacitación de CEMAPO transformaron la forma en que nuestro equipo aborda los desafíos diarios. La calidad de sus instructores y el enfoque práctico marcan la diferencia.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="María González" class="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">María González</h4>
+                                <p class="text-gray-500 text-sm">Gerente de RRHH, Empresa XYZ</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonio 2 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg relative">
+                        <div class="absolute -top-5 left-8 text-blue-500 text-6xl opacity-20">"</div>
+                        <p class="text-gray-600 mb-6 relative z-10">
+                            Implementar los programas In Company de CEMAPO fue una de las mejores decisiones que tomamos. Las formaciones personalizadas elevaron el rendimiento de nuestros equipos significativamente.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Méndez" class="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Carlos Méndez</h4>
+                                <p class="text-gray-500 text-sm">Director de Operaciones, Grupo ABC</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonio 3 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg relative">
+                        <div class="absolute -top-5 left-8 text-blue-500 text-6xl opacity-20">"</div>
+                        <p class="text-gray-600 mb-6 relative z-10">
+                            La capacitación en liderazgo que recibimos fue excepcional. Los conceptos y metodologías se adaptaron perfectamente a nuestra cultura organizacional, generando resultados inmediatos.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Laura Sánchez" class="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Laura Sánchez</h4>
+                                <p class="text-gray-500 text-sm">CEO, Innovatech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Llamado a la acción -->
+        <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Listo para potenciar el talento de tu organización?</h2>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto mb-10">
+                    Contáctanos hoy mismo y descubre cómo nuestras soluciones pueden ayudarte a desarrollar el talento de tu empresa
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contacto" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                        Solicitar información
+                    </a>
+                    <a href="/servicios" class="bg-transparent hover:bg-white/10 border-2 border-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                        Ver todos nuestros servicios
+                    </a>
+                </div>
+            </div>
+        </section>
+    </Layout>

@@ -1,0 +1,119 @@
+---
+// components/servicios/TabLayout.astro
+// Componente para manejar navegación por pestañas en las páginas de servicios
+
+// En Astro, los nombres de slots deben ser estáticos, no dinámicos
+// Por lo tanto, usaremos slots con nombres fijos
+---
+
+<div class="tab-container bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Navegación de pestañas -->
+    <div class="tab-navigation border-b border-gray-200 overflow-x-auto">
+      <div class="flex space-x-8">
+        <button
+          id="tab-online"
+          class="tab-btn py-4 px-1 border-b-2 font-medium text-lg transition-colors duration-200 border-primary-500 text-primary-600"
+          data-target="tab-content-online"
+        >
+          Capacitaciones Online
+        </button>
+        <button
+          id="tab-incompany"
+          class="tab-btn py-4 px-1 border-b-2 font-medium text-lg transition-colors duration-200 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+          data-target="tab-content-incompany"
+        >
+          In Company
+        </button>
+      </div>
+    </div>
+    
+    <!-- Contenido de las pestañas -->
+    <div class="tab-content">
+      <div id="tab-content-online" class="tab-pane active">
+        <slot name="online" />
+      </div>
+      <div id="tab-content-incompany" class="tab-pane hidden">
+        <slot name="incompany" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Script para manejar la interacción de las pestañas
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const target = button.getAttribute('data-target');
+        
+        // Desactivar todas las pestañas
+        tabButtons.forEach(btn => {
+          btn.classList.remove('border-primary-500', 'text-primary-600');
+          btn.classList.add('border-transparent', 'text-gray-500');
+        });
+        
+        // Ocultar todos los contenidos
+        tabPanes.forEach(pane => {
+          pane.classList.add('hidden');
+          pane.classList.remove('active');
+        });
+        
+        // Activar la pestaña seleccionada
+        button.classList.remove('border-transparent', 'text-gray-500');
+        button.classList.add('border-primary-500', 'text-primary-600');
+        
+        // Mostrar el contenido seleccionado
+        const activePane = document.getElementById(target);
+        if (activePane) {
+          activePane.classList.remove('hidden');
+          activePane.classList.add('active');
+          
+          // Animación sutil de entrada
+          activePane.style.opacity = '0';
+          activePane.style.transform = 'translateY(10px)';
+          
+          setTimeout(() => {
+            activePane.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            activePane.style.opacity = '1';
+            activePane.style.transform = 'translateY(0)';
+          }, 50);
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .tab-pane.active {
+    display: block;
+  }
+  
+  /* Animación de entrada para el contenido de pestañas */
+  .tab-pane {
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Estilizar la barra de desplazamiento en caso de muchas pestañas */
+  .tab-navigation {
+    scrollbar-width: thin;
+    scrollbar-color: #e2e8f0 #ffffff;
+  }
+  
+  .tab-navigation::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .tab-navigation::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+  
+  .tab-navigation::-webkit-scrollbar-thumb {
+    background-color: #e2e8f0;
+    border-radius: 3px;
+  }
+</style>
