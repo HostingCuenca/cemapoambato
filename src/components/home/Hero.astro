@@ -1,388 +1,469 @@
 ---
 ---
 
-<section class="relative md:h-[85vh] h-screen flex items-center overflow-hidden pt-20">
-    <!-- Carrusel de imágenes de fondo -->
-    <div class="absolute inset-0 z-0">
-      <div class="slideshow-container">
-        <div class="slide active">
-          <img
+<section class="relative min-h-[90vh] flex items-center overflow-hidden pt-16">
+  <!-- Carrusel de imágenes de fondo -->
+  <div class="absolute inset-0 z-0">
+    <div class="slideshow-container">
+      <div class="slide active">
+        <img
             src="https://img.freepik.com/foto-gratis/acercamiento-joven-empresario-que-realiza-pasantia_23-2149305367.jpg"
             alt="Profesional en desarrollo"
             class="w-full h-full object-cover"
-          />
-        </div>
-        <div class="slide">
-          <img
+        />
+      </div>
+      <div class="slide">
+        <img
             src="https://img.freepik.com/fotos-premium/companero-trabajo-amistoso-que-tiene-buena-relacion-conversacion-agradable-lugar-trabajo_317809-5925.jpg?w=1060"
             alt="Profesionales en colaboración"
             class="w-full h-full object-cover"
-          />
-        </div>
-        <div class="slide">
-          <img
+        />
+      </div>
+      <div class="slide">
+        <img
             src="https://img.freepik.com/foto-gratis/guy-muestra-documento-nina-grupo-jovenes-autonomos-oficina-conversando-trabajando_146671-13569.jpg?t=st=1741227419~exp=1741231019~hmac=08d973482f983469ec36cf106254c97c1ce625c5cd633bffc7c4eaf920a2b2a0&w=1060"
             alt="Equipo profesional trabajando"
             class="w-full h-full object-cover"
-          />
+        />
+      </div>
+    </div>
+
+    <!-- Overlay con gradiente azul eléctrico -->
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-800/85 z-10"></div>
+  </div>
+
+  <!-- Contenido principal del hero -->
+  <div class="container mx-auto px-4 relative z-20 py-20 md:py-0">
+    <div id="hero-content" class="relative">
+      <!-- Slide 1 -->
+      <div class="hero-slide active">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 fade-in">
+            Alcanza tu máximo potencial con expertos en Desarrollo del Talento Humano
+          </h1>
+          <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto fade-in delay-200">
+            Somos una plataforma educativa de excelencia, especializada en el Desarrollo del Talento Humano,
+            donde profesionales expertos comparten sus conocimientos y experiencia para potenciar
+            tu crecimiento educativo y profesional.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in delay-400">
+            <a href="/servicios" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg text-lg transform hover:-translate-y-1 w-full sm:w-auto">
+              Descubre nuestros cursos
+            </a>
+            <a href="/contacto" class="bg-white hover:bg-gray-100 text-blue-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg text-lg transform hover:-translate-y-1 w-full sm:w-auto">
+              Contáctanos
+            </a>
+          </div>
         </div>
       </div>
-  
-      <!-- Overlay con gradiente azul eléctrico -->
-      <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-800/85 z-10"></div>
-    </div>
-  
-    <!-- Contenido principal del hero -->
-    <div class="container mx-auto px-6 relative z-20">
-      <div id="hero-content">
-        <!-- Slide 1 -->
-        <div class="hero-slide active">
-          <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 fade-in">
-              Alcanza tu máximo potencial con expertos en Desarrollo del Talento Humano
-            </h1>
-            <p class="text-lg md:text-xl text-white/90 mb-12 max-w-3xl mx-auto fade-in delay-200">
-              Somos una plataforma educativa de excelencia, especializada en el Desarrollo del Talento Humano,
-              donde profesionales expertos comparten sus conocimientos y experiencia para potenciar
-              tu crecimiento educativo y profesional.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-5 justify-center fade-in delay-400">
-              <a href="/servicios" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-8 py-4 rounded-md font-semibold transition-all duration-300 shadow-xl text-lg transform hover:-translate-y-1">
-                Descubre nuestros cursos
-              </a>
-              <a href="/contacto" class="bg-white hover:bg-white text-blue-900 px-8 py-4 rounded-md font-semibold transition-all duration-300 shadow-xl text-lg transform hover:-translate-y-1">
-                Contáctanos
-              </a>
-            </div>
+
+      <!-- Slide 2 -->
+      <div class="hero-slide">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 fade-in">
+            Formamos profesionales preparados para los desafíos actuales
+          </h1>
+          <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto fade-in delay-200">
+            Nuestros programas están diseñados para desarrollar habilidades técnicas y blandas,
+            permitiéndote adaptarte a un entorno laboral en constante evolución y destacarte en tu campo profesional.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in delay-400">
+            <a href="/nosotros" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg text-lg transform hover:-translate-y-1 w-full sm:w-auto">
+              Conoce nuestra metodología
+            </a>
+            <a href="/testimonios" class="bg-white hover:bg-gray-100 text-blue-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg text-lg transform hover:-translate-y-1 w-full sm:w-auto">
+              Ver testimonios
+            </a>
           </div>
         </div>
-        
-        <!-- Slide 2 -->
-        <div class="hero-slide">
-          <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 fade-in">
-              Formamos profesionales preparados para los desafíos actuales
-            </h1>
-            <p class="text-lg md:text-xl text-white/90 mb-12 max-w-3xl mx-auto fade-in delay-200">
-              Nuestros programas están diseñados para desarrollar habilidades técnicas y blandas,
-              permitiéndote adaptarte a un entorno laboral en constante evolución y destacarte en tu campo profesional.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-5 justify-center fade-in delay-400">
-              <a href="/nosotros" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-8 py-4 rounded-md font-semibold transition-all duration-300 shadow-xl text-lg transform hover:-translate-y-1">
-                Conoce nuestra metodología
-              </a>
-              <a href="/testimonios" class="bg-white text-blue-900 px-8 py-4 rounded-md font-semibold transition-all duration-300 shadow-xl text-lg transform hover:-translate-y-1">
-                Ver testimonios
-              </a>
-            </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="hero-slide">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 fade-in">
+            Colaboramos con empresas líderes para fortalecer su talento humano
+          </h1>
+          <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto fade-in delay-200">
+            Ofrecemos soluciones personalizadas para organizaciones, mejorando el rendimiento,
+            la satisfacción laboral y la retención de talento mediante programas formativos adaptados a cada necesidad.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in delay-400">
+            <a href="/servicios#empresas" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg text-lg transform hover:-translate-y-1 w-full sm:w-auto">
+              Servicios para empresas
+            </a>
+            <a href="/contacto" class="bg-white hover:bg-gray-100 text-blue-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg text-lg transform hover:-translate-y-1 w-full sm:w-auto">
+              Solicitar asesoría
+            </a>
           </div>
-        </div>
-        
-        <!-- Slide 3 -->
-        <div class="hero-slide">
-          <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 fade-in">
-              Colaboramos con empresas líderes para fortalecer su talento humano
-            </h1>
-            <p class="text-lg md:text-xl text-white/90 mb-12 max-w-3xl mx-auto fade-in delay-200">
-              Ofrecemos soluciones personalizadas para organizaciones, mejorando el rendimiento, 
-              la satisfacción laboral y la retención de talento mediante programas formativos adaptados a cada necesidad.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-5 justify-center fade-in delay-400">
-              <a href="/servicios#empresas" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-8 py-4 rounded-md font-semibold transition-all duration-300 shadow-xl text-lg transform hover:-translate-y-1">
-                Servicios para empresas
-              </a>
-              <a href="/contacto" class="bg-white  text-blue-900 px-8 py-4 rounded-md font-semibold transition-all duration-300 shadow-xl text-lg transform hover:-translate-y-1">
-                Solicitar asesoría
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Controles de navegación -->
-        <div class="hero-dots">
-          <span class="hero-dot active" data-slide="0"></span>
-          <span class="hero-dot" data-slide="1"></span>
-          <span class="hero-dot" data-slide="2"></span>
         </div>
       </div>
     </div>
-  </section>
-  
-  <!-- Sección flotante de estadísticas -->
-  <div class="stats-container">
-    <div class="container mx-auto px-6">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-value count-up" data-target="500">0</div>
-          <div class="stat-label">Empresas satisfechas</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value count-up" data-target="10">0</div>
-          <div class="stat-label">Años de experiencia</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value count-up" data-target="2000">0</div>
-          <div class="stat-label">Profesionales capacitados</div>
-        </div>
+
+    <!-- Controles de navegación -->
+    <div class="hero-dots mt-12">
+      <button class="hero-dot active" aria-label="Slide 1" data-slide="0"></button>
+      <button class="hero-dot" aria-label="Slide 2" data-slide="1"></button>
+      <button class="hero-dot" aria-label="Slide 3" data-slide="2"></button>
+    </div>
+  </div>
+</section>
+
+<!-- Sección flotante de estadísticas -->
+<div class="relative z-30 mx-4 -mt-16 md:-mt-20 mb-16">
+  <div class="container mx-auto px-4">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value count-up" data-target="500">0</div>
+        <div class="stat-label">Empresas satisfechas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value count-up" data-target="10">0</div>
+        <div class="stat-label">Años de experiencia</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value count-up" data-target="2000">0</div>
+        <div class="stat-label">Profesionales capacitados</div>
       </div>
     </div>
   </div>
-  
-  <style>
-    /* Estilos para el carrusel con efecto zoom */
-    .slideshow-container {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-  
-    .slide {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      animation: zoom 15s infinite;
-      animation-play-state: paused;
-      filter: saturate(1.2) contrast(1.1) brightness(0.9);
-    }
-  
-    .slide.active {
-      opacity: 1;
-      animation-play-state: running;
-    }
-  
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-  
-    @keyframes zoom {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-  
-    /* Contenido del Hero */
-    #hero-content {
-      position: relative;
-    }
-  
-    .hero-slide {
-      display: none;
-      opacity: 0;
-      transition: opacity 0.8s ease-in-out;
-    }
-  
-    .hero-slide.active {
-      display: block;
-      opacity: 1;
-    }
-  
-    /* Animaciones de fade-in para el contenido */
-    .fade-in {
+</div>
+
+<style>
+  /* Estilos para el carrusel con efecto zoom */
+  .slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    animation: zoom 15s infinite;
+    animation-play-state: paused;
+    filter: saturate(1.2) contrast(1.1) brightness(0.9);
+    will-change: transform;
+  }
+
+  .slide.active {
+    opacity: 1;
+    animation-play-state: running;
+    z-index: 1;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @keyframes zoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  /* Contenido del Hero */
+  #hero-content {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-slide {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+  }
+
+  .hero-slide.active {
+    display: block;
+    opacity: 1;
+    position: relative;
+    pointer-events: auto;
+  }
+
+  /* Animaciones de fade-in para el contenido */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .hero-slide.active .fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .hero-slide.active .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .hero-slide.active .delay-400 {
+    animation-delay: 400ms;
+  }
+
+  @keyframes fadeIn {
+    from {
       opacity: 0;
       transform: translateY(20px);
     }
-  
-    .hero-slide.active .fade-in {
-      animation: fadeIn 1.2s ease-out forwards;
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
-  
-    .hero-slide.active .delay-200 {
-      animation-delay: 200ms;
-    }
-  
-    .hero-slide.active .delay-400 {
-      animation-delay: 400ms;
-    }
-  
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  
-    /* Hero dots de navegación */
-    .hero-dots {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      position: absolute;
-      bottom: -80px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-    }
-  
-    .hero-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.5);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-  
-    .hero-dot.active {
-      background-color: white;
-      transform: scale(1.2);
-    }
-  
-    /* Sección flotante de estadísticas */
-    .stats-container {
-      position: relative;
-      margin-top: -100px;
-      z-index: 30;
-      margin-bottom: 3rem;
-    }
-  
+  }
+
+  /* Hero dots de navegación */
+  .hero-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto;
+  }
+
+  .hero-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .hero-dot.active {
+    background-color: white;
+    transform: scale(1.2);
+  }
+
+  /* Sección flotante de estadísticas */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 640px) {
     .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
     }
-  
-    @media (min-width: 640px) {
-      .stats-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
+  }
+
+  .stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .stat-value {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0036c3; /* Azul eléctrico oscuro */
+    margin-bottom: 0.5rem;
+    line-height: 1;
+  }
+
+  .stat-value::after {
+    content: "+";
+  }
+
+  .stat-label {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Variables para controlar slides
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const backgroundSlides = document.querySelectorAll('.slide');
+    const heroDots = document.querySelectorAll('.hero-dot');
+    let currentSlideIndex = 0;
+    let slideInterval;
+    let isTransitioning = false;
+    let isHovered = false;
+
+    // Iniciar contador de estadísticas cuando están visibles
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.2
+    };
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounters();
+          statsObserver.disconnect();
+        }
+      });
+    }, observerOptions);
+
+    const statsContainer = document.querySelector('.stats-grid');
+    if (statsContainer) {
+      statsObserver.observe(statsContainer);
     }
-  
-    .stat-card {
-      background: white;
-      border-radius: 12px;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-  
-    .stat-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    }
-  
-    .stat-value {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #0036c3; /* Azul eléctrico oscuro */
-      margin-bottom: 0.5rem;
-      line-height: 1;
-    }
-  
-    .stat-value::after {
-      content: "+";
-    }
-  
-    .stat-label {
-      color: #333;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-  </style>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Variables para controlar slides
-      const heroSlides = document.querySelectorAll('.hero-slide');
-      const backgroundSlides = document.querySelectorAll('.slide');
-      const heroDots = document.querySelectorAll('.hero-dot');
-      let currentSlideIndex = 0;
-      let slideInterval;
-  
-      // Iniciar contador de estadísticas cuando están visibles
-      const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            startCounters();
-            statsObserver.disconnect();
+
+    // Función para animar contadores
+    function startCounters() {
+      const counters = document.querySelectorAll('.count-up');
+
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000; // duración en ms
+        const step = target / (duration / 30); // 30ms por paso
+        let current = 0;
+
+        const updateCounter = () => {
+          current += step;
+          if (current >= target) {
+            counter.textContent = target;
+            clearInterval(interval);
+          } else {
+            counter.textContent = Math.floor(current);
           }
-        });
-      }, { threshold: 0.5 });
-  
-      const statsContainer = document.querySelector('.stats-container');
-      if (statsContainer) {
-        statsObserver.observe(statsContainer);
-      }
-  
-      // Función para animar contadores
-      function startCounters() {
-        const counters = document.querySelectorAll('.count-up');
-        
-        counters.forEach(counter => {
-          const target = parseInt(counter.getAttribute('data-target'));
-          const duration = 2000; // duración en ms
-          const step = target / (duration / 30); // 30ms por paso
-          let current = 0;
-          
-          const updateCounter = () => {
-            current += step;
-            if (current >= target) {
-              counter.textContent = target;
-              clearInterval(interval);
-            } else {
-              counter.textContent = Math.floor(current);
-            }
-          };
-          
-          const interval = setInterval(updateCounter, 30);
-        });
-      }
-  
-      // Función para mostrar un slide específico
-      function showSlide(index) {
-        // Ocultar todos los slides
-        heroSlides.forEach(slide => {
-          slide.classList.remove('active');
-        });
-        
-        backgroundSlides.forEach(slide => {
-          slide.classList.remove('active');
-        });
-        
-        heroDots.forEach(dot => {
-          dot.classList.remove('active');
-        });
-        
-        // Mostrar el slide actual
-        currentSlideIndex = index;
-        heroSlides[index].classList.add('active');
-        backgroundSlides[index].classList.add('active');
-        heroDots[index].classList.add('active');
-      }
-  
-      // Función para avanzar al siguiente slide
-      function nextSlide() {
+        };
+
+        const interval = setInterval(updateCounter, 30);
+      });
+    }
+
+    // Función para mostrar un slide específico
+    function showSlide(index) {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      // Ocultar todos los slides
+      heroSlides.forEach(slide => {
+        slide.classList.remove('active');
+      });
+
+      backgroundSlides.forEach(slide => {
+        slide.classList.remove('active');
+      });
+
+      heroDots.forEach(dot => {
+        dot.classList.remove('active');
+      });
+
+      // Mostrar el slide actual
+      currentSlideIndex = index;
+      heroSlides[index].classList.add('active');
+      backgroundSlides[index].classList.add('active');
+      heroDots[index].classList.add('active');
+
+      // Permitir nueva transición después de un tiempo
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 1000);
+    }
+
+    // Función para avanzar al siguiente slide
+    function nextSlide() {
+      if (isHovered) return;
+      const newIndex = (currentSlideIndex + 1) % heroSlides.length;
+      showSlide(newIndex);
+    }
+
+    // Establecer eventos para los dots
+    heroDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        if (isTransitioning) return;
+        clearInterval(slideInterval);
+        showSlide(index);
+        startSlideInterval();
+      });
+    });
+
+    // Detectar si el usuario está interactuando con el slider
+    const heroContent = document.getElementById('hero-content');
+    heroContent.addEventListener('mouseenter', () => {
+      isHovered = true;
+    });
+
+    heroContent.addEventListener('mouseleave', () => {
+      isHovered = false;
+    });
+
+    // Iniciar intervalo de cambio de slides
+    function startSlideInterval() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, 8000); // Cambiar cada 8 segundos
+    }
+
+    // Control táctil para dispositivos móviles
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const heroSection = document.querySelector('section');
+
+    heroSection.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+
+    heroSection.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, {passive: true});
+
+    function handleSwipe() {
+      if (isTransitioning) return;
+
+      const swipeThreshold = 50;
+
+      if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe a la izquierda - siguiente slide
+        clearInterval(slideInterval);
         const newIndex = (currentSlideIndex + 1) % heroSlides.length;
         showSlide(newIndex);
+        startSlideInterval();
       }
-  
-      // Establecer eventos para los dots
-      heroDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          clearInterval(slideInterval);
-          showSlide(index);
-          startSlideInterval();
-        });
-      });
-  
-      // Iniciar intervalo de cambio de slides
-      function startSlideInterval() {
-        slideInterval = setInterval(nextSlide, 8000); // Cambiar cada 8 segundos
+
+      if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe a la derecha - slide anterior
+        clearInterval(slideInterval);
+        const newIndex = (currentSlideIndex - 1 + heroSlides.length) % heroSlides.length;
+        showSlide(newIndex);
+        startSlideInterval();
       }
-  
-      // Iniciar carrusel
-      startSlideInterval();
+    }
+
+    // Iniciar carrusel
+    startSlideInterval();
+
+    // Reiniciar el slider si la ventana cambia de tamaño
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        showSlide(currentSlideIndex);
+      }, 250);
     });
-  </script>
+  });
+</script>
