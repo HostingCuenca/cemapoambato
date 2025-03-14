@@ -1,238 +1,287 @@
 ---
 ---
 
-<section class="py-20 relative overflow-hidden bg-[#004B8D]">
-    <!-- Fondo con ondas -->
-    <div class="absolute inset-0 w-full h-full z-0 opacity-30">
-      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice">
-        <path fill="#ffffff" fill-opacity="0.2" d="M 0,700 C 0,700 0,233 0,233 C 75.97129186602871,254.1722488038278 151.94258373205741,275.34449760765546 248,264 C 344.0574162679426,252.65550239234454 460.2009569377991,208.79425837320576 552,209 C 643.7990430622009,209.20574162679424 711.2535885167464,253.47846889952152 786,248 C 860.7464114832536,242.52153110047848 942.7846889952152,187.29186602870817 1029,175 C 1115.2153110047848,162.70813397129183 1205.6076555023923,193.35406698564593 1285,208 C 1364.3923444976077,222.64593301435407 1432.1961722488039,221.29186602870817 1500,220 C 1500,220 1500,700 1500,700 Z"></path>
-        <path fill="#ffffff" fill-opacity="0.2" d="M 0,700 C 0,700 0,466 0,466 C 61.090909090909086,443.96650717703346 122.18181818181817,421.9330143540669 204,425 C 285.8181818181818,428.0669856459331 388.3636363636365,456.23444976076553 473,477 C 557.6363636363635,497.76555023923447 624.3636363636365,511.12918660287084 699,503 C 773.6363636363635,494.87081339712916 856.1818181818182,465.2488038277512 944,454 C 1031.8181818181818,442.7511961722488 1124.909090909091,449.8755980861244 1207,458 C 1289.090909090909,466.1244019138756 1360.5454545454545,475.2488038277512 1432,484 C 1432,484 1432,700 1432,700 Z"></path>
-        <path fill="#ffffff" fill-opacity="0.2" d="M 0,700 C 0,700 0,583 0,583 C 88.65071770334929,602.4545454545455 177.30143540669857,621.909090909091 256,617 C 334.69856459330143,612.090909090909 403.44497607655505,582.8181818181818 486,571 C 568.555023923445,559.1818181818182 664.9186602870813,564.8181818181818 742,564 C 819.0813397129187,563.1818181818182 876.8803827751196,555.909090909091 957,562 C 1037.1196172248803,568.090909090909 1139.5598086124402,587.5454545454545 1229,594 C 1318.4401913875598,600.4545454545455 1394.88038277512,593.909090909091 1471,587 C 1471,587 1471,700 1471,700 Z"></path>
-      </svg>
-    </div>
-  
-    <div class="container mx-auto px-4 relative z-10">
-      <!-- Encabezado de sección -->
-      <div class="relative text-center mb-16">
-        <div class="relative z-10">
-          <span class="inline-block py-1 px-4 rounded-full backdrop-blur-xl bg-white/10 text-white text-sm font-medium mb-3 border border-white/20 shadow-[0_0_10px_rgba(255,255,255,0.3)]">Nuestro Enfoque</span>
-          <h2 class="text-3xl md:text-5xl font-bold text-white mb-4]">¿QUÉ HACEMOS?</h2>
+<!--<section class="py-20 relative overflow-hidden bg-[#004B8D]">-->
+<!--    &lt;!&ndash; Fondo con ondas &ndash;&gt;-->
+<!--    <div class="absolute inset-0 w-full h-full z-0 opacity-30">-->
+<!--      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice">-->
+<!--        <path fill="#ffffff" fill-opacity="0.2" d="M 0,700 C 0,700 0,233 0,233 C 75.97129186602871,254.1722488038278 151.94258373205741,275.34449760765546 248,264 C 344.0574162679426,252.65550239234454 460.2009569377991,208.79425837320576 552,209 C 643.7990430622009,209.20574162679424 711.2535885167464,253.47846889952152 786,248 C 860.7464114832536,242.52153110047848 942.7846889952152,187.29186602870817 1029,175 C 1115.2153110047848,162.70813397129183 1205.6076555023923,193.35406698564593 1285,208 C 1364.3923444976077,222.64593301435407 1432.1961722488039,221.29186602870817 1500,220 C 1500,220 1500,700 1500,700 Z"></path>-->
+<!--        <path fill="#ffffff" fill-opacity="0.2" d="M 0,700 C 0,700 0,466 0,466 C 61.090909090909086,443.96650717703346 122.18181818181817,421.9330143540669 204,425 C 285.8181818181818,428.0669856459331 388.3636363636365,456.23444976076553 473,477 C 557.6363636363635,497.76555023923447 624.3636363636365,511.12918660287084 699,503 C 773.6363636363635,494.87081339712916 856.1818181818182,465.2488038277512 944,454 C 1031.8181818181818,442.7511961722488 1124.909090909091,449.8755980861244 1207,458 C 1289.090909090909,466.1244019138756 1360.5454545454545,475.2488038277512 1432,484 C 1432,484 1432,700 1432,700 Z"></path>-->
+<!--        <path fill="#ffffff" fill-opacity="0.2" d="M 0,700 C 0,700 0,583 0,583 C 88.65071770334929,602.4545454545455 177.30143540669857,621.909090909091 256,617 C 334.69856459330143,612.090909090909 403.44497607655505,582.8181818181818 486,571 C 568.555023923445,559.1818181818182 664.9186602870813,564.8181818181818 742,564 C 819.0813397129187,563.1818181818182 876.8803827751196,555.909090909091 957,562 C 1037.1196172248803,568.090909090909 1139.5598086124402,587.5454545454545 1229,594 C 1318.4401913875598,600.4545454545455 1394.88038277512,593.909090909091 1471,587 C 1471,587 1471,700 1471,700 Z"></path>-->
+<!--      </svg>-->
+<!--    </div>-->
+<!--  -->
+<!--    <div class="container mx-auto px-4 relative z-10">-->
+<!--     -->
+<!--      &lt;!&ndash; Metodología con diseño neón y glasmorfismo &ndash;&gt;-->
+<!--      <div class="relative rounded-2xl overflow-hidden backdrop-blur-xl bg-gradient-to-r from-[#0c8599]/40 to-[#13a2b8]/40 border border-white/20 p-8 lg:p-12 shadow-[0_0_30px_rgba(47,212,242,0.2)]">-->
+<!--        <div class="relative z-10">-->
+<!--          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">-->
+<!--            <div class="lg:col-span-4">-->
+<!--              <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">Nuestra Metodología</h3>-->
+<!--              <p class="text-white/90 mb-6 text-base leading-relaxed">-->
+<!--                Combinamos teoría y práctica en un enfoque integral que facilita la aplicación inmediata del conocimiento. Trabajamos con expertos en cada área y utilizamos tecnologías educativas de vanguardia.-->
+<!--              </p>-->
+<!--                     </div>-->
+
+<!--            <div class="lg:col-span-8">-->
+<!--              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">-->
+<!--                &lt;!&ndash; Paso 1 &ndash;&gt;-->
+<!--                <div class="backdrop-blur-md bg-white/10 rounded-xl p-5 border border-white/20 transform transition-transform hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]">-->
+<!--                  <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 text-white font-bold text-xl border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.2)]">1</div>-->
+<!--                  <h4 class="text-white font-semibold text-lg mb-2">Diagnóstico</h4>-->
+<!--                  <p class="text-white/80 text-sm">Evaluamos necesidades específicas y creamos soluciones personalizadas para cada cliente.</p>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Paso 2 &ndash;&gt;-->
+<!--                <div class="backdrop-blur-md bg-white/10 rounded-xl p-5 border border-white/20 transform transition-transform hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]">-->
+<!--                  <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 text-white font-bold text-xl border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.2)]">2</div>-->
+<!--                  <h4 class="text-white font-semibold text-lg mb-2">Implementación</h4>-->
+<!--                  <p class="text-white/80 text-sm">Desarrollamos programas con herramientas innovadoras y metodologías prácticas.</p>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Paso 3 &ndash;&gt;-->
+<!--                <div class="backdrop-blur-md bg-white/10 rounded-xl p-5 border border-white/20 transform transition-transform hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]">-->
+<!--                  <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 text-white font-bold text-xl border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.2)]">3</div>-->
+<!--                  <h4 class="text-white font-semibold text-lg mb-2">Seguimiento</h4>-->
+<!--                  <p class="text-white/80 text-sm">Evaluamos resultados y brindamos acompañamiento continuo para garantizar el éxito.</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Destacado adicional con estadísticas - Diseño de tarjetas neón &ndash;&gt;-->
+<!--      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">-->
+<!--        <div class="backdrop-blur-xl bg-white/15 border border-white/20 rounded-xl p-6 md:p-8 overflow-hidden relative hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300">-->
+<!--          <div class="absolute top-0 right-0 w-40 h-40 bg-cyan-500/10 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>-->
+
+<!--          <div class="relative z-10">-->
+<!--            <h3 class="text-xl font-bold text-white mb-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">Nuestro Impacto</h3>-->
+<!--            <p class="text-white/90 mb-6">-->
+<!--              En CEMAPO transformamos el potencial humano en resultados excepcionales con metodologías prácticas y acompañamiento personalizado.-->
+<!--            </p>-->
+
+<!--            <div class="grid grid-cols-2 gap-4">-->
+<!--              <div class="text-center p-4 bg-[#0c8599]/30 backdrop-blur-md rounded-lg transform transition-transform hover:scale-105 border border-white/20 hover:shadow-[0_0_15px_rgba(47,212,242,0.3)]">-->
+<!--                <span class="text-3xl font-bold text-cyan-300 block mb-1 stat-counter drop-shadow-[0_0_5px_rgba(47,212,242,0.7)]" data-target="95">95</span>-->
+<!--                <span class="text-sm text-white/80">% de satisfacción</span>-->
+<!--              </div>-->
+<!--              <div class="text-center p-4 bg-[#0c8599]/30 backdrop-blur-md rounded-lg transform transition-transform hover:scale-105 border border-white/20 hover:shadow-[0_0_15px_rgba(47,212,242,0.3)]">-->
+<!--                <span class="text-3xl font-bold text-cyan-300 block mb-1 stat-counter drop-shadow-[0_0_5px_rgba(47,212,242,0.7)]" data-target="5000">5000</span>-->
+<!--                <span class="text-sm text-white/80">Profesionales formados</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="backdrop-blur-xl bg-white/15 border border-white/20 rounded-xl p-6 md:p-8 overflow-hidden relative hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300">-->
+<!--          <div class="absolute bottom-0 left-0 w-40 h-40 bg-cyan-500/10 rounded-full transform -translate-x-1/3 translate-y-1/3"></div>-->
+
+<!--          <div class="relative z-10">-->
+<!--            <h3 class="text-xl font-bold text-white mb-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">Ventajas Distintivas</h3>-->
+<!--            <ul class="space-y-3">-->
+<!--              <li class="flex items-start">-->
+<!--                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-cyan-300/20 backdrop-blur-sm flex items-center justify-center mr-2 mt-0.5 shadow-[0_0_5px_rgba(47,212,242,0.5)]">-->
+<!--                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-cyan-300" viewBox="0 0 20 20" fill="currentColor">-->
+<!--                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />-->
+<!--                  </svg>-->
+<!--                </div>-->
+<!--                <span class="text-white/90">Formación de alta calidad con docentes especializados</span>-->
+<!--              </li>-->
+<!--              <li class="flex items-start">-->
+<!--                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-cyan-300/20 backdrop-blur-sm flex items-center justify-center mr-2 mt-0.5 shadow-[0_0_5px_rgba(47,212,242,0.5)]">-->
+<!--                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-cyan-300" viewBox="0 0 20 20" fill="currentColor">-->
+<!--                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />-->
+<!--                  </svg>-->
+<!--                </div>-->
+<!--                <span class="text-white/90">Contenidos actualizados con las últimas tendencias</span>-->
+<!--              </li>-->
+<!--              <li class="flex items-start">-->
+<!--                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-cyan-300/20 backdrop-blur-sm flex items-center justify-center mr-2 mt-0.5 shadow-[0_0_5px_rgba(47,212,242,0.5)]">-->
+<!--                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-cyan-300" viewBox="0 0 20 20" fill="currentColor">-->
+<!--                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />-->
+<!--                  </svg>-->
+<!--                </div>-->
+<!--                <span class="text-white/90">Flexibilidad horaria adaptada a tus necesidades</span>-->
+<!--              </li>-->
+<!--              <li class="flex items-start">-->
+<!--                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-cyan-300/20 backdrop-blur-sm flex items-center justify-center mr-2 mt-0.5 shadow-[0_0_5px_rgba(47,212,242,0.5)]">-->
+<!--                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-cyan-300" viewBox="0 0 20 20" fill="currentColor">-->
+<!--                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />-->
+<!--                  </svg>-->
+<!--                </div>-->
+<!--                <span class="text-white/90">Enfoque práctico con resultados inmediatos</span>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </section>-->
+
+
+
+
+
+
+
+
+<!-- Sección Metodología con diseño que complementa la anterior -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <!-- Metodología con diseño moderno y profesional -->
+    <div class="relative rounded-2xl overflow-hidden bg-primary-700 p-8 lg:p-12 shadow-xl mb-16">
+      <div class="absolute inset-0 opacity-10">
+        <svg width="100%" height="100%">
+          <defs>
+            <pattern id="dotGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="10" cy="10" r="1" fill="white" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dotGrid)" />
+        </svg>
+      </div>
+
+      <div class="relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Nuestra Metodología</h3>
+            <p class="text-white/90 mb-6 text-base leading-relaxed">
+              Combinamos teoría y práctica en un enfoque integral que facilita la aplicación inmediata del conocimiento. Trabajamos con expertos en cada área y utilizamos tecnologías educativas de vanguardia.
+            </p>
+          </div>
+
+          <div class="lg:col-span-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 metodologia-cards">
+              <!-- Paso 1 -->
+              <div class="bg-white/10 rounded-xl p-5 border border-white/20 transform transition-all duration-300 hover:translate-y-(-4px) hover:shadow-lg">
+                <div class="w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center mb-4 text-white font-bold text-xl border border-white/30">1</div>
+                <h4 class="text-white font-semibold text-lg mb-2">Diagnóstico</h4>
+                <p class="text-white/80 text-sm">Evaluamos necesidades específicas y creamos soluciones personalizadas para cada cliente.</p>
+              </div>
+
+              <!-- Paso 2 -->
+              <div class="bg-white/10 rounded-xl p-5 border border-white/20 transform transition-all duration-300 hover:translate-y-(-4px) hover:shadow-lg">
+                <div class="w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center mb-4 text-white font-bold text-xl border border-white/30">2</div>
+                <h4 class="text-white font-semibold text-lg mb-2">Implementación</h4>
+                <p class="text-white/80 text-sm">Desarrollamos programas con herramientas innovadoras y metodologías prácticas.</p>
+              </div>
+
+              <!-- Paso 3 -->
+              <div class="bg-white/10 rounded-xl p-5 border border-white/20 transform transition-all duration-300 hover:translate-y-(-4px) hover:shadow-lg">
+                <div class="w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center mb-4 text-white font-bold text-xl border border-white/30">3</div>
+                <h4 class="text-white font-semibold text-lg mb-2">Seguimiento</h4>
+                <p class="text-white/80 text-sm">Evaluamos resultados y brindamos acompañamiento continuo para garantizar el éxito.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="max-w-2xl mx-auto relative">
-          <p class="text-lg text-white/90 leading-relaxed backdrop-blur-sm rounded-xl p-4 bg-white/5">
-            Ofrecemos programas especializados en Gestión Humana, Empresarial y Educación Continua, diseñados para potenciar habilidades y talentos mediante herramientas actuales, impulsando el crecimiento profesional con excelencia educativa.
+      </div>
+    </div>
+
+    <!-- Destacado adicional con estadísticas - Diseño de tarjetas moderno -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+      <div class="bg-white border border-gray-200 rounded-xl p-6 md:p-8 overflow-hidden relative shadow-md hover:shadow-xl transition-all duration-300">
+        <div class="absolute top-0 right-0 w-40 h-40 bg-primary-100 rounded-full transform translate-x-1/3 -translate-y-1/3 opacity-50"></div>
+
+        <div class="relative z-10">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Nuestro Impacto</h3>
+          <p class="text-gray-600 mb-6">
+            En CEMAPO transformamos el potencial humano en resultados excepcionales con metodologías prácticas y acompañamiento personalizado.
           </p>
-        </div>
-      </div>
-      
-      <!-- Áreas de especialización con iconos y efectos neón/glassmórficos -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
-        <!-- Área 1: Gestión Humana -->
-        <div class="backdrop-blur-xl bg-white/15 border border-white/20 rounded-xl overflow-hidden group hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300">
-          <div class="h-1 bg-gradient-to-r from-cyan-300 to-teal-300 shadow-[0_0_10px_rgba(47,212,242,0.7)]"></div>
-          <div class="p-6 relative">
-            <div class="w-16 h-16 rounded-xl bg-[#0c8599]/30 flex items-center justify-center mb-5 group-hover:bg-[#0c8599]/50 transition-colors border border-white/20 shadow-[0_0_10px_rgba(47,212,242,0.4)]">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="text-center p-4 bg-primary-50 rounded-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md border border-primary-100">
+              <span class="text-3xl font-bold text-primary-600 block mb-1">Alto</span>
+              <span class="text-sm text-gray-600">% de satisfacción</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3 text-shadow">Gestión Humana</h3>
-            <p class="text-white/90 text-sm leading-relaxed">
-              Desarrollamos estrategias para potenciar el talento dentro de las organizaciones, con procesos de selección, evaluación y retención eficientes.
-            </p>
-            <a href="/servicios/gestion-humana" class="mt-4 inline-flex items-center text-cyan-300 font-medium text-sm group-hover:text-cyan-200 hover:underline">
-              Conocer más
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Área 2: Desarrollo Empresarial -->
-        <div class="backdrop-blur-xl bg-white/15 border border-white/20 rounded-xl overflow-hidden group hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300">
-          <div class="h-1 bg-gradient-to-r from-cyan-300 to-teal-300 shadow-[0_0_10px_rgba(47,212,242,0.7)]"></div>
-          <div class="p-6 relative">
-            <div class="w-16 h-16 rounded-xl bg-[#0c8599]/30 flex items-center justify-center mb-5 group-hover:bg-[#0c8599]/50 transition-colors border border-white/20 shadow-[0_0_10px_rgba(47,212,242,0.4)]">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
+            <div class="text-center p-4 bg-primary-50 rounded-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md border border-primary-100">
+              <span class="text-3xl font-bold text-primary-600 block mb-1">5000</span>
+              <span class="text-sm text-gray-600">Profesionales formados</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3 text-shadow">Desarrollo Empresarial</h3>
-            <p class="text-white/90 text-sm leading-relaxed">
-              Consultoría y acompañamiento para mejorar procesos, cultura organizacional y rendimiento corporativo, con impacto directo en resultados.
-            </p>
-            <a href="/servicios/desarrollo-empresarial" class="mt-4 inline-flex items-center text-cyan-300 font-medium text-sm group-hover:text-cyan-200 hover:underline">
-              Conocer más
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Área 3: Educación Continua -->
-        <div class="backdrop-blur-xl bg-white/15 border border-white/20 rounded-xl overflow-hidden group hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300">
-          <div class="h-1 bg-gradient-to-r from-cyan-300 to-teal-300 shadow-[0_0_10px_rgba(47,212,242,0.7)]"></div>
-          <div class="p-6 relative">
-            <div class="w-16 h-16 rounded-xl bg-[#0c8599]/30 flex items-center justify-center mb-5 group-hover:bg-[#0c8599]/50 transition-colors border border-white/20 shadow-[0_0_10px_rgba(47,212,242,0.4)]">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3 text-shadow">Educación Continua</h3>
-            <p class="text-white/90 text-sm leading-relaxed">
-              Programas de actualización y especialización profesional para mantenerse a la vanguardia de las tendencias del mercado laboral global.
-            </p>
-            <a href="/servicios/educacion-continua" class="mt-4 inline-flex items-center text-cyan-300 font-medium text-sm group-hover:text-cyan-200 hover:underline">
-              Conocer más
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Área 4: Desarrollo Personal -->
-        <div class="backdrop-blur-xl bg-white/15 border border-white/20 rounded-xl overflow-hidden group hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300">
-          <div class="h-1 bg-gradient-to-r from-cyan-300 to-teal-300 shadow-[0_0_10px_rgba(47,212,242,0.7)]"></div>
-          <div class="p-6 relative">
-            <div class="w-16 h-16 rounded-xl bg-[#0c8599]/30 flex items-center justify-center mb-5 group-hover:bg-[#0c8599]/50 transition-colors border border-white/20 shadow-[0_0_10px_rgba(47,212,242,0.4)]">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3 text-shadow">Desarrollo Personal</h3>
-            <p class="text-white/90 text-sm leading-relaxed">
-              Coaching y programas enfocados en potenciar habilidades blandas, liderazgo y bienestar integral, transformando vidas con enfoque holístico.
-            </p>
-            <a href="/servicios/desarrollo-personal" class="mt-4 inline-flex items-center text-cyan-300 font-medium text-sm group-hover:text-cyan-200 hover:underline">
-              Conocer más
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
           </div>
         </div>
       </div>
-      
-      <!-- Metodología con diseño neón y glasmorfismo -->
-      <div class="relative rounded-2xl overflow-hidden backdrop-blur-xl bg-gradient-to-r from-[#0c8599]/40 to-[#13a2b8]/40 border border-white/20 p-8 lg:p-12 shadow-[0_0_30px_rgba(47,212,242,0.2)]">
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6 md:p-8 overflow-hidden relative shadow-md hover:shadow-xl transition-all duration-300">
+        <div class="absolute bottom-0 left-0 w-40 h-40 bg-primary-100 rounded-full transform -translate-x-1/3 translate-y-1/3 opacity-50"></div>
+
         <div class="relative z-10">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div class="lg:col-span-4">
-              <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">Nuestra Metodología</h3>
-              <p class="text-white/90 mb-6 text-base leading-relaxed">
-                Combinamos teoría y práctica en un enfoque integral que facilita la aplicación inmediata del conocimiento. Trabajamos con expertos en cada área y utilizamos tecnologías educativas de vanguardia.
-              </p>
-              <a href="/metodologia" class="inline-flex items-center bg-white/10 backdrop-blur-md text-white font-medium rounded-lg px-5 py-2.5 border border-white/30 hover:bg-white/20 transition-all duration-300 group shadow-[0_0_10px_rgba(255,255,255,0.1)]">
-                Conoce más
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Ventajas Distintivas</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-primary-100 flex items-center justify-center mr-3 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-primary-600" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                 </svg>
-              </a>
-            </div>
-            
-            <div class="lg:col-span-8">
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <!-- Paso 1 -->
-                <div class="backdrop-blur-md bg-white/10 rounded-xl p-5 border border-white/20 transform transition-transform hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                  <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 text-white font-bold text-xl border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.2)]">1</div>
-                  <h4 class="text-white font-semibold text-lg mb-2">Diagnóstico</h4>
-                  <p class="text-white/80 text-sm">Evaluamos necesidades específicas y creamos soluciones personalizadas para cada cliente.</p>
-                </div>
-                
-                <!-- Paso 2 -->
-                <div class="backdrop-blur-md bg-white/10 rounded-xl p-5 border border-white/20 transform transition-transform hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                  <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 text-white font-bold text-xl border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.2)]">2</div>
-                  <h4 class="text-white font-semibold text-lg mb-2">Implementación</h4>
-                  <p class="text-white/80 text-sm">Desarrollamos programas con herramientas innovadoras y metodologías prácticas.</p>
-                </div>
-                
-                <!-- Paso 3 -->
-                <div class="backdrop-blur-md bg-white/10 rounded-xl p-5 border border-white/20 transform transition-transform hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                  <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 text-white font-bold text-xl border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.2)]">3</div>
-                  <h4 class="text-white font-semibold text-lg mb-2">Seguimiento</h4>
-                  <p class="text-white/80 text-sm">Evaluamos resultados y brindamos acompañamiento continuo para garantizar el éxito.</p>
-                </div>
               </div>
-            </div>
-          </div>
+              <span class="text-gray-600">Formación de alta calidad con docentes especializados</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-primary-100 flex items-center justify-center mr-3 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-primary-600" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-gray-600">Contenidos actualizados con las últimas tendencias</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-primary-100 flex items-center justify-center mr-3 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-primary-600" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-gray-600">Flexibilidad horaria adaptada a tus necesidades</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-primary-100 flex items-center justify-center mr-3 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-primary-600" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-gray-600">Enfoque práctico con resultados inmediatos</span>
+            </li>
+          </ul>
         </div>
       </div>
-      
-      <!-- Destacado adicional con estadísticas - Diseño de tarjetas neón -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-        <div class="backdrop-blur-xl bg-white/15 border border-white/20 rounded-xl p-6 md:p-8 overflow-hidden relative hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300">
-          <div class="absolute top-0 right-0 w-40 h-40 bg-cyan-500/10 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
-          
-          <div class="relative z-10">
-            <h3 class="text-xl font-bold text-white mb-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">Nuestro Impacto</h3>
-            <p class="text-white/90 mb-6">
-              En CEMAPO transformamos el potencial humano en resultados excepcionales con metodologías prácticas y acompañamiento personalizado.
-            </p>
-            
-            <div class="grid grid-cols-2 gap-4">
-              <div class="text-center p-4 bg-[#0c8599]/30 backdrop-blur-md rounded-lg transform transition-transform hover:scale-105 border border-white/20 hover:shadow-[0_0_15px_rgba(47,212,242,0.3)]">
-                <span class="text-3xl font-bold text-cyan-300 block mb-1 stat-counter drop-shadow-[0_0_5px_rgba(47,212,242,0.7)]" data-target="95">95</span>
-                <span class="text-sm text-white/80">% de satisfacción</span>
-              </div>
-              <div class="text-center p-4 bg-[#0c8599]/30 backdrop-blur-md rounded-lg transform transition-transform hover:scale-105 border border-white/20 hover:shadow-[0_0_15px_rgba(47,212,242,0.3)]">
-                <span class="text-3xl font-bold text-cyan-300 block mb-1 stat-counter drop-shadow-[0_0_5px_rgba(47,212,242,0.7)]" data-target="5000">5000</span>
-                <span class="text-sm text-white/80">Profesionales formados</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="backdrop-blur-xl bg-white/15 border border-white/20 rounded-xl p-6 md:p-8 overflow-hidden relative hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300">
-          <div class="absolute bottom-0 left-0 w-40 h-40 bg-cyan-500/10 rounded-full transform -translate-x-1/3 translate-y-1/3"></div>
-          
-          <div class="relative z-10">
-            <h3 class="text-xl font-bold text-white mb-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">Ventajas Distintivas</h3>
-            <ul class="space-y-3">
-              <li class="flex items-start">
-                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-cyan-300/20 backdrop-blur-sm flex items-center justify-center mr-2 mt-0.5 shadow-[0_0_5px_rgba(47,212,242,0.5)]">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-cyan-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <span class="text-white/90">Formación de alta calidad con docentes especializados</span>
-              </li>
-              <li class="flex items-start">
-                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-cyan-300/20 backdrop-blur-sm flex items-center justify-center mr-2 mt-0.5 shadow-[0_0_5px_rgba(47,212,242,0.5)]">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-cyan-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <span class="text-white/90">Contenidos actualizados con las últimas tendencias</span>
-              </li>
-              <li class="flex items-start">
-                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-cyan-300/20 backdrop-blur-sm flex items-center justify-center mr-2 mt-0.5 shadow-[0_0_5px_rgba(47,212,242,0.5)]">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-cyan-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <span class="text-white/90">Flexibilidad horaria adaptada a profesionales activos</span>
-              </li>
-              <li class="flex items-start">
-                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-cyan-300/20 backdrop-blur-sm flex items-center justify-center mr-2 mt-0.5 shadow-[0_0_5px_rgba(47,212,242,0.5)]">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-cyan-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <span class="text-white/90">Enfoque práctico con resultados inmediatos</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
     </div>
-  </section>
-  
+  </div>
+</section>
+
+<style>
+  /* Animación para las tarjetas de metodología */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .metodologia-cards > div {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .metodologia-cards > div:nth-child(1) { animation-delay: 0.1s; }
+  .metodologia-cards > div:nth-child(2) { animation-delay: 0.2s; }
+  .metodologia-cards > div:nth-child(3) { animation-delay: 0.3s; }
+</style>
+
+
+
+
+
+
+
+
+
   <style>
     .text-shadow {
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);

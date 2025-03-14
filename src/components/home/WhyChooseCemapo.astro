@@ -1,142 +1,185 @@
----
----
+<section class="py-16 md:py-24 relative overflow-hidden">
+  <!-- Fondo con gradiente sutil -->
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-900 to-blue-700 opacity-10"></div>
 
-<section class="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <!-- Contenido -->
-        <div class="order-2 lg:order-1">
-          <div class="max-w-xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 relative">
-              <span class="inline-block">
-                ¿Por qué elegir CEMAPO?
-                <span class="absolute -bottom-2 left-0 w-24 h-1 bg-primary-500 rounded-full"></span>
-              </span>
-            </h2>
-            
-            <p class="text-gray-600 mb-8 text-lg leading-relaxed">
-              En <span class="font-semibold text-primary-600">CEMAPO</span> transformamos el potencial humano en resultados excepcionales. Nuestra metodología combina teoría actualizada con práctica inmediata, y nuestro equipo de expertos acompaña personalmente a cada estudiante, garantizando una formación integral que impacta directamente en su desempeño profesional.
-            </p>
-            
-            <!-- Características destacadas -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border-l-4 border-primary-500">
-                <div class="flex items-start">
-                  <div class="bg-primary-100 p-2 rounded-full mr-3 flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="font-semibold text-gray-800 mb-1">Formación de calidad</h3>
-                    <p class="text-gray-600 text-sm">Programas diseñados con los más altos estándares</p>
-                  </div>
+  <!-- Patrón de fondo sutil -->
+  <div class="absolute inset-0 opacity-5">
+    <svg width="100%" height="100%">
+      <defs>
+        <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" stroke-width="0.5" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#smallGrid)" />
+    </svg>
+  </div>
+
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Contenido -->
+      <div class="order-2 lg:order-1">
+        <div class="max-w-xl">
+          <!-- Título con estilo modernizado -->
+          <span class="inline-block py-1 px-3 rounded-full bg-primary-50 text-primary-700 text-sm font-semibold mb-3">PROPUESTA DE VALOR</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+            ¿Por qué elegir CEMAPO?
+          </h2>
+
+          <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+            En <span class="font-semibold text-primary-600">CEMAPO</span> transformamos el potencial humano en resultados excepcionales. Nuestra metodología combina teoría actualizada con práctica inmediata, y nuestro equipo de expertos acompaña personalmente a cada estudiante, garantizando una formación integral que impacta directamente en su desempeño profesional.
+          </p>
+
+          <!-- Características destacadas -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Característica 1 -->
+            <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-primary-500 group">
+              <div class="flex items-start">
+                <div class="overflow-hidden w-12 h-12 rounded-lg mr-4 flex-shrink-0">
+                  <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+                       alt="Formación de calidad"
+                       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
-              </div>
-              
-              <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border-l-4 border-primary-500">
-                <div class="flex items-start">
-                  <div class="bg-primary-100 p-2 rounded-full mr-3 flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="font-semibold text-gray-800 mb-1">Instructores expertos</h3>
-                    <p class="text-gray-600 text-sm">Profesionales con amplia experiencia en el campo</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border-l-4 border-primary-500">
-                <div class="flex items-start">
-                  <div class="bg-primary-100 p-2 rounded-full mr-3 flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd" />
-                      <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="font-semibold text-gray-800 mb-1">Enfoque práctico</h3>
-                    <p class="text-gray-600 text-sm">Aprendizaje aplicable inmediatamente a tu carrera</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border-l-4 border-primary-500">
-                <div class="flex items-start">
-                  <div class="bg-primary-100 p-2 rounded-full mr-3 flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="font-semibold text-gray-800 mb-1">Flexibilidad horaria</h3>
-                    <p class="text-gray-600 text-sm">Programas adaptados a tu disponibilidad de tiempo</p>
-                  </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800 mb-1">Formación de calidad</h3>
+                  <p class="text-gray-600 text-sm">Programas diseñados con los más altos estándares</p>
                 </div>
               </div>
             </div>
-            
-            <!-- CTA Button -->
-            <div class="mt-10">
-              <a href="/servicios" class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-300 group">
-                Descubre nuestros servicios
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                </svg>
-              </a>
+
+            <!-- Característica 2 -->
+            <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-primary-500 group">
+              <div class="flex items-start">
+                <div class="overflow-hidden w-12 h-12 rounded-lg mr-4 flex-shrink-0">
+                  <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+                       alt="Instructores expertos"
+                       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800 mb-1">Instructores expertos</h3>
+                  <p class="text-gray-600 text-sm">Profesionales con amplia experiencia en el campo</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Característica 3 -->
+            <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-primary-500 group">
+              <div class="flex items-start">
+                <div class="overflow-hidden w-12 h-12 rounded-lg mr-4 flex-shrink-0">
+                  <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+                       alt="Enfoque práctico"
+                       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800 mb-1">Enfoque práctico</h3>
+                  <p class="text-gray-600 text-sm">Aprendizaje aplicable inmediatamente a tu carrera</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Característica 4 -->
+            <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-primary-500 group">
+              <div class="flex items-start">
+                <div class="overflow-hidden w-12 h-12 rounded-lg mr-4 flex-shrink-0">
+                  <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+                       alt="Flexibilidad horaria"
+                       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800 mb-1">Flexibilidad horaria</h3>
+                  <p class="text-gray-600 text-sm">Programas adaptados a tu disponibilidad de tiempo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <div class="mt-10">
+            <a href="/servicios" class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1 group">
+              Descubre nuestros servicios
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagen con efectos mejorados -->
+      <div class="relative order-1 lg:order-2">
+        <!-- Contenedor principal de la imagen -->
+        <div class="bg-white rounded-xl shadow-xl relative z-10 transform transition-all duration-500 hover:scale-[1.02] overflow-hidden">
+          <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+              alt="Profesionales de CEMAPO en acción"
+              class="w-full h-auto object-cover transition-transform duration-700 hover:scale-105"
+          />
+
+          <!-- Overlay con íconos educativos abstractos (como muestra el prompt) -->
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent opacity-70">
+            <!-- Íconos educativos semitransparentes -->
+            <div class="absolute bottom-8 left-8 w-8 h-8 text-white opacity-50">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+              </svg>
+            </div>
+            <div class="absolute top-10 right-12 w-6 h-6 text-white opacity-30">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/>
+              </svg>
+            </div>
+            <div class="absolute top-28 left-14 w-7 h-7 text-white opacity-40">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
             </div>
           </div>
         </div>
-        
-        <!-- Imagen con efectos mejorados -->
-        <div class="relative order-1 lg:order-2">
-          <div class="bg-white p-4 rounded-lg shadow-xl relative z-10 transform transition-transform duration-500 hover:scale-[1.02]">
-            <img
-              src="https://img.freepik.com/foto-gratis/empresario-usando-aplicacion-contactar-sus-companeros_1134-644.jpg?t=st=1741230075~exp=1741233675~hmac=7a16519cd2ba62e712ed93e00de14670dcb564fcf5ec53a9ffdc061d2d6377f1&w=1060"
-              alt="Profesionales de CEMAPO en acción"
-              class="rounded-lg w-full h-auto object-cover"
-              loading="lazy"
-            />
+
+        <!-- Elementos decorativos -->
+        <div class="absolute -top-6 -left-6 w-32 h-32 bg-primary-200 rounded-xl hidden md:block opacity-70 transform -rotate-6 z-0"></div>
+        <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-secondary-100 rounded-xl hidden md:block opacity-80 transform rotate-6 z-0"></div>
+
+        <!-- Badge decorativo mejorado -->
+        <div class="absolute -bottom-4 right-8 bg-white p-4 rounded-lg shadow-lg transform -rotate-2 md:flex items-center hidden">
+          <div class="flex flex-col items-center justify-center bg-primary-600 text-white p-3 rounded-lg mr-3 flex-shrink-0 w-14 h-14">
+            <span class="text-lg font-bold">+500</span>
           </div>
-          
-          <!-- Elementos decorativos mejorados -->
-          <div class="absolute -top-6 -left-6 w-32 h-32 bg-primary-200 rounded-xl hidden md:block opacity-70 transform -rotate-6"></div>
-          <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-secondary-100 rounded-xl hidden md:block opacity-80 transform rotate-6"></div>
-          
-          <!-- Badge decorativo mejorado -->
-          <div class="absolute -bottom-4 md:bottom-10 -left-4 md:left-8 bg-white p-4 rounded-lg shadow-lg max-w-xs transform rotate-3 hidden md:flex items-center animate-pulse">
-            <div class="bg-primary-100 p-2 rounded-full mr-3 flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
+          <div>
+            <p class="text-gray-800 font-semibold">Proyectos realizados</p>
+            <div class="flex mt-1">
+              <span class="text-yellow-500">★</span>
+              <span class="text-yellow-500">★</span>
+              <span class="text-yellow-500">★</span>
+              <span class="text-yellow-500">★</span>
+              <span class="text-yellow-500">★</span>
             </div>
-            <p class="text-sm font-medium text-gray-800">Formación que transforma vidas</p>
-          </div>
-          
-          <!-- Nueva badge -->
-          <div class="absolute -top-2 right-8 md:right-12 bg-white p-3 rounded-lg shadow-lg transform -rotate-2 hidden md:flex items-center animate-pulse">
-            <div class="bg-secondary-100 p-2 rounded-full mr-3 flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-secondary-600" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            </div>
-            <p class="text-sm font-medium text-gray-800">Calidad certificada</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>
+
 <style>
-  @keyframes gentle-pulse {
-    0% { opacity: 0.8; }
-    50% { opacity: 1; }
-    100% { opacity: 0.8; }
+  /* Animación para las tarjetas de características */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  
-  .animate-pulse {
-    animation: gentle-pulse 3s infinite ease-in-out;
+
+  .bg-white.p-5 {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
   }
+
+  .bg-white.p-5:nth-child(1) { animation-delay: 0.1s; }
+  .bg-white.p-5:nth-child(2) { animation-delay: 0.2s; }
+  .bg-white.p-5:nth-child(3) { animation-delay: 0.3s; }
+  .bg-white.p-5:nth-child(4) { animation-delay: 0.4s; }
 </style>

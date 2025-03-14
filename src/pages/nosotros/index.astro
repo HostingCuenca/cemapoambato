@@ -7,9 +7,9 @@ import Layout from '../../layouts/Layout.astro';
         description="Somos una organización comprometida con el desarrollo del talento humano. Conoce nuestra misión, visión, valores y todo lo que hacemos para impulsar el crecimiento profesional."
 >
     <!-- Encabezado de la página -->
-    <section class="relative py-25 md:py-28 bg-gradient-to-r from-blue-900 to-blue-800 text-white overflow-hidden">
-        <!-- Patrón de fondo -->
-        <div class="absolute inset-0 opacity-10">
+    <section class="relative py-24 md:py-32 bg-gradient-to-r from-blue-900 to-blue-800 text-white overflow-hidden">
+        <!-- Patrón de fondo mejorado -->
+        <div class="absolute inset-0 opacity-15">
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <pattern id="small-grid" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -20,103 +20,86 @@ import Layout from '../../layouts/Layout.astro';
             </svg>
         </div>
 
-        <div class="container mx-auto px-4 relative z-10 text-center">
-            <h1 class="text-5xl md:text-6xl font-heading font-bold mb-4">Conócenos</h1>
-            <p class="text-xl max-w-3xl mx-auto text-white/80">
-                Un equipo apasionado por transformar el talento humano y potenciar el éxito de las organizaciones
-            </p>
+        <!-- Sutil elemento decorativo adicional -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600 opacity-10 rounded-bl-full"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">Conócenos</h1>
+                <p class="text-xl md:text-2xl max-w-2xl mx-auto text-white/90">
+                    Un equipo apasionado por transformar el talento humano y potenciar el éxito de las organizaciones
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- Historia y trayectoria -->
-    <!-- <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-3xl font-heading font-bold text-blue-900 mb-6">Nuestra Historia</h2>
-                    <p class="text-lg text-gray-700 mb-6">
-                        CEMAPO nació en 2014 como respuesta a la creciente necesidad de soluciones integrales para la gestión del talento humano en el mercado laboral. Fundada por un grupo de profesionales con amplia experiencia en recursos humanos y desarrollo organizacional, nuestra empresa ha crecido constantemente, manteniendo siempre un enfoque centrado en las personas.
-                    </p>
-                    <p class="text-lg text-gray-700 mb-6">
-                        A lo largo de nuestra trayectoria, hemos colaborado con más de 500 empresas de diversos sectores, implementando metodologías innovadoras que han contribuido al crecimiento profesional de miles de personas.
-                    </p>
-                    <div class="flex items-center mt-8">
-                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
-                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=200" alt="Fundadora" class="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                            <p class="font-medium text-gray-900">Maria Fernández</p>
-                            <p class="text-sm text-gray-600">Fundadora y CEO de CEMAPO</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <img
-                            src="https://img.freepik.com/foto-gratis/equipo-profesional-socios-comerciales-discutiendo-ideas_1303-25852.jpg"
-                            alt="Equipo CEMAPO"
-                            class="rounded-lg shadow-xl w-full"
-                    />
-                    <div class="absolute -bottom-5 -left-5 w-24 h-24 bg-blue-100 rounded-full z-0"></div>
-                    <div class="absolute -top-5 -right-5 w-16 h-16 bg-yellow-300 rounded-full z-0"></div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!-- ¿Qué hacemos? -->
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center">
                 <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">¿Qué Hacemos?</h2>
                 <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-                    Ofrecemos soluciones integrales para impulsar el desarrollo del talento humano y maximizar el potencial de las organizaciones
-                </p>
+                    Ofrecemos programas especializados de Gestión Humana, Empresarial y Educación Continua,
+                    diseñados para potenciar las habilidades y talentos de nuestros estudiantes, profesionales y
+                    organizaciones.
+                    Mediante el uso de herramientas y plataformas educativas actuales, fomentando una
+                    educación de calidad, que impulsa el crecimiento y la excelencia educativa y profesional.                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="py-20 bg-white relative overflow-hidden">
+        <!-- Elementos decorativos de fondo -->
+        <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-50 rounded-full"></div>
+        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-50 rounded-full"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Nuestra Filosofía</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Servicio 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-lg transition-transform hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <!-- Misión -->
+                <div class="bg-blue-50 p-8 rounded-xl shadow-md border border-blue-100 relative">
+                    <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-sm absolute -top-10 left-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-blue-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Consultoría en RRHH</h3>
-                    <p class="text-gray-700">
-                        Asesoramos a organizaciones en la implementación de estrategias efectivas para la gestión del talento, optimizando procesos y mejorando indicadores clave.
-                    </p>
+                    <div class="pt-6">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4 mt-4">Nuestra Misión</h3>
+                        <p class="text-gray-700 mb-4">
+                            Brindar servicios de educación continua y consultoría de alto impacto, proporcionando conocimientos actualizados, mediante el uso de herramientas innovadoras y el acompañamiento de expertos. Potenciar el desarrollo educativo, profesional y empresarial de nuestros estudiantes y clientes asegurando soluciones efectivas adaptadas a sus necesidades.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Servicio 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-lg transition-transform hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                <!-- Visión -->
+                <div class="bg-blue-50 p-8 rounded-xl shadow-md border border-blue-100 relative">
+                    <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-sm absolute -top-10 left-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-blue-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Formación Especializada</h3>
-                    <p class="text-gray-700">
-                        Desarrollamos programas de capacitación adaptados a las necesidades específicas de cada organización, potenciando habilidades técnicas y blandas.
-                    </p>
-                </div>
-
-                <!-- Servicio 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-lg transition-transform hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-                        </svg>
+                    <div class="pt-6">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4 mt-4">Nuestra Visión</h3>
+                        <p class="text-gray-700 mb-4">
+                            Ser una empresa líder en educación y consultoría, reconocida por la excelencia, innovación y compromiso en la transformación educativa, profesional y empresarial, contribuyendo al crecimiento sostenible de nuestros estudiantes, clientes y la sociedad.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Desarrollo Personal</h3>
-                    <p class="text-gray-700">
-                        Ofrecemos servicios de coaching y acompañamiento individual para potenciar las habilidades y el crecimiento profesional de las personas.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Valores Institucionales -->
+
+
+
     <section class="py-20 bg-white relative overflow-hidden">
         <!-- Elementos decorativos de fondo -->
         <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-50 rounded-full"></div>
@@ -125,26 +108,10 @@ import Layout from '../../layouts/Layout.astro';
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Valores Institucionales</h2>
-                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-                    Los principios que guían nuestras acciones y decisiones cada día
-                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Valor 1 -->
-                <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 text-center">
-                    <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-blue-600">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-2">Empatía</h3>
-                    <p class="text-gray-700">
-                        Comprendemos las necesidades y perspectivas de nuestros clientes y colaboradores, construyendo relaciones basadas en el respeto y la comprensión.
-                    </p>
-                </div>
-
-                <!-- Valor 2 -->
+                <!-- Valor 1: Excelencia -->
                 <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 text-center">
                     <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-blue-600">
@@ -153,11 +120,11 @@ import Layout from '../../layouts/Layout.astro';
                     </div>
                     <h3 class="text-xl font-bold text-blue-900 mb-2">Excelencia</h3>
                     <p class="text-gray-700">
-                        Nos esforzamos por superar las expectativas en cada proyecto, buscando siempre la mejora continua y la calidad en todos nuestros servicios.
+                        Ofrecemos una educación de alta calidad, con docentes y consultores expertos, contenido actualizado y metodologías innovadoras.
                     </p>
                 </div>
 
-                <!-- Valor 3 -->
+                <!-- Valor 2: Innovación -->
                 <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 text-center">
                     <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-blue-600">
@@ -166,124 +133,277 @@ import Layout from '../../layouts/Layout.astro';
                     </div>
                     <h3 class="text-xl font-bold text-blue-900 mb-2">Innovación</h3>
                     <p class="text-gray-700">
-                        Fomentamos el pensamiento creativo y la búsqueda constante de soluciones innovadoras que generen valor para nuestros clientes.
+                        Nos adaptamos a los cambios y utilizamos nuevas tecnologías y enfoques para ofrecer soluciones ágiles y efectivas.
                     </p>
                 </div>
 
-                <!-- Valor 4 -->
+                <!-- Valor 3: Integridad -->
                 <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 text-center">
                     <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-blue-600">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-2">Colaboración</h3>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Integridad</h3>
                     <p class="text-gray-700">
-                        Trabajamos en equipo, tanto internamente como con nuestros clientes, creando sinergias que maximizan los resultados y el aprendizaje mutuo.
+                        Actuamos con ética y transparencia, generando confianza en nuestros estudiantes, clientes y empresas, cumpliendo con los compromisos adquiridos.
+                    </p>
+                </div>
+
+                <!-- Valor 4: Compromiso -->
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 text-center">
+                    <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-blue-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Compromiso</h3>
+                    <p class="text-gray-700">
+                        Nos apasiona el crecimiento y éxito de nuestros estudiantes, profesionales y empresas, por lo que brindamos acompañamiento personalizado y soluciones a la medida.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Misión y Visión -->
-    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                <!-- Misión -->
-                <div class="bg-white/10 p-8 rounded-xl backdrop-blur-sm border border-white/20">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Nuestra Misión</h3>
-                    <p class="text-white/90 text-lg mb-4">
-                        Potenciar el desarrollo integral del talento humano a través de soluciones innovadoras y personalizadas que generen valor para las personas y las organizaciones.
-                    </p>
-                    <p class="text-white/90 text-lg">
-                        Nos comprometemos a ser catalizadores del crecimiento profesional, creando espacios de aprendizaje y transformación donde cada individuo pueda descubrir y maximizar su potencial.
-                    </p>
-                </div>
 
-                <!-- Visión -->
-                <div class="bg-white/10 p-8 rounded-xl backdrop-blur-sm border border-white/20">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Nuestra Visión</h3>
-                    <p class="text-white/90 text-lg mb-4">
-                        Ser reconocidos como la organización líder en el desarrollo del talento humano, referente por la excelencia, innovación y el impacto positivo de nuestras soluciones.
-                    </p>
-                    <p class="text-white/90 text-lg">
-                        Aspiramos a construir un mundo donde las personas encuentren propósito y satisfacción en su desarrollo profesional, contribuyendo al éxito sostenible de las organizaciones y la sociedad.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Responsabilidad Social -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-4 py-1.5 rounded-full mb-4">Compromiso con la sociedad</span>
-                    <h2 class="text-3xl font-heading font-bold text-blue-900 mb-6">Responsabilidad Social</h2>
-                    <p class="text-lg text-gray-700 mb-6">
-                        En CEMAPO, creemos firmemente que nuestro propósito va más allá de los resultados empresariales. Estamos comprometidos con generar un impacto positivo en nuestra comunidad y en el medio ambiente a través de diversas iniciativas:
-                    </p>
-                    <ul class="space-y-4">
-                        <li class="flex">
-                            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <!-- Encabezado principal -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-heading font-bold text-blue-900 mb-6">Responsabilidad Social</h2>
+                <p class="text-lg text-gray-700">
+                    En <span class="text-primary-600 font-semibold">CEMAPO</span> estamos comprometidos con el desarrollo sostenible, la inclusión y el bienestar de la comunidad educativa y la sociedad en general. Para lograrlo, mantenemos los siguientes principios y acciones:
+                </p>
+            </div>
+
+            <!-- Imagen principal con overlay de texto -->
+            <div class="relative rounded-xl overflow-hidden mb-12">
+                <img
+                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                        alt="Responsabilidad social CEMAPO - Educación inclusiva"
+                        class="w-full h-auto object-cover aspect-[16/9]"
+                />
+                <div class="absolute -top-4 -right-4 w-24 h-24 bg-yellow-300 rounded-full opacity-30 z-0"></div>
+                <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-200 rounded-full opacity-50 z-0"></div>
+            </div>
+
+            <!-- Stepper de Responsabilidad Social -->
+            <div class="relative">
+                <!-- Línea vertical conectora -->
+                <div class="absolute left-6 top-0 h-full w-0.5 bg-primary-100" aria-hidden="true"></div>
+
+                <!-- Paso 1 -->
+                <div class="relative z-10 mb-12">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="h-12 w-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 ring-8 ring-white">
+                                <span class="font-bold text-xl">1</span>
                             </div>
-                            <div>
-                                <p class="font-medium text-gray-900">Programa de Capacitación Gratuita</p>
-                                <p class="text-gray-700">Ofrecemos talleres y cursos gratuitos para personas en situación de vulnerabilidad, facilitando su inserción en el mercado laboral.</p>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="font-bold text-gray-900 text-xl mb-4">Accesibilidad e Inclusión</h3>
+                            <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-5">
+                                <ul class="space-y-4">
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Garantizar que el modelo educativo sea accesible para personas con discapacidad mediante herramientas de accesibilidad digital.</p>
+                                    </li>
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Ofertar programas de acceso gratuito y de apoyo para estudiantes de bajos recursos.</p>
+                                    </li>
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Promover la equidad de género y la diversidad en los contenidos y la enseñanza.</p>
+                                    </li>
+                                </ul>
                             </div>
-                        </li>
-                        <li class="flex">
-                            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="font-medium text-gray-900">Voluntariado Corporativo</p>
-                                <p class="text-gray-700">Nuestro equipo participa activamente en iniciativas sociales, compartiendo su conocimiento y experiencia con organizaciones sin fines de lucro.</p>
-                            </div>
-                        </li>
-                        <li class="flex">
-                            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="font-medium text-gray-900">Sostenibilidad Ambiental</p>
-                                <p class="text-gray-700">Implementamos prácticas ecoamigables en nuestras operaciones, minimizando nuestra huella de carbono y promoviendo la conciencia ambiental.</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="/contacto" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-md mt-8 transition-colors">
-                        Únete a nuestras iniciativas
-                    </a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="relative">
-                    <img
-                            src="https://img.freepik.com/foto-gratis/vista-lateral-voluntarios-reciclando-donativos-alimentos_23-2149082332.jpg"
-                            alt="Responsabilidad social CEMAPO"
-                            class="rounded-lg shadow-xl w-full"
-                    />
-                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-yellow-300 rounded-full opacity-30 z-0"></div>
-                    <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-200 rounded-full opacity-50 z-0"></div>
+                <!-- Paso 2 -->
+                <div class="relative z-10 mb-12">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="h-12 w-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 ring-8 ring-white">
+                                <span class="font-bold text-xl">2</span>
+                            </div>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="font-bold text-gray-900 text-xl mb-4">Calidad Educativa y Ética</h3>
+                            <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-5">
+                                <ul class="space-y-4">
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Asegurar que la malla educativa sea impartida por profesionales capacitados y referentes en su área de conocimiento.</p>
+                                    </li>
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Diseñar programas de estudio alineados con las necesidades del mercado laboral actual.</p>
+                                    </li>
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Fomentar la ética y los valores en el aprendizaje virtual.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="relative z-10 mb-12">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="h-12 w-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 ring-8 ring-white">
+                                <span class="font-bold text-xl">3</span>
+                            </div>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="font-bold text-gray-900 text-xl mb-4">Compromiso con la Comunidad</h3>
+                            <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-5">
+                                <ul class="space-y-4">
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Brindar formación gratuita o a bajo costo en temas de interés social, como educación financiera, emprendimiento y alfabetización digital.</p>
+                                    </li>
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Crear alianzas estratégicas con organismos gubernamentales para maximizar el impacto educativo.</p>
+                                    </li>
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Ofrecer mentorías o asesoramiento profesional a estudiantes y emprendedores.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="relative z-10 mb-12">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="h-12 w-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 ring-8 ring-white">
+                                <span class="font-bold text-xl">4</span>
+                            </div>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="font-bold text-gray-900 text-xl mb-4">Uso Responsable de la Tecnología</h3>
+                            <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-5">
+                                <ul class="space-y-4">
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Utilizar plataformas seguras y amigables con el usuario.</p>
+                                    </li>
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Proteger la privacidad y datos personales de los estudiantes y las organizaciones.</p>
+                                    </li>
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Reducir la brecha digital promoviendo el uso de tecnología en comunidades vulnerables.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="relative z-10">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="h-12 w-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 ring-8 ring-white">
+                                <span class="font-bold text-xl">5</span>
+                            </div>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="font-bold text-gray-900 text-xl mb-4">Sostenibilidad y Medio Ambiente</h3>
+                            <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-5">
+                                <ul class="space-y-4">
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Fomentar la educación ambiental dentro de los cursos y programas.</p>
+                                    </li>
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Digitalizar procesos administrativos para reducir el uso de papel.</p>
+                                    </li>
+                                    <li class="flex">
+                                        <div class="flex-shrink-0 h-5 w-5 text-primary-600 mt-0.5 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-700">Adoptar prácticas ecoamigables, como la reducción del consumo energético en servidores y centros de datos.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
