@@ -4,144 +4,320 @@ import ServiceCard from '../../components/services/ServiceCard.astro';
 ---
 
 <Layout title="Nuestros Servicios | CEMAPO - Especialistas en Talento Humano">
-    <!-- Encabezado de la página -->
-    <section class="bg-gradient-to-r from-blue-900 to-blue-800 py-20 md:py-28">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-                    Nuestros Servicios
-                </h1>
-                <p class="text-lg md:text-xl text-white/90 mb-8">
-                    Descubre soluciones integrales diseñadas para potenciar el talento humano
-                    y maximizar el rendimiento de tu organización.
-                </p>
-            </div>
+    <!-- Encabezado de la página - Estilo Hero como en psicología -->
+    <section class="relative min-h-[90vh] flex items-center py-24 md:py-32 overflow-hidden">
+        <!-- Imagen de fondo con overlay -->
+        <div class="absolute inset-0 z-0">
+            <img
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Servicios de talento humano"
+                class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-800/80"></div>
         </div>
-    </section>
 
-    <!-- Introducción a los servicios -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Soluciones completas para el desarrollo del talento</h2>
-                    <p class="text-lg text-gray-700 mb-8">
-                        En CEMAPO, ofrecemos un conjunto integral de servicios diseñados para optimizar
-                        el potencial humano tanto a nivel organizacional como individual. Nuestro enfoque
-                        combina las mejores prácticas en gestión de talento con metodologías innovadoras
-                        que garantizan resultados excepcionales.
+        <!-- Patrón de fondo para añadir textura -->
+        <div class="absolute inset-0 opacity-5 z-10">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="small-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#small-grid)" />
+            </svg>
+        </div>
+
+        <!-- Contenido del Hero -->
+        <div class="container mx-auto px-6 relative z-20">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="w-full lg:w-1/2 text-white mb-12 lg:mb-0">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-600/80 text-white text-sm font-semibold mb-6 backdrop-blur-sm">
+                    SOLUCIONES INTEGRALES
+                </span>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
+                        Servicios de <span class="text-blue-300">Talento Humano</span>
+                    </h1>
+                    <p class="text-xl max-w-xl text-white/90 mb-10 leading-relaxed">
+                        Soluciones integrales diseñadas para potenciar el talento humano y maximizar el rendimiento de tu organización.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    <div class="flex flex-col sm:flex-row gap-4 mt-10">
+                        <a href="#servicios" class="bg-white hover:bg-gray-100 text-blue-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1 text-center">
+                            Nuestros Servicios
+                        </a>
+                        <a href="#contacto" class="bg-transparent hover:bg-white/10 border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1 backdrop-blur-sm text-center">
+                            Solicitar Consulta
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card flotante a la derecha -->
+                <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-2xl border border-white/20 max-w-md transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                        <div class="flex items-center mb-6">
+                            <div class="h-12 w-12 rounded-full bg-blue-600 flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                                 </svg>
                             </div>
-                            <span class="font-medium">Profesionales certificados</span>
+                            <h3 class="text-2xl font-bold text-white">Servicios profesionales</h3>
                         </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
+                        <p class="text-white/90 mb-6">
+                            Accede a soluciones integrales para el desarrollo del talento humano con metodologías innovadoras y personal altamente calificado.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                <span class="text-white font-medium">Desarrollo</span>
                             </div>
-                            <span class="font-medium">Metodologías innovadoras</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-                                </svg>
+                            <div class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                <span class="text-white font-medium">Formación</span>
                             </div>
-                            <span class="font-medium">Excelencia garantizada</span>
+                            <div class="bg-blue-600 px-4 py-2 rounded-lg">
+                                <span class="text-white font-medium">Consultoría</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="relative">
-                    <img
-                            src="https://img.freepik.com/foto-gratis/alegre-joven-grupo-personas-pie-oficina-dando-choca-cinco_1153-3694.jpg"
-                            alt="Equipo de profesionales"
-                            class="rounded-lg shadow-xl"
-                    />
-                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-yellow-400 rounded-full opacity-50 z-0"></div>
-                </div>
             </div>
+        </div>
+
+        <!-- Decoración ondulada en la parte inferior -->
+        <div class="absolute bottom-0 left-0 right-0 z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-white">
+                <path d="M0,96L80,85.3C160,75,320,53,480,53.3C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+            </svg>
         </div>
     </section>
 
-    <!-- Gestión del Talento -->
-    <section class="py-20">
-        <div class="container mx-auto px-6">
+    <!-- Servicios principales -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Gestión del Talento</h2>
-                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-                    Ayudamos a empresas y profesionales a optimizar sus recursos humanos mediante estrategias
-                    innovadoras para atraer, desarrollar y retener al mejor talento.
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-3">NUESTROS SERVICIOS</span>
+                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Soluciones para el desarrollo del talento</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Conoce cómo CEMAPO puede ayudarte a potenciar el capital humano y mejorar el rendimiento de tu organización
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <ServiceCard
-                        title="Reclutamiento y selección"
-                        description="Identificamos y atraemos a los profesionales más adecuados para cada posición, utilizando metodologías avanzadas de evaluación."
-                        icon="user-plus"
-                />
-                <ServiceCard
-                        title="Evaluación de desempeño"
-                        description="Implementamos sistemas efectivos para medir y mejorar el rendimiento de los colaboradores, alineados con los objetivos organizacionales."
-                        icon="chart-bar"
-                />
-                <ServiceCard
-                        title="Planes de desarrollo"
-                        description="Diseñamos estrategias personalizadas para potenciar las habilidades y competencias de los colaboradores en todos los niveles."
-                        icon="academic-cap"
-                />
-                <ServiceCard
-                        title="Retención de talento"
-                        description="Creamos programas efectivos para mantener a los mejores profesionales motivados y comprometidos con la organización."
-                        icon="heart"
-                />
-            </div>
+            <!-- Grid de servicios principales -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Servicio 1: Gestión Humana -->
+                <a href="/gestion-humana" class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-t-4 border-blue-600 flex flex-col h-full group">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">Gestión Humana</h4>
+                    <p class="text-gray-700 mb-4 flex-grow">
+                        Potencia el Talento de tu equipo con nuestros programas y cursos de formación especializados.
+                    </p>
+                    <div class="flex items-center text-blue-600 font-medium mt-auto">
+                        <span>Conocer más</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </a>
 
-            <div class="mt-16 relative">
-                <img
-                        src="https://img.freepik.com/foto-gratis/hombre-negocios-aplicacion-humana-negocios-digital_1150-1729.jpg"
-                        alt="Gestión digital del talento humano"
-                        class="w-full h-80 object-cover rounded-xl shadow-lg"
-                />
-                <div class="absolute inset-0 bg-blue-900/30 rounded-xl flex items-center justify-center">
-                    <a href="/contacto" class="bg-white hover:bg-gray-100 text-blue-900 px-8 py-4 rounded-md font-semibold transition-all duration-300 shadow-xl text-lg transform hover:-translate-y-1">
-                        Solicitar asesoría
-                    </a>
-                </div>
+                <!-- Servicio 2: Educación Continua -->
+                <a href="/educacion-continua" class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-t-4 border-blue-600 flex flex-col h-full group">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">Educación Continua</h4>
+                    <p class="text-gray-700 mb-4 flex-grow">
+                        Programas formativos con temáticas actuales, que te ayudarán en tu crecimiento profesional y educativo.
+                    </p>
+                    <div class="flex items-center text-blue-600 font-medium mt-auto">
+                        <span>Conocer más</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Servicio 3: Empresas -->
+                <a href="/empresas" class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-t-4 border-blue-600 flex flex-col h-full group">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">Empresas</h4>
+                    <p class="text-gray-700 mb-4 flex-grow">
+                        Impulsamos el desarrollo de habilidades y destrezas en la generación de conocimientos para el futuro de tu organización.
+                    </p>
+                    <div class="flex items-center text-blue-600 font-medium mt-auto">
+                        <span>Conocer más</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Servicio 4: Psicología Clínica -->
+                <a href="/psicologia-clinica" class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-t-4 border-blue-600 flex flex-col h-full group">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0l6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h4.5a2.25 2.25 0 012.25 2.25v.75a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75V4.5a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25v.75a.75.75 0 01-.75.75h-1.5a.75.75 0 01-.75-.75V4.5a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25v-.75a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75v.75a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25V13.5a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75v.75a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25V4.5A2.25 2.25 0 014.5 2.25h4.5a2.25 2.25 0 012.25 2.25v.75a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75V4.5a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25v.75a.75.75 0 01-.75.75h-1.5a.75.75 0 01-.75-.75V4.5a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25V12a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25v-.75a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75v.75a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25V12a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75v.75a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25V12a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v3.75a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25v-4.5a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25v.75a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v-.75a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25v4.5a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25v-1.5a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75v1.5a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25v-7.5a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25v.75a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v-.75a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25v7.5a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25v-.75a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75v.75a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25v-.75a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v.75a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25v-7.5a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25v.75a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v-.75a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25v.75a.75.75 0 01-.75.75h-1.5a.75.75 0 01-.75-.75v-.75a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25v.75a.75.75 0 01-.75.75h-1.5a.75.75 0 01-.75-.75v-.75a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25v7.5a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25v-.75a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75v.75a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25v-.75a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v.75a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25v-4.5a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25V12a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75V4.5a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25v7.5a2.25 2.25 0 01-2.25 2.25h-4.5a2.25 2.25 0 01-2.25-2.25z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">Psicología Clínica</h4>
+                    <p class="text-gray-700 mb-4 flex-grow">
+                        Servicios de apoyo psicológico, terapia individual y grupal para el bienestar emocional y salud mental.
+                    </p>
+                    <div class="flex items-center text-blue-600 font-medium mt-auto">
+                        <span>Conocer más</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- resto del código permanece igual -->
-</Layout>
-
-<script>
+    <!-- Desarrollo del Talento Humano -->
+    <section class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="relative">
+                        <img
+                            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Desarrollo del Talento Humano"
+                            class="rounded-xl shadow-xl"
+                        />
+                        <!-- Elemento decorativo -->
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-500 rounded-full opacity-20 z-0"></div>
+                    </div>
+                    <div>
+                        <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-3">DESARROLLO PROFESIONAL</span>
+                        <h2 class="text-3xl font-bold text-blue-900 mb-6">Desarrollo del Talento Humano</h2>
+                        <p class="text-gray-700 mb-6">
+                            En un mundo empresarial en constante evolución, el éxito de una organización depende, en gran medida, de la gestión efectiva de su talento humano. Contar con profesionales capacitados en la administración del capital humano no solo mejora el desempeño organizacional, sino que también fomenta un ambiente de trabajo productivo y motivador.
+                        </p>
+                        <p class="text-gray-700 mb-8">
+                            Nuestros programas de capacitación en Gestión Humana están diseñados para fortalecer habilidades clave en reclutamiento y selección, desarrollo organizacional, liderazgo, bienestar laboral, legislación laboral, salud y seguridad ocupacional, entre otros aspectos fundamentales.
+                        </p>
+                        <a href="/talento-humano" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                            Conocer más
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Separador curvo -->
+    <div class="bg-blue-50 relative">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-white">
+            <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,69.3C1120,64,1280,64,1360,64L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+        </svg>
+    </div>
+ 
+    <!-- Por qué elegirnos -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-3">NUESTRAS VENTAJAS</span>
+                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">¿Por qué elegirnos?</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Nos distinguimos por nuestro enfoque integral y personalizado con profesionales altamente calificados
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Ventaja 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-600 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">Profesionales certificados</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Contamos con un equipo de especialistas con amplia experiencia y certificaciones en sus respectivas áreas.
+                    </p>
+                </div>
+                
+                <!-- Ventaja 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-600 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">Metodologías innovadoras</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Aplicamos técnicas actualizadas y metodologías probadas que garantizan resultados óptimos para nuestros clientes.
+                    </p>
+                </div>
+                
+                <!-- Ventaja 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-600 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">Excelencia garantizada</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Nos comprometemos con la calidad y la satisfacción de nuestros clientes, asegurando un servicio excelente en cada proyecto.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Llamado a la acción -->
+    <section id="contacto" class="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Listo para potenciar tu talento?</h2>
+            <p class="text-lg text-white/90 max-w-3xl mx-auto mb-8">
+                Nuestro equipo de expertos está preparado para ayudarte a alcanzar tus objetivos profesionales y organizacionales.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contacto" class="bg-white hover:bg-gray-100 text-blue-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                    Solicitar asesoría
+                </a>
+                <a href="https://wa.me/593961870303" target="_blank" rel="noopener noreferrer" class="bg-transparent hover:bg-white/10 border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1 backdrop-blur-sm">
+                    Contactar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+ </Layout>
+ 
+ <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Manejar FAQs
-        const faqToggles = document.querySelectorAll('.faq-toggle');
-
-        faqToggles.forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const content = toggle.nextElementSibling;
-                const icon = toggle.querySelector('.faq-icon');
-
-                // Alternar visibilidad
-                content.classList.toggle('hidden');
-
-                // Rotar icono
-                if (content.classList.contains('hidden')) {
-                    icon.style.transform = 'rotate(0deg)';
-                } else {
-                    icon.style.transform = 'rotate(180deg)';
-                }
+        // Animaciones de scroll si se necesitan
+        const animatedElements = document.querySelectorAll('.transition-all');
+        
+        if (animatedElements.length > 0) {
+            window.addEventListener('scroll', () => {
+                animatedElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight - 100;
+                    
+                    if (isVisible) {
+                        el.classList.add('animate-fade-in');
+                    }
+                });
             });
-        });
+        }
     });
-</script>
+ </script>

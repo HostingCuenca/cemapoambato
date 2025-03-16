@@ -31,94 +31,245 @@ const currentPath = Astro.url.pathname;
     title="Cursos y Capacitaciones | CEMAPO - Especialistas en Talento Humano"
     description="Descubre nuestra oferta de cursos y capacitaciones para potenciar tus habilidades profesionales y personales. Especialistas en desarrollo del talento humano."
 >
-    <!-- Hero Section - Moderna y llamativa -->
-    <section class="pt-32 pb-20 bg-gradient-to-r from-primary-700 to-primary-900 text-white relative overflow-hidden">
-        <!-- Patrones geométricos de fondo -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0">
-                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <defs>
-                        <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/>
-                        </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#grid-pattern)" />
-                </svg>
-            </div>
-            <div class="absolute right-0 top-20 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl"></div>
-            <div class="absolute left-20 bottom-10 w-72 h-72 bg-white opacity-5 rounded-full blur-3xl"></div>
+    <!-- Hero Section adaptado al estilo de la página de psicología -->
+    <section class="relative min-h-[90vh] flex items-center py-24 md:py-32 overflow-hidden">
+        <!-- Imagen de fondo con overlay -->
+        <div class="absolute inset-0 z-0">
+            <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+                alt="Capacitación profesional en talento humano"
+                class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-800/80"></div>
         </div>
 
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-3xl mx-auto text-center mb-12">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                    Formación Especializada en <span class="text-yellow-400">Talento Humano</span>
-                </h1>
-                <p class="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                    Desarrolla tus competencias profesionales con programas diseñados por expertos del sector
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#cursos" class="bg-white text-primary-700 hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center shadow-lg hover:scale-105 transform transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
-                        </svg>
-                        Ver todos los cursos
-                    </a>
-                    <a href="#contacto" class="bg-transparent text-white border-2 border-white/30 hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-all inline-flex items-center justify-center hover:border-white hover:scale-105 transform transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
-                        </svg>
-                        Solicitar información
-                    </a>
+        <!-- Patrón de fondo para añadir textura -->
+        <div class="absolute inset-0 opacity-5 z-10">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="small-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#small-grid)" />
+            </svg>
+        </div>
+
+        <!-- Contenido del Hero -->
+        <div class="container mx-auto px-6 relative z-20">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="w-full lg:w-1/2 text-white mb-12 lg:mb-0">
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-600/80 text-white text-sm font-semibold mb-6 backdrop-blur-sm">
+                        FORMACIÓN ESPECIALIZADA
+                    </span>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
+                        Desarrollo del <span class="text-blue-300">Talento Humano</span>
+                    </h1>
+                    <p class="text-xl max-w-xl text-white/90 mb-10 leading-relaxed">
+                        Desarrolla tus competencias profesionales con programas diseñados por expertos del sector para potenciar tu carrera y el éxito de tu organización.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-10">
+                        <a href="#cursos" class="bg-white hover:bg-gray-100 text-blue-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1 text-center flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                            </svg>
+                            Ver todos los cursos
+                        </a>
+                        <a href="#contacto" class="bg-transparent hover:bg-white/10 border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1 backdrop-blur-sm text-center flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                            </svg>
+                            Solicitar información
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card flotante a la derecha (similar a la página de psicología) -->
+                <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-2xl border border-white/20 max-w-md transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                        <div class="flex items-center mb-6">
+                            <div class="h-12 w-12 rounded-full bg-blue-600 flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Capacitación profesional</h3>
+                        </div>
+                        <p class="text-white/90 mb-6">
+                            Accede a programas formativos diseñados por expertos para potenciar tus habilidades en gestión del talento humano con un enfoque práctico y actualizado.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                <span class="text-white font-medium">Presencial</span>
+                            </div>
+                            <div class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                <span class="text-white font-medium">Virtual</span>
+                            </div>
+                            <div class="bg-blue-600 px-4 py-2 rounded-lg">
+                                <span class="text-white font-medium">Certificado</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Indicadores de valor -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
-                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 flex items-start transition-all hover:bg-white/15 hover:-translate-y-2 transform duration-300">
-                    <div class="rounded-full bg-yellow-400 p-3 mr-4 text-primary-800">
+        <!-- Decoración ondulada en la parte inferior -->
+        <div class="absolute bottom-0 left-0 right-0 z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-white">
+                <path d="M0,96L80,85.3C160,75,320,53,480,53.3C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
+    
+    <!-- Indicadores de valor (adaptados del código original con el estilo del sitio de psicología) -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Indicador 1 -->
+                <div class="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 transform flex items-start">
+                    <div class="rounded-full bg-blue-100 p-3 mr-4 text-blue-600 flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
                         </svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-xl mb-1">Instructores Expertos</h3>
-                        <p class="text-white/80 text-sm">Profesionales con experiencia en el campo del talento humano</p>
+                        <h3 class="font-bold text-xl mb-1 text-blue-900">Instructores Expertos</h3>
+                        <p class="text-gray-700 text-sm">Profesionales con experiencia en el campo del talento humano</p>
                     </div>
                 </div>
                 
-                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 flex items-start transition-all hover:bg-white/15 hover:-translate-y-2 transform duration-300">
-                    <div class="rounded-full bg-yellow-400 p-3 mr-4 text-primary-800">
+                <!-- Indicador 2 -->
+                <div class="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 transform flex items-start">
+                    <div class="rounded-full bg-blue-100 p-3 mr-4 text-blue-600 flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
                         </svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-xl mb-1">Enfoque Práctico</h3>
-                        <p class="text-white/80 text-sm">Metodología orientada a la aplicación inmediata de conocimientos</p>
+                        <h3 class="font-bold text-xl mb-1 text-blue-900">Enfoque Práctico</h3>
+                        <p class="text-gray-700 text-sm">Metodología orientada a la aplicación inmediata de conocimientos</p>
                     </div>
                 </div>
                 
-                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 flex items-start transition-all hover:bg-white/15 hover:-translate-y-2 transform duration-300">
-                    <div class="rounded-full bg-yellow-400 p-3 mr-4 text-primary-800">
+                <!-- Indicador 3 -->
+                <div class="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 transform flex items-start">
+                    <div class="rounded-full bg-blue-100 p-3 mr-4 text-blue-600 flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                         </svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-xl mb-1">Certificación</h3>
-                        <p class="text-white/80 text-sm">Cursos respaldados por reconocidas instituciones educativas</p>
+                        <h3 class="font-bold text-xl mb-1 text-blue-900">Certificación</h3>
+                        <p class="text-gray-700 text-sm">Cursos respaldados por reconocidas instituciones educativas</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Sección de Desarrollo del Talento Humano -->
+<section class="py-20 bg-white overflow-hidden">
+    <div class="container mx-auto px-4">
+        <!-- Encabezado de la sección -->
+        <div class="text-center mb-12">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-3">TRANSFORMACIÓN ORGANIZACIONAL</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Desarrollo del Talento Humano</h2>
+        </div>
+        
+        <!-- Contenido principal con imagen lateral -->
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-gradient-to-r from-blue-50 to-white rounded-2xl overflow-hidden shadow-xl">
+                <div class="flex flex-col md:flex-row">
+                    <!-- Columna de imagen de altura completa -->
+                    <div class="md:w-1/2 relative h-auto">
+                        <img 
+                            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                            alt="Equipo de profesionales en desarrollo" 
+                            class="w-full h-full object-cover"
+                            style="min-height: 100%;"
+                        />
+                        <!-- Overlay con gradiente -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent"></div>
+                    </div>
+                    
+                    <!-- Contenido de texto -->
+                    <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">Potencia el capital humano de tu organización</h3>
+                        
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                            En un mundo empresarial en constante evolución, el éxito de una organización depende, en gran medida, de la gestión efectiva de su talento humano. Contar con profesionales capacitados en la administración del capital humano no solo mejora el desempeño organizacional, sino que también fomenta un ambiente de trabajo productivo y motivador.
+                        </p>
+                        
+                        <p class="text-gray-700 text-lg leading-relaxed mb-8">
+                            Nuestros programas de capacitación en Gestión Humana están diseñados para fortalecer habilidades clave en reclutamiento y selección, desarrollo organizacional, liderazgo, bienestar laboral, legislación laboral, salud y seguridad ocupacional, entre otros aspectos fundamentales. A través de metodologías innovadoras y casos prácticos, brindamos herramientas que permiten optimizar los procesos de talento humano y alinear la estrategia de la empresa con el desarrollo de su equipo.
+                        </p>
+                        
+                        <a 
+                            href="https://wa.me/593961870303?text=Hola, estoy interesado en conocer más sobre los programas de Desarrollo del Talento Humano. ¿Podrían brindarme información detallada?" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl mt-2 self-start"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                            </svg>
+                            Solicitar información
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Características en cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <!-- Característica 1 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border-t-4 border-blue-600">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-blue-900">Reclutamiento y Selección</h3>
+                    </div>
+                    <p class="text-gray-700 pl-14">Metodologías avanzadas para identificar y atraer a los mejores talentos.</p>
+                </div>
+                
+                <!-- Característica 2 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border-t-4 border-blue-600">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-blue-900">Seguridad Ocupacional</h3>
+                    </div>
+                    <p class="text-gray-700 pl-14">Estrategias para garantizar ambientes de trabajo seguros y saludables.</p>
+                </div>
+                
+                <!-- Característica 3 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border-t-4 border-blue-600">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-blue-900">Liderazgo Efectivo</h3>
+                    </div>
+                    <p class="text-gray-700 pl-14">Desarrollo de habilidades para gestionar equipos de alto rendimiento.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- Filtros de categorías -->
     <section class="py-8 bg-white border-b z-30 shadow-sm">
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap items-center justify-center gap-4">
-                <a href="/cursos" class="py-2 px-4 rounded-full bg-primary-600 text-white font-medium text-sm transition-all hover:bg-primary-700 hover:scale-105 transform duration-300">
+                <a href="/cursos" class="py-2 px-4 rounded-full bg-blue-600 text-white font-medium text-sm transition-all hover:bg-blue-700 hover:scale-105 transform duration-300">
                     Todos los cursos
                 </a>
                 {categories.map(category => (
@@ -139,7 +290,7 @@ const currentPath = Astro.url.pathname;
                         type="text"
                         id="search-input"
                         placeholder="Buscar cursos por nombre..."
-                        class="w-full py-3 px-5 pr-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-sm"
+                        class="w-full py-3 px-5 pr-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm"
                     />
                     <div class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -151,10 +302,16 @@ const currentPath = Astro.url.pathname;
         </div>
     </section>
 
+
+
+
+
+    
+
     <!-- Listado de cursos -->
     <section id="cursos" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Nuestros Cursos</h2>
+            <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Nuestros Programas de Formación</h2>
             
             <div id="courses-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {courses.map((course) => (
@@ -173,7 +330,7 @@ const currentPath = Astro.url.pathname;
                             />
                         </div>
                         <div class="p-4 bg-white">
-                            <h3 class="font-bold text-primary-700 text-lg">{course.title}</h3>
+                            <h3 class="font-bold text-blue-700 text-lg">{course.title}</h3>
                         </div>
                     </a>
                 ))}
@@ -202,17 +359,17 @@ const currentPath = Astro.url.pathname;
     </section>
 
     <!-- Banner de contacto mejorado -->
-    <section id="contacto" class="py-16 bg-primary-900 text-white">
+    <section id="contacto" class="py-16 bg-blue-900 text-white">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-primary-800/50 backdrop-blur-sm rounded-xl p-10 shadow-xl relative overflow-hidden">
+            <div class="max-w-8xl mx-auto">
+                <div class="bg-blue-800/50 backdrop-blur-sm rounded-xl p-10 shadow-xl relative overflow-hidden">
                     <!-- Elementos de diseño de fondo -->
-                    <div class="absolute right-0 top-0 w-64 h-64 bg-primary-600/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
-                    <div class="absolute left-0 bottom-0 w-64 h-64 bg-primary-600/20 rounded-full blur-3xl -ml-32 -mb-32"></div>
+                    <div class="absolute right-0 top-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
+                    <div class="absolute left-0 bottom-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl -ml-32 -mb-32"></div>
                     
                     <div class="relative z-10">
                         <div class="flex flex-col md:flex-row gap-12 items-center">
-                            <div class="md:w-3/5">
+                            <div class="md:w-4/5">
                                 <h2 class="text-3xl font-bold mb-4">Capacitación personalizada para empresas</h2>
                                 <p class="text-lg text-white/80 mb-8">
                                     Diseñamos programas formativos adaptados a las necesidades específicas
@@ -223,18 +380,19 @@ const currentPath = Astro.url.pathname;
                                         href="https://wa.me/593961870303?text=Hola, estoy interesado en conocer sobre capacitaciones corporativas para mi empresa. ¿Podrían brindarme información personalizada?" 
                                         target="_blank" 
                                         rel="noopener noreferrer"
-                                        class="bg-white text-primary-900 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-all inline-flex items-center justify-center hover:scale-105 transform duration-300"
+                                        class="bg-white text-blue-900 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-all inline-flex items-center justify-center hover:scale-105 transform duration-300"
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                                         </svg>
                                         Solicitar información
                                     </a>
-                                    <a href="/capacitacion-empresarial" class="bg-transparent hover:bg-white/10 border border-white/30 px-6 py-3 rounded-lg font-semibold transition-all hover:border-white hover:scale-105 transform duration-300">
+                                    <!-- <a href="/capacitacion-empresarial" class="bg-transparent hover:bg-white/10 border border-white/30 px-6 py-3 rounded-lg font-semibold transition-all hover:border-white hover:scale-105 transform duration-300">
                                         Capacitación empresarial
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
+
                             <div class="hidden md:block md:w-2/5">
                                 <img 
                                     src="/images/illustrations/training.svg" 
@@ -253,256 +411,291 @@ const currentPath = Astro.url.pathname;
     <!-- Ventajas y metodología -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestra Metodología</h2>
-                <p class="text-lg text-gray-700">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-3">METODOLOGÍA</span>
+                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Nuestra Metodología</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
                     Desarrollamos programas formativos que combinan teoría y práctica,
                     con un enfoque en la aplicación inmediata del conocimiento
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                 <!-- Ventaja 1 -->
-                <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all text-center">
-                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 mx-auto mb-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-t-4 border-blue-600 flex flex-col h-full text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Aprendizaje Colaborativo</h3>
-                    <p class="text-gray-700">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Aprendizaje Colaborativo</h3>
+                    <p class="text-gray-700 mb-4 flex-grow">
                         Grupos reducidos que permiten intercambio de experiencias y networking entre profesionales.
                     </p>
+                    <div class="flex items-center text-blue-600 font-medium mt-auto justify-center">
+                        <span>Más información</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
                 </div>
                 
                 <!-- Ventaja 2 -->
-                <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all text-center">
-                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 mx-auto mb-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-t-4 border-blue-600 flex flex-col h-full text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Casos Prácticos</h3>
-                    <p class="text-gray-700">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Casos Prácticos</h3>
+                    <p class="text-gray-700 mb-4 flex-grow">
                         Metodología basada en resolución de situaciones reales del entorno laboral actual.
                     </p>
+                    <div class="flex items-center text-blue-600 font-medium mt-auto justify-center">
+                        <span>Más información</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
                 </div>
                 
-               <!-- Ventaja 3 -->
-<div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all text-center">
-    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 mx-auto mb-6">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-    </div>
-    <h3 class="text-xl font-bold text-gray-900 mb-3">Herramientas Especializadas</h3>
-    <p class="text-gray-700">
-        Acceso a recursos y tecnologías actuales utilizadas en el ámbito profesional.
-    </p>
-</div>
+                <!-- Ventaja 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-t-4 border-blue-600 flex flex-col h-full text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Herramientas Especializadas</h3>
+                    <p class="text-gray-700 mb-4 flex-grow">
+                        Acceso a recursos y tecnologías actuales utilizadas en el ámbito profesional.
+                    </p>
+                    <div class="flex items-center text-blue-600 font-medium mt-auto justify-center">
+                        <span>Más información</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
 
-<!-- Ventaja 4 -->
-<div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all text-center">
-    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 mx-auto mb-6">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-        </svg>
-    </div>
-    <h3 class="text-xl font-bold text-gray-900 mb-3">Material Complementario</h3>
-    <p class="text-gray-700">
-        Documentación actualizada, bibliografía especializada y recursos adicionales.
-    </p>
-</div>
+                <!-- Ventaja 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-t-4 border-blue-600 flex flex-col h-full text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Material Complementario</h3>
+                    <p class="text-gray-700 mb-4 flex-grow">
+                        Documentación actualizada, bibliografía especializada y recursos adicionales.
+                    </p>
+                    <div class="flex items-center text-blue-600 font-medium mt-auto justify-center">
+                        <span>Más información</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-
-<!-- FAQ - Preguntas frecuentes -->
-<section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Preguntas Frecuentes</h2>
-            <p class="text-lg text-gray-700">Resolvemos tus dudas sobre nuestros programas formativos</p>
-        </div>
-        
-        <div class="max-w-3xl mx-auto space-y-6">
-            <!-- Pregunta 1 -->
-            <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
-                <button id="faq-1-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">
-                    <span class="font-semibold text-gray-900">¿Cómo son las modalidades de los cursos?</span>
-                    <svg id="faq-1-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div id="faq-1-content" class="px-6 pb-4 hidden">
-                    <p class="text-gray-700">
-                        Ofrecemos cursos en modalidad presencial, virtual y mixta, adaptándonos a tus necesidades. 
-                        Todos nuestros programas están diseñados con metodologías interactivas que garantizan 
-                        la efectividad del aprendizaje independientemente del formato elegido.
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Pregunta 2 -->
-            <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
-                <button id="faq-2-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">
-                    <span class="font-semibold text-gray-900">¿Qué tipo de certificación recibo?</span>
-                    <svg id="faq-2-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div id="faq-2-content" class="px-6 pb-4 hidden">
-                    <p class="text-gray-700">
-                        Al finalizar cada curso recibirás un certificado avalado por CEMAPO y nuestras instituciones 
-                        educativas asociadas. Este documento acredita las horas de formación y las competencias 
-                        adquiridas durante el programa.
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Pregunta 3 -->
-            <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
-                <button id="faq-3-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">
-                    <span class="font-semibold text-gray-900">¿Ofrecen cursos personalizados para empresas?</span>
-                    <svg id="faq-3-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div id="faq-3-content" class="px-6 pb-4 hidden">
-                    <p class="text-gray-700">
-                        Sí, desarrollamos programas formativos a medida según las necesidades específicas de cada 
-                        organización. Realizamos un diagnóstico previo para identificar las áreas de mejora y 
-                        diseñamos contenido personalizado que se alinee con los objetivos estratégicos de tu empresa.
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Pregunta 4 -->
-            <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
-                <button id="faq-4-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">
-                    <span class="font-semibold text-gray-900">¿Cómo puedo inscribirme en un curso?</span>
-                    <svg id="faq-4-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div id="faq-4-content" class="px-6 pb-4 hidden">
-                    <p class="text-gray-700">
-                        Puedes inscribirte directamente a través de nuestra página web seleccionando el curso 
-                        de tu interés y haciendo clic en el botón de contacto. También puedes comunicarte con 
-                        nuestro equipo de asesores a través de WhatsApp para recibir orientación personalizada 
-                        sobre el proceso de inscripción.
-                    </p>
-                </div>
-            </div>
-        </div>
+    <!-- Separador curvo -->
+    <div class="bg-white relative">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-blue-50">
+            <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,69.3C1120,64,1280,64,1360,64L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+        </svg>
     </div>
-</section>
 
-<!-- Testimonios -->
-<section class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Lo que dicen nuestros estudiantes</h2>
-            <p class="text-lg text-gray-700">
-                Conoce las experiencias de profesionales que ya han participado en nuestros programas
+    <!-- FAQ - Preguntas frecuentes -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-600 text-white text-sm font-semibold mb-3">PREGUNTAS FRECUENTES</span>
+                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Resolvemos tus dudas</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Conoce toda la información sobre nuestros programas formativos
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- Pregunta 1 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
+                    <button id="faq-1-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">
+                        <span class="font-semibold text-gray-900">¿Cómo son las modalidades de los cursos?</span>
+                        <svg id="faq-1-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="faq-1-content" class="px-6 pb-4 hidden">
+                        <p class="text-gray-700">
+                            Ofrecemos cursos en modalidad presencial, virtual y mixta, adaptándonos a tus necesidades. 
+                            Todos nuestros programas están diseñados con metodologías interactivas que garantizan 
+                            la efectividad del aprendizaje independientemente del formato elegido.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 2 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
+                    <button id="faq-2-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">
+                        <span class="font-semibold text-gray-900">¿Qué tipo de certificación recibo?</span>
+                        <svg id="faq-2-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="faq-2-content" class="px-6 pb-4 hidden">
+                        <p class="text-gray-700">
+                            Al finalizar cada curso recibirás un certificado avalado por CEMAPO y nuestras instituciones 
+                            educativas asociadas. Este documento acredita las horas de formación y las competencias 
+                            adquiridas durante el programa.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 3 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
+                    <button id="faq-3-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">
+                        <span class="font-semibold text-gray-900">¿Ofrecen cursos personalizados para empresas?</span>
+                        <svg id="faq-3-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="faq-3-content" class="px-6 pb-4 hidden">
+                        <p class="text-gray-700">
+                            Sí, desarrollamos programas formativos a medida según las necesidades específicas de cada 
+                            organización. Realizamos un diagnóstico previo para identificar las áreas de mejora y 
+                            diseñamos contenido personalizado que se alinee con los objetivos estratégicos de tu empresa.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 4 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
+                    <button id="faq-4-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">
+                        <span class="font-semibold text-gray-900">¿Cómo puedo inscribirme en un curso?</span>
+                        <svg id="faq-4-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="faq-4-content" class="px-6 pb-4 hidden">
+                        <p class="text-gray-700">
+                            Puedes inscribirte directamente a través de nuestra página web seleccionando el curso 
+                            de tu interés y haciendo clic en el botón de contacto. También puedes comunicarte con 
+                            nuestro equipo de asesores a través de WhatsApp para recibir orientación personalizada 
+                            sobre el proceso de inscripción.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <!-- <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-3">TESTIMONIOS</span>
+                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Lo que dicen nuestros estudiantes</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Conoce las experiencias de profesionales que ya han participado en nuestros programas
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg relative hover:shadow-xl transition-all hover:-translate-y-2 transform duration-300 border border-gray-100">
+                    <div class="absolute top-6 right-6 text-blue-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z"/>
+                        </svg>
+                    </div>
+                    <p class="text-gray-700 mb-6 pt-6">
+                        "El curso de Gestión de Talento Humano superó mis expectativas. El enfoque práctico
+                        y los casos reales analizados me han permitido aplicar inmediatamente lo aprendido
+                        en mi empresa."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">MR</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">María Rodríguez</h4>
+                            <p class="text-sm text-gray-600">Directora de RRHH</p>
+                        </div>
+                    </div>
+                </div>
+                
+              
+                <div class="bg-white rounded-xl p-6 shadow-lg relative hover:shadow-xl transition-all hover:-translate-y-2 transform duration-300 border border-gray-100">
+                    <div class="absolute top-6 right-6 text-blue-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z"/>
+                        </svg>
+                    </div>
+                    <p class="text-gray-700 mb-6 pt-6">
+                        "La calidad de los instructores es excepcional. Su experiencia y conocimiento
+                        del sector hacen que las clases sean dinámicas y enriquecedoras. Recomiendo
+                        totalmente los programas de CEMAPO."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">JP</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Juan Pérez</h4>
+                            <p class="text-sm text-gray-600">Gerente de Desarrollo</p>
+                        </div>
+                    </div>
+                </div>
+                
+              
+                <div class="bg-white rounded-xl p-6 shadow-lg relative hover:shadow-xl transition-all hover:-translate-y-2 transform duration-300 border border-gray-100">
+                    <div class="absolute top-6 right-6 text-blue-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z"/>
+                        </svg>
+                    </div>
+                    <p class="text-gray-700 mb-6 pt-6">
+                        "La formación en Liderazgo y Dirección de Equipos me dio herramientas concretas
+                        para gestionar mejor a mi equipo. La metodología práctica y el seguimiento
+                        personalizado marcan la diferencia."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">CP</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Carolina Palacios</h4>
+                            <p class="text-sm text-gray-600">Coordinadora de Proyectos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Sección de llamado a la acción final -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">¿Listo para impulsar tu desarrollo profesional?</h2>
+            <p class="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+                Descubre nuestra oferta formativa y da el siguiente paso en tu carrera
             </p>
+            <a 
+                href="https://wa.me/593961870303?text=Hola, estoy interesado en conocer más sobre los cursos de CEMAPO. ¿Podrían brindarme información detallada?" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="bg-white text-blue-700 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all inline-flex items-center hover:scale-105 transform duration-300"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                Contáctanos ahora
+            </a>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <!-- Testimonio 1 -->
-            <div class="bg-gray-50 rounded-xl p-6 shadow-sm relative hover:shadow-md transition-all hover:-translate-y-2 transform duration-300">
-                <div class="absolute top-6 right-6 text-primary-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z"/>
-                    </svg>
-                </div>
-                <p class="text-gray-700 mb-6 pt-6">
-                    "El curso de Gestión de Talento Humano superó mis expectativas. El enfoque práctico
-                    y los casos reales analizados me han permitido aplicar inmediatamente lo aprendido
-                    en mi empresa."
-                </p>
-                <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4">
-                        <span class="text-primary-600 font-bold">MR</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-gray-900">María Rodríguez</h4>
-                        <p class="text-sm text-gray-600">Directora de RRHH</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Testimonio 2 -->
-            <div class="bg-gray-50 rounded-xl p-6 shadow-sm relative hover:shadow-md transition-all hover:-translate-y-2 transform duration-300">
-                <div class="absolute top-6 right-6 text-primary-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z"/>
-                    </svg>
-                </div>
-                <p class="text-gray-700 mb-6 pt-6">
-                    "La calidad de los instructores es excepcional. Su experiencia y conocimiento
-                    del sector hacen que las clases sean dinámicas y enriquecedoras. Recomiendo
-                    totalmente los programas de CEMAPO."
-                </p>
-                <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4">
-                        <span class="text-primary-600 font-bold">JP</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-gray-900">Juan Pérez</h4>
-                        <p class="text-sm text-gray-600">Gerente de Desarrollo</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Testimonio 3 -->
-            <div class="bg-gray-50 rounded-xl p-6 shadow-sm relative hover:shadow-md transition-all hover:-translate-y-2 transform duration-300">
-                <div class="absolute top-6 right-6 text-primary-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z"/>
-                    </svg>
-                </div>
-                <p class="text-gray-700 mb-6 pt-6">
-                    "La formación en Liderazgo y Dirección de Equipos me dio herramientas concretas
-                    para gestionar mejor a mi equipo. La metodología práctica y el seguimiento
-                    personalizado marcan la diferencia."
-                </p>
-                <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4">
-                        <span class="text-primary-600 font-bold">CP</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-gray-900">Carolina Palacios</h4>
-                        <p class="text-sm text-gray-600">Coordinadora de Proyectos</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Sección de llamado a la acción final -->
-<section class="py-16 bg-primary-600 text-white">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">¿Listo para impulsar tu desarrollo profesional?</h2>
-        <p class="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-            Descubre nuestra oferta formativa y da el siguiente paso en tu carrera
-        </p>
-        <a 
-            href="https://wa.me/593961870303?text=Hola, estoy interesado en conocer más sobre los cursos de CEMAPO. ¿Podrían brindarme información detallada?" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="bg-white text-primary-700 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all inline-flex items-center hover:scale-105 transform duration-300"
-        >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-            </svg>
-            Contáctanos ahora
-        </a>
-    </div>
-</section>
+    </section>
 </Layout>
 
 <script>
