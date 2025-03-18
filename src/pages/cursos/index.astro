@@ -86,7 +86,7 @@ const currentPath = Astro.url.pathname;
 
                 <!-- Card flotante a la derecha (similar a la página de psicología) -->
                 <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
-                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-2xl border border-white/20 max-w-md transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-2xl border border-white/20 max-w-md">
                         <div class="flex items-center mb-6">
                             <div class="h-12 w-12 rounded-full bg-blue-600 flex items-center justify-center mr-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
@@ -125,7 +125,7 @@ const currentPath = Astro.url.pathname;
     <!-- Indicadores de valor (adaptados del código original con el estilo del sitio de psicología) -->
     <section class="py-12 bg-white">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
                 <!-- Indicador 1 -->
                 <div class="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 transform flex items-start">
                     <div class="rounded-full bg-blue-100 p-3 mr-4 text-blue-600 flex-shrink-0">
@@ -153,17 +153,17 @@ const currentPath = Astro.url.pathname;
                 </div>
                 
                 <!-- Indicador 3 -->
-                <div class="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 transform flex items-start">
-                    <div class="rounded-full bg-blue-100 p-3 mr-4 text-blue-600 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-xl mb-1 text-blue-900">Certificación</h3>
-                        <p class="text-gray-700 text-sm">Cursos respaldados por reconocidas instituciones educativas</p>
-                    </div>
-                </div>
+                <!--<div class="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 transform flex items-start">-->
+                <!--    <div class="rounded-full bg-blue-100 p-3 mr-4 text-blue-600 flex-shrink-0">-->
+                <!--        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">-->
+                <!--            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />-->
+                <!--        </svg>-->
+                <!--    </div>-->
+                <!--    <div>-->
+                <!--        <h3 class="font-bold text-xl mb-1 text-blue-900">Certificación</h3>-->
+                <!--        <p class="text-gray-700 text-sm">Cursos respaldados por reconocidas instituciones educativas</p>-->
+                <!--    </div>-->
+                <!--</div>-->
             </div>
         </div>
     </section>
@@ -221,47 +221,47 @@ const currentPath = Astro.url.pathname;
             </div>
             
             <!-- Características en cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                <!-- Característica 1 -->
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border-t-4 border-blue-600">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-100 p-3 rounded-full mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-semibold text-blue-900">Reclutamiento y Selección</h3>
-                    </div>
-                    <p class="text-gray-700 pl-14">Metodologías avanzadas para identificar y atraer a los mejores talentos.</p>
-                </div>
-                
-                <!-- Característica 2 -->
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border-t-4 border-blue-600">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-100 p-3 rounded-full mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-semibold text-blue-900">Seguridad Ocupacional</h3>
-                    </div>
-                    <p class="text-gray-700 pl-14">Estrategias para garantizar ambientes de trabajo seguros y saludables.</p>
-                </div>
-                
-                <!-- Característica 3 -->
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border-t-4 border-blue-600">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-100 p-3 rounded-full mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-semibold text-blue-900">Liderazgo Efectivo</h3>
-                    </div>
-                    <p class="text-gray-700 pl-14">Desarrollo de habilidades para gestionar equipos de alto rendimiento.</p>
-                </div>
-            </div>
-        </div>
+        <!--    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">-->
+        <!--        &lt;!&ndash; Característica 1 &ndash;&gt;-->
+        <!--        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border-t-4 border-blue-600">-->
+        <!--            <div class="flex items-center mb-4">-->
+        <!--                <div class="bg-blue-100 p-3 rounded-full mr-4">-->
+        <!--                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+        <!--                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />-->
+        <!--                    </svg>-->
+        <!--                </div>-->
+        <!--                <h3 class="text-lg font-semibold text-blue-900">Reclutamiento y Selección</h3>-->
+        <!--            </div>-->
+        <!--            <p class="text-gray-700 pl-14">Metodologías avanzadas para identificar y atraer a los mejores talentos.</p>-->
+        <!--        </div>-->
+        <!--        -->
+        <!--        &lt;!&ndash; Característica 2 &ndash;&gt;-->
+        <!--        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border-t-4 border-blue-600">-->
+        <!--            <div class="flex items-center mb-4">-->
+        <!--                <div class="bg-blue-100 p-3 rounded-full mr-4">-->
+        <!--                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+        <!--                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />-->
+        <!--                    </svg>-->
+        <!--                </div>-->
+        <!--                <h3 class="text-lg font-semibold text-blue-900">Seguridad Ocupacional</h3>-->
+        <!--            </div>-->
+        <!--            <p class="text-gray-700 pl-14">Estrategias para garantizar ambientes de trabajo seguros y saludables.</p>-->
+        <!--        </div>-->
+        <!--        -->
+        <!--        &lt;!&ndash; Característica 3 &ndash;&gt;-->
+        <!--        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border-t-4 border-blue-600">-->
+        <!--            <div class="flex items-center mb-4">-->
+        <!--                <div class="bg-blue-100 p-3 rounded-full mr-4">-->
+        <!--                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+        <!--                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />-->
+        <!--                    </svg>-->
+        <!--                </div>-->
+        <!--                <h3 class="text-lg font-semibold text-blue-900">Liderazgo Efectivo</h3>-->
+        <!--            </div>-->
+        <!--            <p class="text-gray-700 pl-14">Desarrollo de habilidades para gestionar equipos de alto rendimiento.</p>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
     </div>
 </section>
 
@@ -359,54 +359,54 @@ const currentPath = Astro.url.pathname;
     </section>
 
     <!-- Banner de contacto mejorado -->
-    <section id="contacto" class="py-16 bg-blue-900 text-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-8xl mx-auto">
-                <div class="bg-blue-800/50 backdrop-blur-sm rounded-xl p-10 shadow-xl relative overflow-hidden">
-                    <!-- Elementos de diseño de fondo -->
-                    <div class="absolute right-0 top-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
-                    <div class="absolute left-0 bottom-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl -ml-32 -mb-32"></div>
-                    
-                    <div class="relative z-10">
-                        <div class="flex flex-col md:flex-row gap-12 items-center">
-                            <div class="md:w-4/5">
-                                <h2 class="text-3xl font-bold mb-4">Capacitación personalizada para empresas</h2>
-                                <p class="text-lg text-white/80 mb-8">
-                                    Diseñamos programas formativos adaptados a las necesidades específicas
-                                    de tu organización. Impulsa el desarrollo de tu equipo con soluciones a medida.
-                                </p>
-                                <div class="flex flex-col sm:flex-row gap-4">
-                                    <a 
-                                        href="https://wa.me/593961870303?text=Hola, estoy interesado en conocer sobre capacitaciones corporativas para mi empresa. ¿Podrían brindarme información personalizada?" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        class="bg-white text-blue-900 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-all inline-flex items-center justify-center hover:scale-105 transform duration-300"
-                                    >
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                        </svg>
-                                        Solicitar información
-                                    </a>
-                                    <!-- <a href="/capacitacion-empresarial" class="bg-transparent hover:bg-white/10 border border-white/30 px-6 py-3 rounded-lg font-semibold transition-all hover:border-white hover:scale-105 transform duration-300">
-                                        Capacitación empresarial
-                                    </a> -->
-                                </div>
-                            </div>
+    <!--<section id="contacto" class="py-16 bg-blue-900 text-white">-->
+    <!--    <div class="container mx-auto px-4">-->
+    <!--        <div class="max-w-8xl mx-auto">-->
+    <!--            <div class="bg-blue-800/50 backdrop-blur-sm rounded-xl p-10 shadow-xl relative overflow-hidden">-->
+    <!--                &lt;!&ndash; Elementos de diseño de fondo &ndash;&gt;-->
+    <!--                <div class="absolute right-0 top-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl -mr-32 -mt-32"></div>-->
+    <!--                <div class="absolute left-0 bottom-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl -ml-32 -mb-32"></div>-->
+    <!--                -->
+    <!--            &lt;!&ndash;    <div class="relative z-10">&ndash;&gt;-->
+    <!--            &lt;!&ndash;        <div class="flex flex-col md:flex-row gap-12 items-center">&ndash;&gt;-->
+    <!--            &lt;!&ndash;            <div class="md:w-4/5">&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <h2 class="text-3xl font-bold mb-4">Capacitación personalizada para empresas</h2>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <p class="text-lg text-white/80 mb-8">&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    Diseñamos programas formativos adaptados a las necesidades específicas&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    de tu organización. Impulsa el desarrollo de tu equipo con soluciones a medida.&ndash;&gt;-->
+    <!--            &lt;!&ndash;                </p>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <div class="flex flex-col sm:flex-row gap-4">&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    <a &ndash;&gt;-->
+    <!--            &lt;!&ndash;                        href="https://wa.me/593961870303?text=Hola, estoy interesado en conocer sobre capacitaciones corporativas para mi empresa. ¿Podrían brindarme información personalizada?" &ndash;&gt;-->
+    <!--            &lt;!&ndash;                        target="_blank" &ndash;&gt;-->
+    <!--            &lt;!&ndash;                        rel="noopener noreferrer"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        class="bg-white text-blue-900 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-all inline-flex items-center justify-center hover:scale-105 transform duration-300"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    >&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">&ndash;&gt;-->
+    <!--            &lt;!&ndash;                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        </svg>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        Solicitar información&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    </a>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    &lt;!&ndash; <a href="/capacitacion-empresarial" class="bg-transparent hover:bg-white/10 border border-white/30 px-6 py-3 rounded-lg font-semibold transition-all hover:border-white hover:scale-105 transform duration-300">&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        Capacitación empresarial&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    </a> &ndash;&gt;&ndash;&gt;-->
+    <!--            &lt;!&ndash;                </div>&ndash;&gt;-->
+    <!--            &lt;!&ndash;            </div>&ndash;&gt;-->
 
-                            <div class="hidden md:block md:w-2/5">
-                                <img 
-                                    src="/images/illustrations/training.svg" 
-                                    alt="Capacitación personalizada" 
-                                    class="w-full h-auto max-w-sm mx-auto opacity-90"
-                                    onError="this.style.display='none'"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--            &lt;!&ndash;            <div class="hidden md:block md:w-2/5">&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <img &ndash;&gt;-->
+    <!--            &lt;!&ndash;                    src="/images/illustrations/training.svg" &ndash;&gt;-->
+    <!--            &lt;!&ndash;                    alt="Capacitación personalizada" &ndash;&gt;-->
+    <!--            &lt;!&ndash;                    class="w-full h-auto max-w-sm mx-auto opacity-90"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    onError="this.style.display='none'"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                />&ndash;&gt;-->
+    <!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+    <!--            &lt;!&ndash;        </div>&ndash;&gt;-->
+    <!--            &lt;!&ndash;    </div>&ndash;&gt;-->
+    <!--            &lt;!&ndash;</div>&ndash;&gt;-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
 
     <!-- Ventajas y metodología -->
     <section class="py-20 bg-white">
@@ -432,12 +432,12 @@ const currentPath = Astro.url.pathname;
                     <p class="text-gray-700 mb-4 flex-grow">
                         Grupos reducidos que permiten intercambio de experiencias y networking entre profesionales.
                     </p>
-                    <div class="flex items-center text-blue-600 font-medium mt-auto justify-center">
-                        <span>Más información</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
+                    <!--<div class="flex items-center text-blue-600 font-medium mt-auto justify-center">-->
+                    <!--    <span>Más información</span>-->
+                    <!--    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">-->
+                    <!--        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />-->
+                    <!--    </svg>-->
+                    <!--</div>-->
                 </div>
                 
                 <!-- Ventaja 2 -->
@@ -451,12 +451,12 @@ const currentPath = Astro.url.pathname;
                     <p class="text-gray-700 mb-4 flex-grow">
                         Metodología basada en resolución de situaciones reales del entorno laboral actual.
                     </p>
-                    <div class="flex items-center text-blue-600 font-medium mt-auto justify-center">
-                        <span>Más información</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
+                    <!--<div class="flex items-center text-blue-600 font-medium mt-auto justify-center">-->
+                    <!--    <span>Más información</span>-->
+                    <!--    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">-->
+                    <!--        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />-->
+                    <!--    </svg>-->
+                    <!--</div>-->
                 </div>
                 
                 <!-- Ventaja 3 -->
@@ -471,12 +471,12 @@ const currentPath = Astro.url.pathname;
                     <p class="text-gray-700 mb-4 flex-grow">
                         Acceso a recursos y tecnologías actuales utilizadas en el ámbito profesional.
                     </p>
-                    <div class="flex items-center text-blue-600 font-medium mt-auto justify-center">
-                        <span>Más información</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
+                    <!--<div class="flex items-center text-blue-600 font-medium mt-auto justify-center">-->
+                    <!--    <span>Más información</span>-->
+                    <!--    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">-->
+                    <!--        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />-->
+                    <!--    </svg>-->
+                    <!--</div>-->
                 </div>
 
                 <!-- Ventaja 4 -->
@@ -490,107 +490,107 @@ const currentPath = Astro.url.pathname;
                     <p class="text-gray-700 mb-4 flex-grow">
                         Documentación actualizada, bibliografía especializada y recursos adicionales.
                     </p>
-                    <div class="flex items-center text-blue-600 font-medium mt-auto justify-center">
-                        <span>Más información</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
+                    <!--<div class="flex items-center text-blue-600 font-medium mt-auto justify-center">-->
+                    <!--    <span>Más información</span>-->
+                    <!--    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">-->
+                    <!--        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />-->
+                    <!--    </svg>-->
+                    <!--</div>-->
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Separador curvo -->
-    <div class="bg-white relative">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-blue-50">
-            <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,69.3C1120,64,1280,64,1360,64L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-        </svg>
-    </div>
+    <!--<div class="bg-white relative">-->
+    <!--    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-blue-50">-->
+    <!--        <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,69.3C1120,64,1280,64,1360,64L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>-->
+    <!--    </svg>-->
+    <!--</div>-->
 
     <!-- FAQ - Preguntas frecuentes -->
-    <section class="py-16 bg-blue-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <span class="inline-block py-1 px-3 rounded-full bg-blue-600 text-white text-sm font-semibold mb-3">PREGUNTAS FRECUENTES</span>
-                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Resolvemos tus dudas</h2>
-                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-                    Conoce toda la información sobre nuestros programas formativos
-                </p>
-            </div>
-            
-            <div class="max-w-3xl mx-auto space-y-6">
-                <!-- Pregunta 1 -->
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
-                    <button id="faq-1-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">
-                        <span class="font-semibold text-gray-900">¿Cómo son las modalidades de los cursos?</span>
-                        <svg id="faq-1-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div id="faq-1-content" class="px-6 pb-4 hidden">
-                        <p class="text-gray-700">
-                            Ofrecemos cursos en modalidad presencial, virtual y mixta, adaptándonos a tus necesidades. 
-                            Todos nuestros programas están diseñados con metodologías interactivas que garantizan 
-                            la efectividad del aprendizaje independientemente del formato elegido.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Pregunta 2 -->
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
-                    <button id="faq-2-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">
-                        <span class="font-semibold text-gray-900">¿Qué tipo de certificación recibo?</span>
-                        <svg id="faq-2-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div id="faq-2-content" class="px-6 pb-4 hidden">
-                        <p class="text-gray-700">
-                            Al finalizar cada curso recibirás un certificado avalado por CEMAPO y nuestras instituciones 
-                            educativas asociadas. Este documento acredita las horas de formación y las competencias 
-                            adquiridas durante el programa.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Pregunta 3 -->
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
-                    <button id="faq-3-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">
-                        <span class="font-semibold text-gray-900">¿Ofrecen cursos personalizados para empresas?</span>
-                        <svg id="faq-3-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div id="faq-3-content" class="px-6 pb-4 hidden">
-                        <p class="text-gray-700">
-                            Sí, desarrollamos programas formativos a medida según las necesidades específicas de cada 
-                            organización. Realizamos un diagnóstico previo para identificar las áreas de mejora y 
-                            diseñamos contenido personalizado que se alinee con los objetivos estratégicos de tu empresa.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Pregunta 4 -->
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
-                    <button id="faq-4-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">
-                        <span class="font-semibold text-gray-900">¿Cómo puedo inscribirme en un curso?</span>
-                        <svg id="faq-4-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div id="faq-4-content" class="px-6 pb-4 hidden">
-                        <p class="text-gray-700">
-                            Puedes inscribirte directamente a través de nuestra página web seleccionando el curso 
-                            de tu interés y haciendo clic en el botón de contacto. También puedes comunicarte con 
-                            nuestro equipo de asesores a través de WhatsApp para recibir orientación personalizada 
-                            sobre el proceso de inscripción.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--<section class="py-16 bg-blue-50">-->
+    <!--    <div class="container mx-auto px-4">-->
+    <!--        <div class="text-center mb-16">-->
+    <!--            <span class="inline-block py-1 px-3 rounded-full bg-blue-600 text-white text-sm font-semibold mb-3">PREGUNTAS FRECUENTES</span>-->
+    <!--            <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Resolvemos tus dudas</h2>-->
+    <!--            <p class="text-xl text-gray-700 max-w-3xl mx-auto">-->
+    <!--                Conoce toda la información sobre nuestros programas formativos-->
+    <!--            </p>-->
+    <!--        </div>-->
+    <!--        -->
+    <!--        <div class="max-w-3xl mx-auto space-y-6">-->
+    <!--            &lt;!&ndash; Pregunta 1 &ndash;&gt;-->
+    <!--            <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">-->
+    <!--                <button id="faq-1-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">-->
+    <!--                    <span class="font-semibold text-gray-900">¿Cómo son las modalidades de los cursos?</span>-->
+    <!--                    <svg id="faq-1-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+    <!--                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />-->
+    <!--                    </svg>-->
+    <!--                </button>-->
+    <!--                <div id="faq-1-content" class="px-6 pb-4 hidden">-->
+    <!--                    <p class="text-gray-700">-->
+    <!--                        Ofrecemos cursos en modalidad presencial, virtual y mixta, adaptándonos a tus necesidades. -->
+    <!--                        Todos nuestros programas están diseñados con metodologías interactivas que garantizan -->
+    <!--                        la efectividad del aprendizaje independientemente del formato elegido.-->
+    <!--                    </p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            -->
+    <!--            &lt;!&ndash; Pregunta 2 &ndash;&gt;-->
+    <!--            <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">-->
+    <!--                <button id="faq-2-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">-->
+    <!--                    <span class="font-semibold text-gray-900">¿Qué tipo de certificación recibo?</span>-->
+    <!--                    <svg id="faq-2-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+    <!--                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />-->
+    <!--                    </svg>-->
+    <!--                </button>-->
+    <!--                <div id="faq-2-content" class="px-6 pb-4 hidden">-->
+    <!--                    <p class="text-gray-700">-->
+    <!--                        Al finalizar cada curso recibirás un certificado avalado por CEMAPO y nuestras instituciones -->
+    <!--                        educativas asociadas. Este documento acredita las horas de formación y las competencias -->
+    <!--                        adquiridas durante el programa.-->
+    <!--                    </p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            -->
+    <!--            &lt;!&ndash; Pregunta 3 &ndash;&gt;-->
+    <!--            <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">-->
+    <!--                <button id="faq-3-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">-->
+    <!--                    <span class="font-semibold text-gray-900">¿Ofrecen cursos personalizados para empresas?</span>-->
+    <!--                    <svg id="faq-3-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+    <!--                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />-->
+    <!--                    </svg>-->
+    <!--                </button>-->
+    <!--                <div id="faq-3-content" class="px-6 pb-4 hidden">-->
+    <!--                    <p class="text-gray-700">-->
+    <!--                        Sí, desarrollamos programas formativos a medida según las necesidades específicas de cada -->
+    <!--                        organización. Realizamos un diagnóstico previo para identificar las áreas de mejora y -->
+    <!--                        diseñamos contenido personalizado que se alinee con los objetivos estratégicos de tu empresa.-->
+    <!--                    </p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            -->
+    <!--            &lt;!&ndash; Pregunta 4 &ndash;&gt;-->
+    <!--            <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">-->
+    <!--                <button id="faq-4-btn" class="flex justify-between items-center w-full px-6 py-4 text-left">-->
+    <!--                    <span class="font-semibold text-gray-900">¿Cómo puedo inscribirme en un curso?</span>-->
+    <!--                    <svg id="faq-4-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+    <!--                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />-->
+    <!--                    </svg>-->
+    <!--                </button>-->
+    <!--                <div id="faq-4-content" class="px-6 pb-4 hidden">-->
+    <!--                    <p class="text-gray-700">-->
+    <!--                        Puedes inscribirte directamente a través de nuestra página web seleccionando el curso -->
+    <!--                        de tu interés y haciendo clic en el botón de contacto. También puedes comunicarte con -->
+    <!--                        nuestro equipo de asesores a través de WhatsApp para recibir orientación personalizada -->
+    <!--                        sobre el proceso de inscripción.-->
+    <!--                    </p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
 
     <!-- Testimonios -->
     <!-- <section class="py-20 bg-white">

@@ -1,0 +1,224 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+        title="CEMAPO Empresas | Trabaja con Nosotros"
+        description="Forma parte de nuestro equipo de profesionales. Envía tu CV y únete a CEMAPO."
+>
+    <!-- Hero Section Simple -->
+    <section class="relative min-h-[40vh] flex items-center py-16 overflow-hidden">
+        <!-- Imagen de fondo con overlay -->
+        <div class="absolute inset-0 z-0">
+            <img
+                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    alt="Equipo empresarial colaborando"
+                    class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-800/80"></div>
+        </div>
+
+        <!-- Contenido del Hero -->
+        <div class="container mx-auto px-6 relative z-20">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white leading-tight">
+                    Trabaja con <span class="text-blue-300">Nosotros</span>
+                </h1>
+                <p class="text-lg text-white/90 mb-6">
+                    Únete a nuestro equipo de profesionales y ayúdanos a transformar organizaciones a través de programas de formación innovadores.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de formulario simple -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <h2 class="text-2xl font-bold text-blue-900 mb-6">Formulario de aplicación</h2>
+
+                    <form id="aplicacionForm" class="space-y-5">
+                        <!-- Datos personales -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombres completos*</label>
+                                <input type="text" id="nombre" name="nombre" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                            </div>
+                            <div>
+                                <label for="ciudad" class="block text-sm font-medium text-gray-700 mb-1">Ciudad*</label>
+                                <input type="text" id="ciudad" name="ciudad" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="telefono" class="block text-sm font-medium text-gray-700 mb-1">Teléfono/WhatsApp*</label>
+                                <input type="tel" id="telefono" name="telefono" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="+593 XX XXX XXXX" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico*</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                            </div>
+                        </div>
+
+                        <!-- Selección de puestos -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Puesto(s) al que aplica* (seleccione hasta 2 opciones)</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="puesto1" name="puestos" value="Recursos Humanos" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
+                                    <label for="puesto1" class="ml-2 text-sm text-gray-700">Recursos Humanos</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="puesto2" name="puestos" value="Desarrollo Organizacional" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
+                                    <label for="puesto2" class="ml-2 text-sm text-gray-700">Desarrollo Organizacional</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="puesto3" name="puestos" value="Finanzas" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
+                                    <label for="puesto3" class="ml-2 text-sm text-gray-700">Finanzas</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="puesto4" name="puestos" value="Tecnología e IA" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
+                                    <label for="puesto4" class="ml-2 text-sm text-gray-700">Tecnología e IA</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="puesto5" name="puestos" value="Jurídico" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
+                                    <label for="puesto5" class="ml-2 text-sm text-gray-700">Jurídico</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="puesto6" name="puestos" value="Salud Ocupacional" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
+                                    <label for="puesto6" class="ml-2 text-sm text-gray-700">Salud Ocupacional</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="puesto7" name="puestos" value="Liderazgo" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
+                                    <label for="puesto7" class="ml-2 text-sm text-gray-700">Liderazgo</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="puesto8" name="puestos" value="Marketing Digital" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
+                                    <label for="puesto8" class="ml-2 text-sm text-gray-700">Marketing Digital</label>
+                                </div>
+                            </div>
+                            <p id="puesto-error" class="text-red-500 text-xs mt-1 hidden">Por favor seleccione máximo 2 opciones.</p>
+                        </div>
+
+                        <!-- Experiencia -->
+                        <div>
+                            <label for="experiencia" class="block text-sm font-medium text-gray-700 mb-1">Años de experiencia*</label>
+                            <select id="experiencia" name="experiencia" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                                <option value="" disabled selected>Seleccione una opción</option>
+                                <option value="Menos de 1 año">Menos de 1 año</option>
+                                <option value="1-3 años">1-3 años</option>
+                                <option value="3-5 años">3-5 años</option>
+                                <option value="5-10 años">5-10 años</option>
+                                <option value="Más de 10 años">Más de 10 años</option>
+                            </select>
+                        </div>
+
+                        <!-- CV -->
+                        <div>
+                            <label for="cv" class="block text-sm font-medium text-gray-700 mb-1">Adjuntar CV (PDF, DOC, DOCX)*</label>
+                            <input type="file" id="cv" name="cv" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" accept=".pdf,.doc,.docx" required>
+                            <p class="text-xs text-gray-500 mt-1">Tamaño máximo: 5MB</p>
+                        </div>
+
+                        <!-- Mensaje breve -->
+                        <div>
+                            <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">Mensaje breve (opcional)</label>
+                            <textarea id="mensaje" name="mensaje" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Añada información adicional que considere relevante"></textarea>
+                        </div>
+
+                        <!-- Términos -->
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="terminos" name="terminos" type="checkbox" class="w-4 h-4 border border-gray-300 rounded focus:ring-blue-500" required>
+                            </div>
+                            <label for="terminos" class="ml-2 text-sm text-gray-700">
+                                Acepto el tratamiento de mis datos personales para el proceso de selección.
+                            </label>
+                        </div>
+
+                        <!-- Botón de envío -->
+                        <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center">
+                            <span>Enviar aplicación por WhatsApp</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script para manejar el formulario y enviar a WhatsApp -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('aplicacionForm');
+            const puestoCheckboxes = document.querySelectorAll('.puesto-checkbox');
+            const puestoError = document.getElementById('puesto-error');
+
+            // Limitar selección a 2 opciones máximo
+            puestoCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const checked = document.querySelectorAll('.puesto-checkbox:checked');
+                    if (checked.length > 2) {
+                        this.checked = false;
+                        puestoError.classList.remove('hidden');
+                    } else {
+                        puestoError.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Manejar envío del formulario
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Recoger datos del formulario
+                const nombre = document.getElementById('nombre').value;
+                const ciudad = document.getElementById('ciudad').value;
+                const telefono = document.getElementById('telefono').value;
+                const email = document.getElementById('email').value;
+                const experiencia = document.getElementById('experiencia').value;
+                const mensaje = document.getElementById('mensaje').value;
+
+                // Recoger puestos seleccionados
+                const puestosSeleccionados = [];
+                puestoCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        puestosSeleccionados.push(checkbox.value);
+                    }
+                });
+
+                // Validar que al menos un puesto esté seleccionado
+                if (puestosSeleccionados.length === 0) {
+                    alert('Por favor seleccione al menos un puesto al que desea aplicar.');
+                    return;
+                }
+
+                // Crear mensaje para WhatsApp
+                let mensajeWhatsApp = `*Nueva aplicación laboral CEMAPO*%0A%0A`;
+                mensajeWhatsApp += `*Nombre:* ${nombre}%0A`;
+                mensajeWhatsApp += `*Ciudad:* ${ciudad}%0A`;
+                mensajeWhatsApp += `*Teléfono:* ${telefono}%0A`;
+                mensajeWhatsApp += `*Email:* ${email}%0A`;
+                mensajeWhatsApp += `*Puesto(s):* ${puestosSeleccionados.join(', ')}%0A`;
+                mensajeWhatsApp += `*Experiencia:* ${experiencia}%0A`;
+
+                if (mensaje) {
+                    mensajeWhatsApp += `*Mensaje:* ${mensaje}%0A`;
+                }
+
+                mensajeWhatsApp += `%0A*Nota:* El candidato ha adjuntado su CV en el formulario web.`;
+
+                // Abrir WhatsApp con el mensaje
+                window.open(`https://wa.me/593982121145?text=${mensajeWhatsApp}`, '_blank');
+
+                // Opcional: Limpiar formulario después de enviar
+                form.reset();
+                alert('Su aplicación ha sido enviada. Por favor complete el envío en WhatsApp.');
+            });
+        });
+    </script>
+</Layout>
