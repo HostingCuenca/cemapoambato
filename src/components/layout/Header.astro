@@ -16,7 +16,8 @@ const navItems = [
     { label: 'Nosotros', url: '/nosotros' },
     // { label: 'Testimonios', url: '/testimonios' },
     // { label: 'Blog', url: '/blog' },
-    { label: 'Artículos', url: '/cursos' }
+    { label: 'Artículos', url: '/cursos' },
+    { label: 'Trabaja con Nosotros', url: '/trabaja-con-nosotros' }
 ];
 
 // Obtener la ruta actual
@@ -165,6 +166,12 @@ const currentPath = Astro.url.pathname;
         header {
             background-color: white;
         }
+    }
+
+    /* Contenedor adaptado para todos los tamaños de pantalla */
+    .container {
+        width: 96%;
+        max-width: 1400px;
     }
 </style>
 

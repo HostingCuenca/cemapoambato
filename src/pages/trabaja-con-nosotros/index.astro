@@ -1,25 +1,44 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getActiveJobVacancies, getAllDepartments } from '../../lib/airtable.js';
+
+// Obtener todas las vacantes activas
+const vacancies = await getActiveJobVacancies();
+console.log('Vacantes obtenidas:', vacancies.length);
+
+// Obtener departamentos disponibles
+const departments = await getAllDepartments();
+
+// Formatear fecha
+function formatDate(dateString) {
+    if (!dateString) return 'Fecha no disponible';
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat('es-EC', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    }).format(date);
+}
 ---
 
 <Layout
-        title="CEMAPO Empresas | Trabaja con Nosotros"
-        description="Forma parte de nuestro equipo de profesionales. Envía tu CV y únete a CEMAPO."
+        title="Trabaja con Nosotros | CEMAPO - Especialistas en Talento Humano"
+        description="Forma parte de nuestro equipo. Explora las vacantes disponibles y envía tu aplicación para unirte a CEMAPO."
 >
-    <!-- Hero Section Simple -->
-    <section class="relative min-h-[40vh] flex items-center py-16 overflow-hidden">
+    <!-- Hero Section con imagen de fondo -->
+    <section class="relative pt-32 pb-24 overflow-hidden">
         <!-- Imagen de fondo con overlay -->
         <div class="absolute inset-0 z-0">
             <img
                     src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                    alt="Equipo empresarial colaborando"
+                    alt="Equipo profesional trabajando juntos"
                     class="w-full h-full object-cover"
             />
             <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-800/80"></div>
         </div>
 
         <!-- Contenido del Hero -->
-        <div class="container mx-auto px-6 relative z-20 pt-24">
+        <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-3xl">
                 <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white leading-tight">
                     Trabaja con <span class="text-blue-300">Nosotros</span>
@@ -31,81 +50,231 @@ import Layout from '../../layouts/Layout.astro';
         </div>
     </section>
 
-    <!-- Sección de formulario simple -->
+    <!-- Sección de Vacantes Disponibles -->
     <section class="py-12 bg-white">
         <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto">
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-                    <h2 class="text-2xl font-bold text-blue-900 mb-6">Formulario de aplicación</h2>
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-blue-900 mb-6 text-center">Vacantes Disponibles</h2>
 
-                    <form id="aplicacionForm" class="space-y-5">
+                <!-- Filtro por departamento (si hay más de un departamento) -->
+                {departments.length > 1 && (
+                        <div class="mb-8 flex flex-wrap justify-center gap-3">
+                            <button id="filter-all" class="py-2 px-4 rounded-full bg-blue-600 text-white text-sm font-medium">
+                                Todas las áreas
+                            </button>
+                            {departments.map(department => (
+                                    <button
+                                            class="filter-btn py-2 px-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium"
+                                            data-department={department}
+                                    >
+                                        {department}
+                                    </button>
+                            ))}
+                        </div>
+                )}
+
+                <!-- Mensaje si no hay vacantes -->
+                {vacancies.length === 0 ? (
+                        <div class="text-center py-12 bg-gray-50 rounded-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto text-gray-400 mb-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+                            </svg>
+                            <h3 class="text-xl font-bold text-gray-700 mb-2">No hay vacantes disponibles actualmente</h3>
+                            <p class="text-gray-600 mx-auto max-w-lg">
+                                En este momento no tenemos posiciones abiertas, pero puedes enviarnos tu CV
+                                para considerarlo en futuras oportunidades.
+                            </p>
+                            <a
+                                    href="#aplicacion-general"
+                                    class="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg font-medium transition-all duration-300"
+                            >
+                                Enviar CV
+                            </a>
+                        </div>
+                ) : (
+                    <!-- Lista de vacantes -->
+                        <div id="vacancies-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {vacancies.map(vacancy => (
+                                    <div class="vacancy-card bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden" data-department={vacancy.department}>
+                                        <div class="h-48 overflow-hidden relative">
+                                            <img
+                                                    src={vacancy.imageUrl}
+                                                    alt={vacancy.title}
+                                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                            />
+                                            <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-semibold py-1 px-2 rounded">
+                                                {vacancy.department}
+                                            </div>
+                                        </div>
+                                        <div class="p-6">
+                                            <div class="flex justify-between items-start mb-3">
+                                                <h3 class="text-xl font-bold text-blue-900">{vacancy.title}</h3>
+                                            </div>
+                                            <p class="text-gray-600 text-sm mb-3">
+                                                Publicado: {formatDate(vacancy.publishDate)}
+                                            </p>
+                                            <p class="text-gray-700 mb-6 line-clamp-2">
+                                                {vacancy.description.slice(0, 120)}...
+                                            </p>
+                                            <button
+                                                    class="apply-btn w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center"
+                                                    data-id={vacancy.id}
+                                                    data-title={vacancy.title}
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12l-3-3m0 0l-3 3m3-3v6m-1.5-15H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                                                </svg>
+                                                Aplicar
+                                            </button>
+                                        </div>
+                                    </div>
+                            ))}
+                        </div>
+                )}
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Aplicación para vacantes específicas -->
+    <div id="apply-modal" class="fixed inset-0 flex items-center justify-center z-50 bg-black/50 backdrop-blur-sm invisible opacity-0 transition-all duration-300">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-auto m-4">
+            <div class="p-6 border-b sticky top-0 bg-white">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-bold text-blue-900" id="modal-title">Aplicar a Vacante</h3>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <form id="application-form" class="space-y-5">
+                    <input type="hidden" id="vacancy-id" name="vacancyId">
+                    <input type="hidden" id="vacancy-title" name="vacancyTitle">
+
+                    <!-- Datos personales -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Nombres completos*</label>
+                            <input type="text" id="fullName" name="fullName" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                        <div>
+                            <label for="city" class="block text-sm font-medium text-gray-700 mb-1">Ciudad*</label>
+                            <input type="text" id="city" name="city" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono/WhatsApp*</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="+593 XX XXX XXXX" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico*</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                    </div>
+
+                    <!-- Experiencia -->
+                    <div>
+                        <label for="experience" class="block text-sm font-medium text-gray-700 mb-1">Años de experiencia*</label>
+                        <select id="experience" name="experience" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option value="Menos de 1 año">Menos de 1 año</option>
+                            <option value="1-3 años">1-3 años</option>
+                            <option value="3-5 años">3-5 años</option>
+                            <option value="5-10 años">5-10 años</option>
+                            <option value="Más de 10 años">Más de 10 años</option>
+                        </select>
+                    </div>
+
+                    <!-- CV -->
+                    <div>
+                        <label for="cv" class="block text-sm font-medium text-gray-700 mb-1">Adjuntar CV (PDF, DOC, DOCX)*</label>
+                        <input type="file" id="cv" name="cv" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" accept=".pdf,.doc,.docx" required>
+                        <p class="text-xs text-gray-500 mt-1">Tamaño máximo: 5MB</p>
+                    </div>
+
+                    <!-- Mensaje breve -->
+                    <div>
+                        <label for="coverLetter" class="block text-sm font-medium text-gray-700 mb-1">Carta de presentación (opcional)</label>
+                        <textarea id="coverLetter" name="coverLetter" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Cuéntanos brevemente sobre tu experiencia y por qué te interesa esta posición"></textarea>
+                    </div>
+
+                    <!-- Términos -->
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="terms" name="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded focus:ring-blue-500" required>
+                        </div>
+                        <label for="terms" class="ml-2 text-sm text-gray-700">
+                            Acepto el tratamiento de mis datos personales para el proceso de selección.
+                        </label>
+                    </div>
+
+                    <!-- Botón de envío -->
+                    <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center">
+                        <span>Enviar aplicación por WhatsApp</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario de Aplicación General -->
+    <section id="aplicacion-general" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-blue-900 mb-6 text-center">Envíanos tu CV</h2>
+                <p class="text-center text-gray-700 mb-8">
+                    Incluso si no hay vacantes abiertas en este momento, siempre estamos buscando talento excepcional.
+                    Envíanos tu CV y te consideraremos para futuras oportunidades.
+                </p>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <form id="general-application-form" class="space-y-5">
                         <!-- Datos personales -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
-                                <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombres completos*</label>
-                                <input type="text" id="nombre" name="nombre" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                                <label for="gen-fullName" class="block text-sm font-medium text-gray-700 mb-1">Nombres completos*</label>
+                                <input type="text" id="gen-fullName" name="fullName" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
                             </div>
                             <div>
-                                <label for="ciudad" class="block text-sm font-medium text-gray-700 mb-1">Ciudad*</label>
-                                <input type="text" id="ciudad" name="ciudad" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                                <label for="gen-city" class="block text-sm font-medium text-gray-700 mb-1">Ciudad*</label>
+                                <input type="text" id="gen-city" name="city" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
-                                <label for="telefono" class="block text-sm font-medium text-gray-700 mb-1">Teléfono/WhatsApp*</label>
-                                <input type="tel" id="telefono" name="telefono" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="+593 XX XXX XXXX" required>
+                                <label for="gen-phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono/WhatsApp*</label>
+                                <input type="tel" id="gen-phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="+593 XX XXX XXXX" required>
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico*</label>
-                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                                <label for="gen-email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico*</label>
+                                <input type="email" id="gen-email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
                             </div>
                         </div>
 
-                        <!-- Selección de puestos -->
+                        <!-- Área de interés -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Puesto(s) al que aplica* (seleccione hasta 2 opciones)</label>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="puesto1" name="puestos" value="Recursos Humanos" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
-                                    <label for="puesto1" class="ml-2 text-sm text-gray-700">Recursos Humanos</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="puesto2" name="puestos" value="Desarrollo Organizacional" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
-                                    <label for="puesto2" class="ml-2 text-sm text-gray-700">Desarrollo Organizacional</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="puesto3" name="puestos" value="Finanzas" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
-                                    <label for="puesto3" class="ml-2 text-sm text-gray-700">Finanzas</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="puesto4" name="puestos" value="Tecnología e IA" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
-                                    <label for="puesto4" class="ml-2 text-sm text-gray-700">Tecnología e IA</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="puesto5" name="puestos" value="Jurídico" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
-                                    <label for="puesto5" class="ml-2 text-sm text-gray-700">Jurídico</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="puesto6" name="puestos" value="Salud Ocupacional" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
-                                    <label for="puesto6" class="ml-2 text-sm text-gray-700">Salud Ocupacional</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="puesto7" name="puestos" value="Liderazgo" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
-                                    <label for="puesto7" class="ml-2 text-sm text-gray-700">Liderazgo</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="puesto8" name="puestos" value="Marketing Digital" class="puesto-checkbox w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
-                                    <label for="puesto8" class="ml-2 text-sm text-gray-700">Marketing Digital</label>
-                                </div>
-                            </div>
-                            <p id="puesto-error" class="text-red-500 text-xs mt-1 hidden">Por favor seleccione máximo 2 opciones.</p>
+                            <label for="gen-area" class="block text-sm font-medium text-gray-700 mb-1">Área de interés*</label>
+                            <select id="gen-area" name="area" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                                <option value="" disabled selected>Seleccione una opción</option>
+                                {departments.map(department => (
+                                        <option value={department}>{department}</option>
+                                ))}
+                                <option value="General">General / Cualquier área</option>
+                            </select>
                         </div>
 
                         <!-- Experiencia -->
                         <div>
-                            <label for="experiencia" class="block text-sm font-medium text-gray-700 mb-1">Años de experiencia*</label>
-                            <select id="experiencia" name="experiencia" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                            <label for="gen-experience" class="block text-sm font-medium text-gray-700 mb-1">Años de experiencia*</label>
+                            <select id="gen-experience" name="experience" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
                                 <option value="" disabled selected>Seleccione una opción</option>
                                 <option value="Menos de 1 año">Menos de 1 año</option>
                                 <option value="1-3 años">1-3 años</option>
@@ -117,32 +286,32 @@ import Layout from '../../layouts/Layout.astro';
 
                         <!-- CV -->
                         <div>
-                            <label for="cv" class="block text-sm font-medium text-gray-700 mb-1">Adjuntar CV (PDF, DOC, DOCX)*</label>
-                            <input type="file" id="cv" name="cv" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" accept=".pdf,.doc,.docx" required>
+                            <label for="gen-cv" class="block text-sm font-medium text-gray-700 mb-1">Adjuntar CV (PDF, DOC, DOCX)*</label>
+                            <input type="file" id="gen-cv" name="cv" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" accept=".pdf,.doc,.docx" required>
                             <p class="text-xs text-gray-500 mt-1">Tamaño máximo: 5MB</p>
                         </div>
 
                         <!-- Mensaje breve -->
                         <div>
-                            <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">Mensaje breve (opcional)</label>
-                            <textarea id="mensaje" name="mensaje" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Añada información adicional que considere relevante"></textarea>
+                            <label for="gen-message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje breve (opcional)</label>
+                            <textarea id="gen-message" name="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Cuéntanos brevemente sobre tu experiencia y por qué te gustaría trabajar con nosotros"></textarea>
                         </div>
 
                         <!-- Términos -->
                         <div class="flex items-start">
                             <div class="flex items-center h-5">
-                                <input id="terminos" name="terminos" type="checkbox" class="w-4 h-4 border border-gray-300 rounded focus:ring-blue-500" required>
+                                <input id="gen-terms" name="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded focus:ring-blue-500" required>
                             </div>
-                            <label for="terminos" class="ml-2 text-sm text-gray-700">
+                            <label for="gen-terms" class="ml-2 text-sm text-gray-700">
                                 Acepto el tratamiento de mis datos personales para el proceso de selección.
                             </label>
                         </div>
 
                         <!-- Botón de envío -->
-                        <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center">
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center">
                             <span>Enviar aplicación por WhatsApp</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                             </svg>
                         </button>
                     </form>
@@ -151,63 +320,201 @@ import Layout from '../../layouts/Layout.astro';
         </div>
     </section>
 
-    <!-- Script para manejar el formulario y enviar a WhatsApp -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('aplicacionForm');
-            const puestoCheckboxes = document.querySelectorAll('.puesto-checkbox');
-            const puestoError = document.getElementById('puesto-error');
+    <!-- Por qué trabajar con nosotros -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">¿Por qué trabajar en CEMAPO?</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Somos una empresa comprometida con el desarrollo profesional y personal de nuestro equipo
+                </p>
+            </div>
 
-            // Limitar selección a 2 opciones máximo
-            puestoCheckboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', function() {
-                    const checked = document.querySelectorAll('.puesto-checkbox:checked');
-                    if (checked.length > 2) {
-                        this.checked = false;
-                        puestoError.classList.remove('hidden');
-                    } else {
-                        puestoError.classList.add('hidden');
-                    }
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Ventaja 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Desarrollo Profesional</h3>
+                    <p class="text-gray-700">
+                        Fomentamos el crecimiento continuo de nuestros colaboradores con capacitación constante y oportunidades de desarrollo.
+                    </p>
+                </div>
+
+                <!-- Ventaja 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Ambiente Colaborativo</h3>
+                    <p class="text-gray-700">
+                        Trabajamos en un entorno donde se valoran las ideas, la creatividad y el trabajo en equipo para alcanzar objetivos comunes.
+                    </p>
+                </div>
+
+                <!-- Ventaja 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Equilibrio Laboral</h3>
+                    <p class="text-gray-700">
+                        Promovemos un balance saludable entre vida personal y profesional, con políticas flexibles y enfoque en resultados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Llamado a la acción final -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">¿Listo para dar el siguiente paso en tu carrera?</h2>
+            <p class="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+                Envíanos tu CV hoy mismo y forma parte de un equipo apasionado por el desarrollo del talento humano
+            </p>
+            <a href="#aplicacion-general" class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-700 hover:bg-blue-50 font-semibold rounded-lg transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                Postular ahora
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+    </section>
+</Layout>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Funcionalidad de filtrado por departamento
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const filterAll = document.getElementById('filter-all');
+        const vacancyCards = document.querySelectorAll('.vacancy-card');
+
+        if (filterButtons.length > 0 && filterAll && vacancyCards.length > 0) {
+            // Filtrar por departamento
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const department = this.getAttribute('data-department');
+
+                    // Actualizar clases de botones
+                    filterButtons.forEach(btn => btn.classList.remove('bg-blue-600', 'text-white'));
+                    filterButtons.forEach(btn => btn.classList.add('bg-gray-100', 'text-gray-800'));
+                    filterAll.classList.remove('bg-blue-600', 'text-white');
+                    filterAll.classList.add('bg-gray-100', 'text-gray-800');
+                    this.classList.remove('bg-gray-100', 'text-gray-800');
+                    this.classList.add('bg-blue-600', 'text-white');
+
+                    // Filtrar tarjetas
+                    vacancyCards.forEach(card => {
+                        const cardDepartment = card.getAttribute('data-department');
+                        if (cardDepartment === department) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
                 });
             });
 
-            // Manejar envío del formulario
-            form.addEventListener('submit', function(e) {
+            // Botón "Todas las áreas"
+            filterAll.addEventListener('click', function() {
+                // Actualizar clases de botones
+                filterButtons.forEach(btn => btn.classList.remove('bg-blue-600', 'text-white'));
+                filterButtons.forEach(btn => btn.classList.add('bg-gray-100', 'text-gray-800'));
+                this.classList.remove('bg-gray-100', 'text-gray-800');
+                this.classList.add('bg-blue-600', 'text-white');
+
+                // Mostrar todas las tarjetas
+                vacancyCards.forEach(card => card.classList.remove('hidden'));
+            });
+        }
+
+        // Manejo del modal de aplicación
+        const applyButtons = document.querySelectorAll('.apply-btn');
+        const applyModal = document.getElementById('apply-modal');
+        const closeModal = document.getElementById('close-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const vacancyIdInput = document.getElementById('vacancy-id');
+        const vacancyTitleInput = document.getElementById('vacancy-title');
+
+        if (applyButtons.length > 0 && applyModal && closeModal) {
+            // Abrir modal
+            applyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const vacancyId = this.getAttribute('data-id');
+                    const vacancyTitle = this.getAttribute('data-title');
+
+                    // Actualizar título del modal y campos ocultos
+                    modalTitle.textContent = `Aplicar a: ${vacancyTitle}`;
+                    vacancyIdInput.value = vacancyId;
+                    vacancyTitleInput.value = vacancyTitle;
+
+                    // Mostrar modal
+                    applyModal.classList.remove('invisible', 'opacity-0');
+                    document.body.style.overflow = 'hidden'; // Bloquear scroll
+                });
+            });
+
+            // Cerrar modal
+            closeModal.addEventListener('click', function() {
+                applyModal.classList.add('invisible', 'opacity-0');
+                document.body.style.overflow = ''; // Restaurar scroll
+            });
+
+            // Cerrar modal al hacer clic fuera
+            applyModal.addEventListener('click', function(e) {
+                if (e.target === applyModal) {
+                    applyModal.classList.add('invisible', 'opacity-0');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // Manejar envío del formulario de aplicación específica
+        const applicationForm = document.getElementById('application-form');
+        if (applicationForm) {
+            applicationForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
+                // Validar formulario
+                if (!this.checkValidity()) {
+                    this.reportValidity();
+                    return;
+                }
+
                 // Recoger datos del formulario
-                const nombre = document.getElementById('nombre').value;
-                const ciudad = document.getElementById('ciudad').value;
-                const telefono = document.getElementById('telefono').value;
+                const fullName = document.getElementById('fullName').value;
+                const city = document.getElementById('city').value;
+                const phone = document.getElementById('phone').value;
                 const email = document.getElementById('email').value;
-                const experiencia = document.getElementById('experiencia').value;
-                const mensaje = document.getElementById('mensaje').value;
+                const experience = document.getElementById('experience').value;
+                const vacancyTitle = document.getElementById('vacancy-title').value;
+                const coverLetter = document.getElementById('coverLetter').value;
+                const cvFile = document.getElementById('cv').files[0];
 
-                // Recoger puestos seleccionados
-                const puestosSeleccionados = [];
-                puestoCheckboxes.forEach(checkbox => {
-                    if (checkbox.checked) {
-                        puestosSeleccionados.push(checkbox.value);
-                    }
-                });
-
-                // Validar que al menos un puesto esté seleccionado
-                if (puestosSeleccionados.length === 0) {
-                    alert('Por favor seleccione al menos un puesto al que desea aplicar.');
+                if (!cvFile) {
+                    alert('Por favor adjunte su CV.');
                     return;
                 }
 
                 // Crear mensaje para WhatsApp
                 let mensajeWhatsApp = `*Nueva aplicación laboral CEMAPO*%0A%0A`;
-                mensajeWhatsApp += `*Nombre:* ${nombre}%0A`;
-                mensajeWhatsApp += `*Ciudad:* ${ciudad}%0A`;
-                mensajeWhatsApp += `*Teléfono:* ${telefono}%0A`;
+                mensajeWhatsApp += `*Vacante:* ${vacancyTitle}%0A`;
+                mensajeWhatsApp += `*Nombre:* ${fullName}%0A`;
+                mensajeWhatsApp += `*Ciudad:* ${city}%0A`;
+                mensajeWhatsApp += `*Teléfono:* ${phone}%0A`;
                 mensajeWhatsApp += `*Email:* ${email}%0A`;
-                mensajeWhatsApp += `*Puesto(s):* ${puestosSeleccionados.join(', ')}%0A`;
-                mensajeWhatsApp += `*Experiencia:* ${experiencia}%0A`;
+                mensajeWhatsApp += `*Experiencia:* ${experience}%0A`;
 
-                if (mensaje) {
-                    mensajeWhatsApp += `*Mensaje:* ${mensaje}%0A`;
+                if (coverLetter) {
+                    mensajeWhatsApp += `*Carta de presentación:* ${coverLetter}%0A`;
                 }
 
                 mensajeWhatsApp += `%0A*Nota:* El candidato ha adjuntado su CV en el formulario web.`;
@@ -215,10 +522,80 @@ import Layout from '../../layouts/Layout.astro';
                 // Abrir WhatsApp con el mensaje
                 window.open(`https://wa.me/593982121145?text=${mensajeWhatsApp}`, '_blank');
 
-                // Opcional: Limpiar formulario después de enviar
-                form.reset();
+                // Cerrar modal y limpiar formulario
+                applyModal.classList.add('invisible', 'opacity-0');
+                document.body.style.overflow = '';
+                applicationForm.reset();
                 alert('Su aplicación ha sido enviada. Por favor complete el envío en WhatsApp.');
             });
+        }
+
+        // Manejar envío del formulario de aplicación general
+        const generalApplicationForm = document.getElementById('general-application-form');
+        if (generalApplicationForm) {
+            generalApplicationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Validar formulario
+                if (!this.checkValidity()) {
+                    this.reportValidity();
+                    return;
+                }
+
+                // Recoger datos del formulario
+                const fullName = document.getElementById('gen-fullName').value;
+                const city = document.getElementById('gen-city').value;
+                const phone = document.getElementById('gen-phone').value;
+                const email = document.getElementById('gen-email').value;
+                const area = document.getElementById('gen-area').value;
+                const experience = document.getElementById('gen-experience').value;
+                const message = document.getElementById('gen-message').value;
+                const cvFile = document.getElementById('gen-cv').files[0];
+
+                if (!cvFile) {
+                    alert('Por favor adjunte su CV.');
+                    return;
+                }
+
+                // Crear mensaje para WhatsApp
+                let mensajeWhatsApp = `*Nueva aplicación laboral general CEMAPO*%0A%0A`;
+                mensajeWhatsApp += `*Nombre:* ${fullName}%0A`;
+                mensajeWhatsApp += `*Ciudad:* ${city}%0A`;
+                mensajeWhatsApp += `*Teléfono:* ${phone}%0A`;
+                mensajeWhatsApp += `*Email:* ${email}%0A`;
+                mensajeWhatsApp += `*Área de interés:* ${area}%0A`;
+                mensajeWhatsApp += `*Experiencia:* ${experience}%0A`;
+
+                if (message) {
+                    mensajeWhatsApp += `*Mensaje:* ${message}%0A`;
+                }
+
+                mensajeWhatsApp += `%0A*Nota:* El candidato ha adjuntado su CV en el formulario web.`;
+
+                // Abrir WhatsApp con el mensaje
+                window.open(`https://wa.me/593982121145?text=${mensajeWhatsApp}`, '_blank');
+
+                // Limpiar formulario
+                generalApplicationForm.reset();
+                alert('Su aplicación ha sido enviada. Por favor complete el envío en WhatsApp.');
+            });
+        }
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 120, // Ajuste para compensar el header fijo
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
-    </script>
-</Layout>
+    });
+</script>
