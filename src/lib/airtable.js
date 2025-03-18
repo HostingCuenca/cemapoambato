@@ -72,8 +72,8 @@ const AIRTABLE_PERSONAL_TOKEN = import.meta.env.AIRTABLE_PERSONAL_TOKEN;
 
 // IDs de tablas
 const COURSES_TABLE_ID = import.meta.env.AIRTABLE_COURSES_TABLE_ID || 'tblnTchpMxxemcEOi';
-const VACANCIES_TABLE_ID = import.meta.env.AIRTABLE_VACANCIES_TABLE_ID || 'tblVacantesLaborales';
-const APPLICATIONS_TABLE_ID = import.meta.env.AIRTABLE_APPLICATIONS_TABLE_ID || 'tblAplicacionesLaborales';
+const VACANCIES_TABLE_ID = import.meta.env.AIRTABLE_VACANCIES_TABLE_ID || 'tblARj0OGP2u7kG1Q';
+const APPLICATIONS_TABLE_ID = import.meta.env.AIRTABLE_APPLICATIONS_TABLE_ID || 'tblZuka4T5uW3vGhK';
 
 /**
  * Función auxiliar para realizar solicitudes a la API de Airtable
