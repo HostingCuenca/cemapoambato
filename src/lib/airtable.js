@@ -1,66 +1,3 @@
-// // src/lib/airtable.js
-//
-// /**
-//  * Funciones para interactuar con la API de Airtable
-//  */
-//
-// // Constantes de configuración
-// const AIRTABLE_BASE_ID = import.meta.env.AIRTABLE_BASE_ID;
-// const AIRTABLE_PERSONAL_TOKEN = import.meta.env.AIRTABLE_PERSONAL_TOKEN;
-// const AIRTABLE_TABLE_NAME = import.meta.env.AIRTABLE_TABLE_NAME || 'tblnTchpMxxemcEOi';
-//
-// /**
-//  * Obtiene todos los cursos desde Airtable
-//  */
-// export async function getAllCourses() {
-//   try {
-//     // URL para obtener todos los cursos
-//     const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}?maxRecords=100`;
-//
-//     const response = await fetch(url, {
-//       headers: {
-//         'Authorization': `Bearer ${AIRTABLE_PERSONAL_TOKEN}`
-//       }
-//     });
-//
-//     if (!response.ok) {
-//       throw new Error(`Error al obtener cursos: ${response.status}`);
-//     }
-//
-//     const data = await response.json();
-//
-//     // Transformar los registros de Airtable al formato que espera tu aplicación
-//     return data.records.map(record => ({
-//       id: record.id,
-//       title: record.fields['Nombre del Curso'] || 'Sin título',
-//       // Manejar el formato específico de las imágenes en Airtable
-//       imageUrl: record.fields['Imagen'] && record.fields['Imagen'][0] ?
-//                 record.fields['Imagen'][0].url :
-//                 'https://via.placeholder.com/600x400?text=Imagen+no+disponible',
-//       whatsappUrl: record.fields['URL de WhatsApp'] ||
-//                    `https://wa.me/593961870303?text=Hola,%20estoy%20interesado%20en%20el%20curso%20de%20${encodeURIComponent(record.fields['Nombre del Curso'] || 'Sin título')}`
-//     }));
-//   } catch (error) {
-//     console.error('Error al obtener cursos desde Airtable:', error);
-//     // En caso de error, devuelve un array vacío para que tu aplicación no se rompa
-//     return [];
-//   }
-// }
-//
-// /**
-//  * Obtiene solo los cursos destacados
-//  */
-// export async function getFeaturedCourses(limit = 6) {
-//   try {
-//     const allCourses = await getAllCourses();
-//     return allCourses.slice(0, limit);
-//   } catch (error) {
-//     console.error('Error al obtener cursos destacados:', error);
-//     return [];
-//   }
-// }
-
-
 
 /**
  * Funciones para interactuar con la API de Airtable
@@ -74,6 +11,8 @@ const AIRTABLE_PERSONAL_TOKEN = import.meta.env.AIRTABLE_PERSONAL_TOKEN;
 const COURSES_TABLE_ID = import.meta.env.AIRTABLE_COURSES_TABLE_ID || 'tblnTchpMxxemcEOi';
 const VACANCIES_TABLE_ID = import.meta.env.AIRTABLE_VACANCIES_TABLE_ID || 'tblARj0OGP2u7kG1Q';
 const APPLICATIONS_TABLE_ID = import.meta.env.AIRTABLE_APPLICATIONS_TABLE_ID || 'tblZuka4T5uW3vGhK';
+
+const ARTICLES_TABLE_ID = import.meta.env.AIRTABLE_ARTICLES_TABLE_ID || 'tblbpl62ezxFYb2yV';
 
 /**
  * Función auxiliar para realizar solicitudes a la API de Airtable
@@ -117,6 +56,13 @@ async function fetchFromAirtable(tableName, options = {}) {
     console.error('Error al comunicarse con Airtable:', error);
     throw error;
   }
+}
+
+function formatDate(dateString) {
+  if (!dateString) return '';
+
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString('es-ES', options);
 }
 
 /**
@@ -260,6 +206,138 @@ export async function getAllDepartments() {
     return [];
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Obtiene todos los artículos publicados desde Airtable
+ */
+export async function getAllArticles() {
+  try {
+    const data = await fetchFromAirtable(ARTICLES_TABLE_ID, {
+      filterByFormula: "{Estado} = 'Publicado'",
+      sort: [{ field: 'Fecha Publicación', direction: 'desc' }]
+    });
+
+    return data.records.map(record => ({
+      id: record.id,
+      title: record.fields['Título'] || 'Sin título',
+      slug: record.fields['Slug'] || `articulo-${record.id}`, // Fallback para slug
+      summary: record.fields['Resumen'] || 'No hay resumen disponible para este artículo.',
+      content: record.fields['Contenido'] || 'El contenido de este artículo no está disponible en este momento.',
+      imageUrl: record.fields['Imagen'] && record.fields['Imagen'][0] ?
+          record.fields['Imagen'][0].url :
+          '/images/placeholder-article.jpg',
+      category: record.fields['Categoría'] || 'General',
+      author: record.fields['Autor'] || 'Equipo CEMAPO',
+      publishDate: record.fields['Fecha Publicación'] || null,
+      formattedDate: formatDate(record.fields['Fecha Publicación']),
+      featured: record.fields['Destacado'] || false,
+      tags: record.fields['Tags'] || []
+    }));
+  } catch (error) {
+    console.error('Error al obtener artículos desde Airtable:', error);
+    return [];
+  }
+}
+
+/**
+ * Obtiene un artículo específico por su ID
+ */
+export async function getArticleById(articleId) {
+  if (!articleId) return null;
+
+  try {
+    const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${ARTICLES_TABLE_ID}/${articleId}`;
+
+    const response = await fetch(url, {
+      headers: {
+        'Authorization': `Bearer ${AIRTABLE_PERSONAL_TOKEN}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error al obtener artículo: ${response.status}`);
+    }
+
+    const record = await response.json();
+
+    return {
+      id: record.id,
+      title: record.fields['Título'] || 'Sin título',
+      slug: record.fields['Slug'] || `articulo-${record.id}`,
+      summary: record.fields['Resumen'] || 'No hay resumen disponible para este artículo.',
+      content: record.fields['Contenido'] || 'El contenido de este artículo no está disponible en este momento.',
+      imageUrl: record.fields['Imagen'] && record.fields['Imagen'][0] ?
+          record.fields['Imagen'][0].url :
+          '/images/placeholder-article.jpg',
+      category: record.fields['Categoría'] || 'General',
+      author: record.fields['Autor'] || 'Equipo CEMAPO',
+      publishDate: record.fields['Fecha Publicación'] || null,
+      formattedDate: formatDate(record.fields['Fecha Publicación']),
+      featured: record.fields['Destacado'] || false,
+      tags: record.fields['Tags'] || []
+    };
+  } catch (error) {
+    console.error(`Error al obtener artículo con ID ${articleId}:`, error);
+    return null;
+  }
+}
+
+/**
+ * Obtiene un artículo específico por su slug
+ */
+export async function getArticleBySlug(slug) {
+  if (!slug) return null;
+
+  try {
+    const data = await fetchFromAirtable(ARTICLES_TABLE_ID, {
+      filterByFormula: `{Slug} = '${slug}'`,
+      maxRecords: 1
+    });
+
+    if (data.records.length === 0) {
+      return null;
+    }
+
+    const record = data.records[0];
+
+    return {
+      id: record.id,
+      title: record.fields['Título'] || 'Sin título',
+      slug: record.fields['Slug'] || `articulo-${record.id}`,
+      summary: record.fields['Resumen'] || 'No hay resumen disponible para este artículo.',
+      content: record.fields['Contenido'] || 'El contenido de este artículo no está disponible en este momento.',
+      imageUrl: record.fields['Imagen'] && record.fields['Imagen'][0] ?
+          record.fields['Imagen'][0].url :
+          '/images/placeholder-article.jpg',
+      category: record.fields['Categoría'] || 'General',
+      author: record.fields['Autor'] || 'Equipo CEMAPO',
+      publishDate: record.fields['Fecha Publicación'] || null,
+      formattedDate: formatDate(record.fields['Fecha Publicación']),
+      featured: record.fields['Destacado'] || false,
+      tags: record.fields['Tags'] || []
+    };
+  } catch (error) {
+    console.error(`Error al obtener artículo con slug ${slug}:`, error);
+    return null;
+  }
+}
+
+
+
+
 
 /**
  * Para implementaciones futuras: Crear una nueva aplicación laboral

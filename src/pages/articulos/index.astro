@@ -1,0 +1,262 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getAllArticles } from '../../lib/airtable';
+
+// Obtener todos los artículos
+const articles = await getAllArticles();
+
+// Extraer categorías únicas de los artículos
+const categories = [...new Set(articles.map(article => article.category).filter(Boolean))];
+
+// Extraer tags únicos de los artículos
+const allTags = articles.flatMap(article => article.tags);
+const tags = [...new Set(allTags.filter(Boolean))];
+
+// Obtener parámetros de filtrado
+const { searchParams } = Astro.url;
+const categoryFilter = searchParams.get('category');
+const tagFilter = searchParams.get('tag');
+
+// Filtrar artículos por categoría y/o tag si existen parámetros
+let filteredArticles = articles;
+
+if (categoryFilter) {
+    filteredArticles = filteredArticles.filter(article => article.category === categoryFilter);
+}
+
+if (tagFilter) {
+    filteredArticles = filteredArticles.filter(article => article.tags && article.tags.includes(tagFilter));
+}
+---
+
+<Layout
+        title="Artículos | CEMAPO - Conocimiento especializado en Talento Humano"
+        description="Explore nuestros artículos sobre gestión del talento humano, recursos humanos, capacitación y desarrollo organizacional. Contenido actualizado por especialistas."
+>
+    <!-- Encabezado de la página -->
+    <section class="relative py-24 md:py-32 bg-gradient-to-r from-blue-900 to-blue-800 text-white overflow-hidden">
+        <!-- Patrón de fondo -->
+        <div class="absolute inset-0 opacity-15">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="small-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#small-grid)" />
+            </svg>
+        </div>
+
+        <!-- Elemento decorativo -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600 opacity-10 rounded-bl-full"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">Artículos</h1>
+                <p class="text-xl md:text-2xl max-w-2xl mx-auto text-white/90">
+                    Conocimiento especializado en recursos humanos, liderazgo y desarrollo organizacional
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de filtros -->
+    <section class="py-8 bg-gray-50 border-b">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                <!-- Filtro por categoría -->
+                {categories.length > 0 && (
+                        <div>
+                            <label for="categoryFilter" class="block text-sm font-medium text-gray-700 mb-1">Filtrar por categoría</label>
+                            <select
+                                    id="categoryFilter"
+                                    class="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                            >
+                                <option value="">Todas las categorías</option>
+                                {categories.map(cat => (
+                                        <option value={cat} selected={categoryFilter === cat}>{cat}</option>
+                                ))}
+                            </select>
+                        </div>
+                )}
+
+                <!-- Filtro por tag -->
+                {tags.length > 0 && (
+                        <div>
+                            <label for="tagFilter" class="block text-sm font-medium text-gray-700 mb-1">Filtrar por etiqueta</label>
+                            <select
+                                    id="tagFilter"
+                                    class="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                            >
+                                <option value="">Todas las etiquetas</option>
+                                {tags.map(t => (
+                                        <option value={t} selected={tagFilter === t}>{t}</option>
+                                ))}
+                            </select>
+                        </div>
+                )}
+            </div>
+        </div>
+    </section>
+
+    <!-- Listado de artículos -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            {filteredArticles.length > 0 ? (
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {filteredArticles.map(article => (
+                                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                                    <a href={`/articulos/${article.slug}`} class="block">
+                                        <div class="relative h-48 overflow-hidden">
+                                            <img
+                                                    src={article.imageUrl}
+                                                    alt={article.title}
+                                                    class="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
+                                                    onerror="this.onerror=null; this.src='/images/placeholder-article.jpg';"
+                                            />
+                                            <div class="absolute top-4 left-4">
+                                        <span class="inline-block bg-primary-600 text-white px-3 py-1 rounded-md text-sm font-medium">
+                                            {article.category}
+                                        </span>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <div class="p-6">
+                                        <div class="flex items-center text-gray-500 text-sm mb-2">
+                                            <span>{article.formattedDate || 'Sin fecha'}</span>
+                                            {article.author && (
+                                                    <>
+                                                        <span class="mx-2">•</span>
+                                                        <span>{article.author}</span>
+                                                    </>
+                                            )}
+                                        </div>
+
+                                        <a href={`/articulos/${article.slug}`} class="block group">
+                                            <h3 class="text-xl font-semibold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2">
+                                                {article.title}
+                                            </h3>
+                                        </a>
+
+                                        <p class="text-gray-600 line-clamp-3 mb-4">
+                                            {article.summary}
+                                        </p>
+
+                                        {article.tags && article.tags.length > 0 && (
+                                                <div class="flex flex-wrap gap-2 mt-4">
+                                                    {article.tags.slice(0, 3).map(tag => (
+                                                            <a
+                                                                    href={`/articulos?tag=${tag}`}
+                                                                    class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded hover:bg-gray-200 transition-colors"
+                                                            >
+                                                                #{tag}
+                                                            </a>
+                                                    ))}
+                                                    {article.tags.length > 3 && (
+                                                            <span class="text-xs text-gray-500">+{article.tags.length - 3} más</span>
+                                                    )}
+                                                </div>
+                                        )}
+
+                                        <a
+                                                href={`/articulos/${article.slug}`}
+                                                class="inline-flex items-center mt-4 text-primary-600 hover:text-primary-700 font-medium"
+                                        >
+                                            Leer más
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                        ))}
+                    </div>
+            ) : (
+                    <div class="text-center py-12">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2">No se encontraron artículos</h3>
+                        <p class="text-gray-600 mb-6">No hay artículos disponibles con los filtros seleccionados.</p>
+                        <a href="/articulos" class="inline-block bg-primary-600 hover:bg-primary-700 text-white py-2 px-6 rounded-md transition-colors">
+                            Ver todos los artículos
+                        </a>
+                    </div>
+            )}
+        </div>
+    </section>
+
+    <!-- Newsletter / CTA -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-gradient-to-r from-blue-900 to-blue-800 rounded-xl shadow-xl overflow-hidden">
+                <div class="p-8 md:p-12 text-center">
+                    <h2 class="text-3xl font-bold text-white mb-4">Manténgase actualizado</h2>
+                    <p class="text-white/80 mb-6 max-w-2xl mx-auto">
+                        Reciba nuestros últimos artículos y actualizaciones sobre gestión del talento humano directamente en su bandeja de entrada.
+                    </p>
+
+                    <form class="max-w-md mx-auto">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <input
+                                    type="email"
+                                    placeholder="Su correo electrónico"
+                                    class="flex-grow py-3 px-4 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                    required
+                            />
+                            <button
+                                    type="submit"
+                                    class="bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-md transition-colors font-medium"
+                            >
+                                Suscribirse
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<script>
+    // Script para manejar los filtros
+    const categoryFilter = document.getElementById('categoryFilter');
+    const tagFilter = document.getElementById('tagFilter');
+
+    if (categoryFilter) {
+        categoryFilter.addEventListener('change', () => {
+            applyFilters();
+        });
+    }
+
+    if (tagFilter) {
+        tagFilter.addEventListener('change', () => {
+            applyFilters();
+        });
+    }
+
+    function applyFilters() {
+        const category = categoryFilter ? categoryFilter.value : '';
+        const tag = tagFilter ? tagFilter.value : '';
+
+        // Construir la URL con los parámetros de filtrado
+        let url = '/articulos';
+        const params = new URLSearchParams();
+
+        if (category) {
+            params.set('category', category);
+        }
+
+        if (tag) {
+            params.set('tag', tag);
+        }
+
+        if (params.toString()) {
+            url += '?' + params.toString();
+        }
+
+        // Redirigir a la URL con los filtros
+        window.location.href = url;
+    }
+</script>
