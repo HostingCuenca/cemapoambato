@@ -81,7 +81,7 @@ export async function getAllCourses() {
           record.fields['Imagen'][0].url :
           'https://via.placeholder.com/600x400?text=Imagen+no+disponible',
       whatsappUrl: record.fields['URL de WhatsApp'] ||
-          `https://wa.me/593961870303?text=Hola,%20estoy%20interesado%20en%20el%20curso%20de%20${encodeURIComponent(record.fields['Nombre del Curso'] || 'Sin título')}`,
+          `https://wa.me/593982121145?text=Hola,%20estoy%20interesado%20en%20el%20curso%20de%20${encodeURIComponent(record.fields['Nombre del Curso'] || 'Sin título')}`,
       category: record.fields['Categoría'] || 'General'
     }));
   } catch (error) {

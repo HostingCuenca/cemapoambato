@@ -61,11 +61,10 @@ if (tagFilter) {
     </section>
 
     <!-- Sección de filtros -->
-    <section class="py-8 bg-gray-50 border-b">
+    <!-- <section class="py-8 bg-gray-50 border-b">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-                <!-- Filtro por categoría -->
-                {categories.length > 0 && (
+                          {categories.length > 0 && (
                         <div>
                             <label for="categoryFilter" class="block text-sm font-medium text-gray-700 mb-1">Filtrar por categoría</label>
                             <select
@@ -80,7 +79,7 @@ if (tagFilter) {
                         </div>
                 )}
 
-                <!-- Filtro por tag -->
+             
                 {tags.length > 0 && (
                         <div>
                             <label for="tagFilter" class="block text-sm font-medium text-gray-700 mb-1">Filtrar por etiqueta</label>
@@ -97,7 +96,7 @@ if (tagFilter) {
                 )}
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Listado de artículos -->
     <section class="py-16 bg-white">
@@ -189,15 +188,19 @@ if (tagFilter) {
 
     <!-- Newsletter / CTA -->
     <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 max-w-4xl">
+        <div class="container mx-auto px-4 max-w-8xl">
             <div class="bg-gradient-to-r from-blue-900 to-blue-800 rounded-xl shadow-xl overflow-hidden">
                 <div class="p-8 md:p-12 text-center">
-                    <h2 class="text-3xl font-bold text-white mb-4">Manténgase actualizado</h2>
+                    <h2 class="text-3xl font-bold text-white mb-4">Síganos para estar al día</h2>
                     <p class="text-white/80 mb-6 max-w-2xl mx-auto">
-                        Reciba nuestros últimos artículos y actualizaciones sobre gestión del talento humano directamente en su bandeja de entrada.
+                        Manténgase informado sobre las últimas tendencias y estrategias en gestión del talento humano a través de nuestros artículos especializados.
                     </p>
+                    <a href="https://wa.me/593982121145?text=Hola%2C%20he%20leído%20sus%20artículos%20y%20me%20gustaría%20obtener%20más%20información%20relacionada.%20¿Podrían%20ayudarme%3F" class="inline-block bg-white text-blue-900 hover:bg-blue-50 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg" target="_blank" rel="noopener">
+                        Contáctenos vía WhatsApp
+                    </a>
 
-                    <form class="max-w-md mx-auto">
+
+                    <!-- <form class="max-w-md mx-auto">
                         <div class="flex flex-col sm:flex-row gap-3">
                             <input
                                     type="email"
@@ -212,7 +215,7 @@ if (tagFilter) {
                                 Suscribirse
                             </button>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>
