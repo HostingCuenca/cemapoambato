@@ -1,84 +1,84 @@
-/*---*/
-/*// Definir las páginas actuales del sitio*/
-/*const navItems = [*/
-/*    { label: 'Inicio', url: '/' },*/
-/*    {*/
-/*        label: 'Servicios',*/
-/*        url: '/servicios',*/
-/*        hasDropdown: true,*/
-/*        dropdownItems: [*/
-/*            { label: 'Gestión Humana', url: '/cursos' },*/
-/*            { label: 'Educación Continua', url: '/servicios/educacion-continua' },*/
-/*            { label: 'Empresas', url: '/servicios/empresas' },*/
-/*            { label: 'Salud Mental', url: '/servicios/psicologia-clinica' },*/
-/*        ]*/
-/*    },*/
-/*    { label: 'Nosotros', url: '/nosotros' },*/
-/*    // { label: 'Testimonios', url: '/testimonios' },*/
-/*    // { label: 'Blog', url: '/blog' },*/
-/*    { label: 'Gestión Humana', url: '/cursos' },*/
-/*    { label: 'Trabaja con Nosotros', url: '/trabaja-con-nosotros' }*/
-/*];*/
+---
+// Definir las páginas actuales del sitio
+const navItems = [
+    { label: 'Inicio', url: '/' },
+    {
+        label: 'Servicios',
+        url: '/servicios',
+        hasDropdown: true,
+        dropdownItems: [
+            { label: 'Gestión Humana', url: '/cursos' },
+            { label: 'Educación Continua', url: '/servicios/educacion-continua' },
+            { label: 'Empresas', url: '/servicios/empresas' },
+            { label: 'Salud Mental', url: '/servicios/psicologia-clinica' },
+        ]
+    },
+    { label: 'Nosotros', url: '/nosotros' },
+    // { label: 'Testimonios', url: '/testimonios' },
+    // { label: 'Blog', url: '/blog' },
+    { label: 'Gestión Humana', url: '/cursos' },
+    { label: 'Trabaja con Nosotros', url: '/trabaja-con-nosotros' }
+];
 
-/*// Obtener la ruta actual*/
-/*const currentPath = Astro.url.pathname;*/
-/*---*/
+// Obtener la ruta actual
+const currentPath = Astro.url.pathname;
+---
 
-/*<nav class="hidden md:flex items-center space-x-10 mr-10 w-full justify-end">*/
-/*    {navItems.map((item) => (*/
-/*            <div class="relative group">*/
-/*                <a*/
-/*                        href={item.url}*/
-/*                        class:list={[*/
-/*                            'font-medium transition-colors text-sm hover:text-primary-600 inline-flex items-center whitespace-nowrap',*/
-/*                            item.hasDropdown && 'pr-2',*/
-/*                            currentPath === item.url || (item.url !== '/' && currentPath.startsWith(item.url))*/
-/*                                ? 'text-primary-600 font-semibold'*/
-/*                                : 'text-gray-700'*/
-/*                        ]}*/
-/*                >*/
-/*                    {item.label}*/
-/*                    {item.hasDropdown && (*/
-/*                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">*/
-/*                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />*/
-/*                            </svg>*/
-/*                    )}*/
-/*                </a>*/
+<nav class="hidden md:flex items-center space-x-10 mr-10 w-full justify-end">
+    {navItems.map((item) => (
+            <div class="relative group">
+                <a
+                        href={item.url}
+                        class:list={[
+                            'font-medium transition-colors text-sm hover:text-primary-600 inline-flex items-center whitespace-nowrap',
+                            item.hasDropdown && 'pr-2',
+                            currentPath === item.url || (item.url !== '/' && currentPath.startsWith(item.url))
+                                ? 'text-primary-600 font-semibold'
+                                : 'text-gray-700'
+                        ]}
+                >
+                    {item.label}
+                    {item.hasDropdown && (
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                    )}
+                </a>
 
-/*                {item.hasDropdown && (*/
-/*                        <div class="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-md overflow-hidden transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 origin-top-left invisible group-hover:visible z-50">*/
-/*                            <div class="py-2">*/
-/*                                {item.dropdownItems.map((dropdownItem) => (*/
-/*                                        <a*/
-/*                                                href={dropdownItem.url}*/
-/*                                                class:list={[*/
-/*                                                    'block px-4 py-2 text-sm hover:bg-primary-50 transition-colors',*/
-/*                                                    currentPath === dropdownItem.url || currentPath.startsWith(dropdownItem.url)*/
-/*                                                        ? 'text-primary-600 font-semibold'*/
-/*                                                        : 'text-gray-700'*/
-/*                                                ]}*/
-/*                                        >*/
-/*                                            {dropdownItem.label}*/
-/*                                        </a>*/
-/*                                ))}*/
-/*                            </div>*/
-/*                        </div>*/
-/*                )}*/
-/*            </div>*/
-/*    ))}*/
-/*</nav>*/
+                {item.hasDropdown && (
+                        <div class="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-md overflow-hidden transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 origin-top-left invisible group-hover:visible z-50">
+                            <div class="py-2">
+                                {item.dropdownItems.map((dropdownItem) => (
+                                        <a
+                                                href={dropdownItem.url}
+                                                class:list={[
+                                                    'block px-4 py-2 text-sm hover:bg-primary-50 transition-colors',
+                                                    currentPath === dropdownItem.url || currentPath.startsWith(dropdownItem.url)
+                                                        ? 'text-primary-600 font-semibold'
+                                                        : 'text-gray-700'
+                                                ]}
+                                        >
+                                            {dropdownItem.label}
+                                        </a>
+                                ))}
+                            </div>
+                        </div>
+                )}
+            </div>
+    ))}
+</nav>
 
-/*<style>*/
-/*    nav a {*/
-/*        font-family: 'Montserrat', sans-serif;*/
-/*    }*/
+<style>
+    nav a {
+        font-family: 'Montserrat', sans-serif;
+    }
 
-/*    !* Aumentar el tamaño de los elementos del navbar *!*/
-/*    nav {*/
-/*        padding: 1rem 0;*/
-/*    }*/
+    /* Aumentar el tamaño de los elementos del navbar */
+    nav {
+        padding: 1rem 0;
+    }
 
-/*    nav a {*/
-/*        padding: 0.5rem 0;*/
-/*    }*/
-/*</style>*/
+    nav a {
+        padding: 0.5rem 0;
+    }
+</style>

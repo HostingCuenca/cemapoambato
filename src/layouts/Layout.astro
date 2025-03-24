@@ -1,134 +1,3 @@
-
-<!-- -&#45;&#45;-->
-<!--import Header from '../components/layout/Header.astro';-->
-<!--import Footer from '../components/layout/Footer.astro';-->
-<!--import SEOHead from '../components/layout/SEOHead.astro';-->
-
-<!--export interface Props {-->
-<!--    title?: string;-->
-<!--    description?: string;-->
-<!--    ogImage?: string;-->
-<!--    canonicalURL?: string;-->
-<!--    }-->
-
-<!--const {-->
-<!--    title = 'CEMAPO TALENTO HUMANO',-->
-<!--    description = 'Soluciones en gestión de recursos humanos y desarrollo de talento empresarial',-->
-<!--    ogImage = '/assets/images/og-image.jpg',-->
-<!--    canonicalURL = Astro.url.pathname-->
-<!--    } = Astro.props;-->
-<!-- -&#45;&#45;-->
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="es">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8" />-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
-<!--    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />-->
-<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
-<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
-<!--    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">-->
-<!--    &lt;!&ndash; Usar el CDN de Tailwind &ndash;&gt;-->
-<!--    <link href="https://cdn.tailwindcss.com" rel="stylesheet">-->
-
-<!--    <script>-->
-<!--        tailwind.config = {-->
-<!--            theme: {-->
-<!--                extend: {-->
-<!--                    colors: {-->
-<!--                        primary: {-->
-<!--                            50: '#f0f9ff',-->
-<!--                            100: '#e0f2fe',-->
-<!--                            200: '#bae6fd',-->
-<!--                            300: '#7dd3fc',-->
-<!--                            400: '#38bdf8',-->
-<!--                            500: '#0ea5e9',-->
-<!--                            600: '#0284c7',-->
-<!--                            700: '#0369a1',-->
-<!--                            800: '#075985',-->
-<!--                            900: '#0c4a6e',-->
-<!--                            950: '#082f49',-->
-<!--                        },-->
-<!--                        secondary: {-->
-<!--                            50: '#fdf2f8',-->
-<!--                            100: '#fce7f3',-->
-<!--                            200: '#fbcfe8',-->
-<!--                            300: '#f9a8d4',-->
-<!--                            400: '#f472b6',-->
-<!--                            500: '#ec4899',-->
-<!--                            600: '#db2777',-->
-<!--                            700: '#be185d',-->
-<!--                            800: '#9d174d',-->
-<!--                            900: '#831843',-->
-<!--                            950: '#500724',-->
-<!--                        },-->
-<!--                    },-->
-<!--                    fontFamily: {-->
-<!--                        sans: ['Inter', 'sans-serif'],-->
-<!--                        heading: ['Montserrat', 'sans-serif'],-->
-<!--                    },-->
-<!--                }-->
-<!--            }-->
-<!--        }-->
-<!--    </script>-->
-
-<!--    <meta name="generator" content={Astro.generator} />-->
-
-<!--    <SEOHead-->
-<!--            title={title}-->
-<!--            description={description}-->
-<!--            ogImage={ogImage}-->
-<!--            canonicalURL={canonicalURL}-->
-<!--    />-->
-<!--</head>-->
-<!--<body class="flex flex-col min-h-screen bg-gray-50">-->
-<!--<Header />-->
-
-<!--<main class="flex-grow">-->
-<!--    <slot />-->
-<!--</main>-->
-
-<!--<Footer />-->
-
-<!--&lt;!&ndash; Unificamos el comportamiento del menú móvil aquí &ndash;&gt;-->
-<!--<script is:inline>-->
-<!--    // Función para manejar el menú móvil y scroll-->
-<!--    document.addEventListener('DOMContentLoaded', function() {-->
-<!--        // Configurar menú móvil-->
-<!--        const menuButton = document.getElementById('menu-toggle');-->
-<!--        const mobileMenu = document.getElementById('mobile-menu');-->
-
-<!--        if (menuButton && mobileMenu) {-->
-<!--            // Eliminar cualquier evento que ya podría estar adjunto-->
-<!--            const newMenuButton = menuButton.cloneNode(true);-->
-<!--            menuButton.parentNode.replaceChild(newMenuButton, menuButton);-->
-
-<!--            // Adjuntar el evento de clic nuevo-->
-<!--            newMenuButton.addEventListener('click', function() {-->
-<!--                mobileMenu.classList.toggle('hidden');-->
-<!--                console.log('Menú móvil toggled desde Layout');-->
-<!--            });-->
-<!--        } else {-->
-<!--            console.warn('Elementos del menú móvil no encontrados');-->
-<!--        }-->
-
-<!--        // Configurar efecto de scroll en el header-->
-<!--        const header = document.querySelector('header');-->
-<!--        if (header) {-->
-<!--            window.addEventListener('scroll', function() {-->
-<!--                if (window.scrollY > 50) {-->
-<!--                    header.classList.add('scrolled');-->
-<!--                } else {-->
-<!--                    header.classList.remove('scrolled');-->
-<!--                }-->
-<!--            });-->
-<!--        }-->
-<!--    });-->
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->
-
-
 ---
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
@@ -139,14 +8,14 @@ export interface Props {
     description?: string;
     ogImage?: string;
     canonicalURL?: string;
-    }
+}
 
 const {
     title = 'CEMAPO TALENTO HUMANO',
     description = 'Soluciones en gestión de recursos humanos y desarrollo de talento empresarial',
     ogImage = '/assets/images/og-image.jpg',
     canonicalURL = Astro.url.pathname
-    } = Astro.props;
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -246,19 +115,33 @@ const {
             console.warn('Elementos del menú móvil no encontrados');
         }
 
-        // Configurar dropdowns móviles
+        // Configurar dropdowns en móvil - versión corregida
         const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
         mobileDropdownToggles.forEach(toggle => {
-            toggle.addEventListener('click', (e) => {
+            // Eliminar eventos previos para evitar duplicados
+            const newToggle = toggle.cloneNode(true);
+            toggle.parentNode.replaceChild(newToggle, toggle);
+
+            // Agregar el event listener al nuevo elemento
+            newToggle.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
 
                 // Rotar icono
-                toggle.querySelector('svg').classList.toggle('rotate-180');
+                const icon = this.querySelector('svg');
+                if (icon) {
+                    icon.classList.toggle('rotate-180');
+                }
 
-                // Mostrar/ocultar dropdown
-                const dropdown = toggle.closest('.relative').querySelector('.mobile-dropdown');
-                dropdown.classList.toggle('hidden');
+                // Encontrar el dropdown más cercano
+                const parentItem = this.closest('.relative');
+                if (parentItem) {
+                    const dropdown = parentItem.querySelector('.mobile-dropdown');
+                    if (dropdown) {
+                        dropdown.classList.toggle('hidden');
+                    }
+                }
             });
         });
 
