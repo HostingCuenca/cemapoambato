@@ -69,14 +69,14 @@ import Layout from '../../layouts/Layout.astro';
                             Accede a servicios de psicología profesional desde cualquier lugar, con la misma calidad que una sesión presencial pero con mayor flexibilidad y comodidad.
                         </p>
                         <div class="flex flex-wrap gap-3">
-                            <div class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                <span class="text-blue font-medium">Videollamada</span>
+                            <div class="bg-blue-600 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                <span class="text-white font-medium">Videollamada</span>
                             </div>
-                            <div class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                <span class="text-blue font-medium">Chat privado</span>
+                            <div class="bg-blue-600 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                <span class="text-white font-medium">Chat privado</span>
                             </div>
                             <div class="bg-blue-600 px-4 py-2 rounded-lg">
-                                <span class="text-blue font-medium">100% online</span>
+                                <span class="text-white font-medium">100% online</span>
                             </div>
                         </div>
                     </div>
@@ -327,29 +327,32 @@ import Layout from '../../layouts/Layout.astro';
                 <div class="bg-white p-8 rounded-2xl shadow-xl">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
-                            <form class="space-y-6">
+                            <form id="contacto-form" class="space-y-6">
                                 <div>
-                                    <label for="nombre" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
+                                    <label for="nombre" class="block text-gray-700 font-medium mb-2">Nombre completo*</label>
                                     <input type="text" id="nombre" name="nombre" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tu nombre" required />
                                 </div>
                                 <div>
-                                    <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico*</label>
                                     <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="ejemplo@correo.com" required />
                                 </div>
                                 <div>
-                                    <label for="telefono" class="block text-gray-700 font-medium mb-2">Teléfono</label>
-                                    <input type="tel" id="telefono" name="telefono" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tu número de teléfono" />
+                                    <label for="telefono" class="block text-gray-700 font-medium mb-2">Teléfono*</label>
+                                    <input type="tel" id="telefono" name="telefono" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tu número de teléfono" required />
                                 </div>
                                 <div>
-                                    <label for="servicio" class="block text-gray-700 font-medium mb-2">Servicio de interés</label>
-                                    <select id="servicio" name="servicio" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <label for="servicio" class="block text-gray-700 font-medium mb-2">Servicio de interés*</label>
+                                    <select id="servicio" name="servicio" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
                                         <option value="">Selecciona un servicio</option>
                                         <option value="terapia-individual">Terapia Individual</option>
                                         <option value="terapia-empresarial">Psicoterapia para Empresas</option>
                                         <option value="atencion-crisis">Atención en Crisis</option>
                                         <option value="evaluaciones">Evaluaciones Psicológicas</option>
-                                        <!-- <option value="asesoramiento">Asesoramiento Personal</option> -->
                                     </select>
+                                </div>
+                                <div>
+                                    <label for="mensaje" class="block text-gray-700 font-medium mb-2">Mensaje (opcional)</label>
+                                    <textarea id="mensaje" name="mensaje" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Cuéntanos brevemente sobre tu consulta"></textarea>
                                 </div>
                                 <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg transform hover:-translate-y-1">
                                     Solicitar información
@@ -433,3 +436,105 @@ import Layout from '../../layouts/Layout.astro';
         </div>
     </section>
 </Layout>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtener referencias al formulario y elementos relacionados
+        const contactForm = document.querySelector('#contacto form');
+        const nombreInput = document.getElementById('nombre');
+        const emailInput = document.getElementById('email');
+        const telefonoInput = document.getElementById('telefono');
+        const servicioSelect = document.getElementById('servicio');
+        const mensajeInput = document.getElementById('mensaje');
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+
+        // Variable para el estado del formulario
+        let formStatusElement = null;
+
+        // Función para crear o actualizar el elemento de estado del formulario
+        function updateFormStatus(message, isSuccess) {
+            if (!formStatusElement) {
+                formStatusElement = document.createElement('div');
+                formStatusElement.className = 'mt-4 p-3 rounded-lg text-center';
+                contactForm.appendChild(formStatusElement);
+            }
+
+            // Actualizar el mensaje y estilo
+            formStatusElement.textContent = message;
+
+            // Resetear clases para evitar conflictos
+            formStatusElement.className = '';
+
+            // Agregar clases individualmente para evitar el error de espacios en blanco
+            formStatusElement.classList.add('mt-4');
+            formStatusElement.classList.add('p-3');
+            formStatusElement.classList.add('rounded-lg');
+            formStatusElement.classList.add('text-center');
+
+            if (isSuccess === true) {
+                formStatusElement.classList.add('bg-green-100');
+                formStatusElement.classList.add('text-green-800');
+            } else if (isSuccess === false) {
+                formStatusElement.classList.add('bg-red-100');
+                formStatusElement.classList.add('text-red-800');
+            }
+        }
+
+        // Manejar el envío del formulario
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Validar formulario
+            if (!nombreInput.value || !emailInput.value || !telefonoInput.value || !servicioSelect.value) {
+                updateFormStatus('Por favor complete todos los campos requeridos', false);
+                return;
+            }
+
+            // Deshabilitar botón mientras se procesa
+            submitButton.disabled = true;
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.innerHTML = '<svg class="animate-spin h-5 w-5 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
+
+            try {
+                // Preparar datos
+                const formData = {
+                    nombre: nombreInput.value,
+                    email: emailInput.value,
+                    telefono: telefonoInput.value,
+                    servicio: servicioSelect.value,
+                    mensaje: mensajeInput ? mensajeInput.value : ''
+                };
+
+                // Enviar solicitud al endpoint
+                const response = await fetch('/api/submit-psicologia', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(result.message || 'Error al enviar la solicitud');
+                }
+
+                // Mostrar mensaje de éxito
+                updateFormStatus('¡Gracias! Recibimos tu solicitud y nos pondremos en contacto contigo muy pronto.', true);
+
+                // Limpiar formulario
+                contactForm.reset();
+
+            } catch (error) {
+                console.error('Error al enviar solicitud:', error);
+                updateFormStatus(`Error: ${error.message || 'No se pudo enviar la solicitud. Intenta de nuevo más tarde.'}`, false);
+            } finally {
+                // Restaurar botón
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }
+        });
+    });
+</script>
