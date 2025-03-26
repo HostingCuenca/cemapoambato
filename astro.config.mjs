@@ -1,10 +1,10 @@
-// @ts-check
+// astro.config.mjs
 import { defineConfig } from 'astro/config';
-
 import tailwind from '@astrojs/tailwind';
+import vercel from '@astrojs/vercel/serverless';
 
-// https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  output: 'static', // Changed from default 'static' to 'hybrid'
+  output: 'server',
+  adapter: vercel()
 });
