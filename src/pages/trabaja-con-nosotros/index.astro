@@ -578,7 +578,7 @@ function formatDate(dateString) {
                                         formData.append('isGeneral', 'false');
 
                                         // Enviar datos al endpoint
-                                        const response = await fetch('/api/submit-application', {
+                                        const response = await fetch('http://cemapoedu.ec.softlatam.com/api/submit-application', {
                                             method: 'POST',
                                             body: formData
                                         });
