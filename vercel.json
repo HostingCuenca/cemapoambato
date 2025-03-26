@@ -1,11 +1,11 @@
 {
-    "version": 2,
-    "buildCommand": "npm run build",
-    "outputDirectory": ".vercel/output",
-    "framework": "astro",
-    "functions": {
-      "**/*.func/**": {
-        "runtime": "nodejs18.x"
-      }
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": ".vercel/output",
+  "framework": "astro",
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "@vercel/node@2.15.2"
     }
   }
+}
