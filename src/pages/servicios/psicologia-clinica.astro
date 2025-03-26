@@ -406,7 +406,7 @@ import Layout from '../../layouts/Layout.astro';
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Obtener referencias al formulario y elementos relacionados
-        const contactForm = document.querySelector('#contacto form');
+        const contactForm = document.querySelector('#contacto-form');
         const nombreInput = document.getElementById('nombre');
         const emailInput = document.getElementById('email');
         const telefonoInput = document.getElementById('telefono');
@@ -447,13 +447,15 @@ import Layout from '../../layouts/Layout.astro';
         }
 
         // Manejar el envío del formulario
-        contactForm.addEventListener('submit', async function(e) {
+        contactForm.addEventListener('submit', function(e) {
+            // Detener INMEDIATAMENTE el comportamiento predeterminado
             e.preventDefault();
+            e.stopPropagation(); // Evitar que el evento se propague
 
             // Validar formulario
             if (!nombreInput.value || !emailInput.value || !telefonoInput.value || !servicioSelect.value) {
                 updateFormStatus('Por favor complete todos los campos requeridos', false);
-                return;
+                return false; // Asegurarse de que la función termina aquí
             }
 
             // Deshabilitar botón mientras se procesa
@@ -461,45 +463,64 @@ import Layout from '../../layouts/Layout.astro';
             const originalButtonText = submitButton.innerHTML;
             submitButton.innerHTML = '<svg class="animate-spin h-5 w-5 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
 
-            try {
-                // Preparar datos
-                const formData = {
-                    nombre: nombreInput.value,
-                    email: emailInput.value,
-                    telefono: telefonoInput.value,
-                    servicio: servicioSelect.value,
-                    mensaje: mensajeInput ? mensajeInput.value : ''
-                };
+            // Preparar datos
+            const formData = {
+                nombre: nombreInput.value,
+                email: emailInput.value,
+                telefono: telefonoInput.value,
+                servicio: servicioSelect.value,
+                mensaje: mensajeInput ? mensajeInput.value : ''
+            };
 
-                // Enviar solicitud al endpoint
-                const response = await fetch('http://cemapoedu.ec.softlatam.com/api/submit-psicologia', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
+            // Usar fetch con promesas
+            fetch('http://cemapoedu.ec.softlatam.com/api/submit-psicologia', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error en la respuesta del servidor');
+                    }
+                    return response.json();
+                })
+                .then(result => {
+                    // Mostrar mensaje de éxito
+                    updateFormStatus('¡Gracias! Recibimos tu solicitud y nos pondremos en contacto contigo muy pronto.', true);
+                    // Limpiar formulario
+                    contactForm.reset();
+                })
+                .catch(error => {
+                    console.error('Error al enviar solicitud:', error);
+                    updateFormStatus(`Error: No se pudo enviar la solicitud. Intenta de nuevo más tarde.`, false);
+                })
+                .finally(() => {
+                    // Restaurar botón
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonText;
                 });
 
-                const result = await response.json();
+            // Retornar false para asegurarnos de que no se procese el submit del formulario
+            return false;
+        });
 
-                if (!response.ok) {
-                    throw new Error(result.message || 'Error al enviar la solicitud');
+        // Opcional: Añadir validaciones en tiempo real para los campos
+        [nombreInput, emailInput, telefonoInput, servicioSelect].forEach(input => {
+            input.addEventListener('blur', function() {
+                if (!this.value && this.hasAttribute('required')) {
+                    this.classList.add('border-red-500');
+                } else {
+                    this.classList.remove('border-red-500');
                 }
+            });
 
-                // Mostrar mensaje de éxito
-                updateFormStatus('¡Gracias! Recibimos tu solicitud y nos pondremos en contacto contigo muy pronto.', true);
-
-                // Limpiar formulario
-                contactForm.reset();
-
-            } catch (error) {
-                console.error('Error al enviar solicitud:', error);
-                updateFormStatus(`Error: ${error.message || 'No se pudo enviar la solicitud. Intenta de nuevo más tarde.'}`, false);
-            } finally {
-                // Restaurar botón
-                submitButton.disabled = false;
-                submitButton.innerHTML = originalButtonText;
-            }
+            input.addEventListener('input', function() {
+                if (this.value) {
+                    this.classList.remove('border-red-500');
+                }
+            });
         });
     });
 </script>
