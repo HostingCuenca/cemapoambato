@@ -156,14 +156,22 @@
 
             console.log('Datos del formulario preparados', formData);
 
-            // Usar fetch con promesas
-            fetch('http://cemapoedu.ec.softlatam.com/api/submit-psicologia', {
+
+            fetch('https://corsproxy.io/?http://cemapoedu.ec.softlatam.com/api/submit-psicologia', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formData)
             })
+            // // Usar fetch con promesas
+            // fetch('http://cemapoedu.ec.softlatam.com/api/submit-psicologia', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify(formData)
+            // })
                 .then(response => {
                     console.log('Respuesta recibida', response);
                     if (!response.ok) {
