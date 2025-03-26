@@ -1,297 +1,252 @@
 ---
+// Puedes agregar propiedades aquí si es necesario
 ---
 
+<div class="w-full px-4 sm:px-6 md:max-w-4xl md:mx-auto">
+  <div class="bg-white p-4 sm:p-8 rounded-2xl shadow-xl">
 
 
-<section class="py-20 bg-gradient-to-r from-white to-blue-50">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-20">
-      <span class="inline-block py-1 px-4 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-4">NUESTRAS VENTAJAS</span>
-      <h2 class="text-5xl font-heading font-bold text-blue-900 mb-6">¿Por qué elegir CEMAPO?</h2>
-      <p class="text-2xl text-gray-700 max-w-6xl mx-auto">
-        Nos distinguimos por nuestro enfoque integral y personalizado. En <span class="font-semibold text-primary-600">CEMAPO</span> transformamos el potencial humano en resultados excepcionales, combinando teoría actualizada con práctica inmediata. Nuestro equipo de profesionales altamente calificados acompaña personalmente a cada estudiante, garantizando una formación que impacta directamente en su desempeño profesional.
-      </p>
-    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-8xl mx-auto">
-      <!-- Ventaja 1: Profesionales certificados -->
-      <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl overflow-hidden">
-        <div class="h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80"
-               alt="Profesionales certificados"
-               class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500">
-        </div>
-        <div class="flex items-center mb-6">
-          <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-            </svg>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <div>
+        <form id="contacto-form" class="space-y-6">
+          <div>
+            <label for="nombre" class="block text-gray-700 font-medium mb-2">Nombre completo*</label>
+            <input type="text" id="nombre" name="nombre" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tu nombre" required />
           </div>
-          <h3 class="text-2xl font-bold text-blue-900">Profesionales certificados</h3>
-        </div>
-        <p class="text-lg text-gray-700">
-          Contamos con un equipo de especialistas con amplia experiencia y certificaciones en sus respectivas áreas.
-        </p>
+          <div>
+            <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico*</label>
+            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="ejemplo@correo.com" required />
+          </div>
+          <div>
+            <label for="telefono" class="block text-gray-700 font-medium mb-2">Teléfono*</label>
+            <input type="tel" id="telefono" name="telefono" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tu número de teléfono" required />
+          </div>
+          <div>
+            <label for="servicio" class="block text-gray-700 font-medium mb-2">Servicio de interés*</label>
+            <select id="servicio" name="servicio" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+              <option value="">Selecciona un servicio</option>
+              <option value="terapia-individual">Terapia Individual</option>
+              <option value="terapia-empresarial">Psicoterapia para Empresas</option>
+              <option value="atencion-crisis">Atención en Crisis</option>
+              <option value="evaluaciones">Evaluaciones Psicológicas</option>
+            </select>
+          </div>
+          <div>
+            <label for="mensaje" class="block text-gray-700 font-medium mb-2">Mensaje (opcional)</label>
+            <textarea id="mensaje" name="mensaje" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Cuéntanos brevemente sobre tu consulta"></textarea>
+          </div>
+          <button type="submit" id="submit-button" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+            Solicitar información
+          </button>
+          <div id="form-status" class="mt-4 p-3 rounded-lg text-center" style="display: none;"></div>
+        </form>
       </div>
+      <div class="bg-blue-600 rounded-xl p-6 sm:p-8 text-white flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl sm:text-2xl font-bold mb-4">Contacto directo</h3>
 
-      <!-- Ventaja 2: Metodologías innovadoras -->
-      <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl overflow-hidden">
-        <div class="h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-               alt="Metodologías innovadoras"
-               class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500">
-        </div>
-        <div class="flex items-center mb-6">
-          <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-blue-900">Metodologías innovadoras</h3>
-        </div>
-        <p class="text-lg text-gray-700">
-          Aplicamos técnicas actualizadas y metodologías probadas que garantizan resultados óptimos para nuestros clientes.
-        </p>
-      </div>
-
-      <!-- Ventaja 3: Enfoque práctico -->
-      <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl overflow-hidden">
-        <div class="h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-               alt="Enfoque práctico"
-               class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500">
-        </div>
-        <div class="flex items-center mb-6">
-          <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-blue-900">Enfoque práctico</h3>
-        </div>
-        <p class="text-lg text-gray-700">
-          Aprendizaje aplicable inmediatamente a tu carrera, combinando teoría con ejercicios y casos reales para maximizar tu desarrollo profesional.
-        </p>
-      </div>
-
-      <!-- Ventaja 4: Flexibilidad horaria -->
-      <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl overflow-hidden">
-        <div class="h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-               alt="Flexibilidad horaria"
-               class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500">
-        </div>
-        <div class="flex items-center mb-6">
-          <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-blue-900">Flexibilidad horaria</h3>
-        </div>
-        <p class="text-lg text-gray-700">
-          Programas adaptados a tu disponibilidad de tiempo, permitiéndote equilibrar tus responsabilidades personales y profesionales mientras continúas tu formación.
-        </p>
-      </div>
-    </div>
-
-    <!-- CTA Button -->
-    <div class="text-center mt-16 pt-16">
-      <a href="https://wa.me/593982121145?text=Hola, estoy interesado en conocer más sobre los servicios de CEMAPO. ¿Podrían brindarme información personalizada?"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="inline-flex items-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white text-lg font-medium rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-        Contáctanos por WhatsApp
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Sección Metodología con diseño que complementa la anterior -->
-<section id="metodologia" class="py-16 bg-gray-50">
-
-  <div class="container mx-auto px-4">
-    <!-- Metodología con diseño moderno y profesional -->
-    <div class="relative rounded-2xl overflow-hidden bg-primary-700 p-8 lg:p-12 shadow-xl mb-16">
-      <!--<div class="absolute inset-0 opacity-10">-->
-      <!--  <svg width="100%" height="100%">-->
-      <!--    <defs>-->
-      <!--      <pattern id="dotGrid" width="20" height="20" patternUnits="userSpaceOnUse">-->
-      <!--        <circle cx="10" cy="10" r="1" fill="white" />-->
-      <!--      </pattern>-->
-      <!--    </defs>-->
-      <!--    <rect width="100%" height="100%" fill="url(#dotGrid)" />-->
-      <!--  </svg>-->
-      <!--</div>-->
-
-      <div class="relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-4">
-            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Nuestra Metodología</h3>
-            <p class="text-white/90 mb-6 text-base leading-relaxed">
-              Combinamos teoría y práctica en un enfoque integral que facilita la aplicación inmediata del conocimiento. Trabajamos con expertos en cada área y utilizamos tecnologías educativas de vanguardia.
-            </p>
-          </div>
-
-          <div class="lg:col-span-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 metodologia-cards">
-              <!-- Paso 1 -->
-              <div class="bg-white/10 rounded-xl p-5 border border-white/20 transform transition-all duration-300 hover:translate-y-(-4px) hover:shadow-lg">
-                <div class="w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center mb-4 text-white font-bold text-xl border border-white/30">1</div>
-                <h4 class="text-white font-semibold text-lg mb-2">Diagnóstico</h4>
-                <p class="text-white/80 text-sm">Evaluamos necesidades específicas y creamos soluciones personalizadas para cada cliente.</p>
-              </div>
-
-              <!-- Paso 2 -->
-              <div class="bg-white/10 rounded-xl p-5 border border-white/20 transform transition-all duration-300 hover:translate-y-(-4px) hover:shadow-lg">
-                <div class="w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center mb-4 text-white font-bold text-xl border border-white/30">2</div>
-                <h4 class="text-white font-semibold text-lg mb-2">Implementación</h4>
-                <p class="text-white/80 text-sm">Desarrollamos programas con herramientas innovadoras y metodologías prácticas.</p>
-              </div>
-
-              <!-- Paso 3 -->
-              <div class="bg-white/10 rounded-xl p-5 border border-white/20 transform transition-all duration-300 hover:translate-y-(-4px) hover:shadow-lg">
-                <div class="w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center mb-4 text-white font-bold text-xl border border-white/30">3</div>
-                <h4 class="text-white font-semibold text-lg mb-2">Seguimiento</h4>
-                <p class="text-white/80 text-sm">Evaluamos resultados y brindamos acompañamiento continuo para garantizar el éxito.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Destacado adicional con estadísticas - Diseño de tarjetas moderno -->
-    <div class="grid grid-cols-1 md:grid-cols-1 gap-8 mt-16">
-      <div class="bg-white border border-gray-200 rounded-xl p-6 md:p-8 overflow-hidden relative shadow-md hover:shadow-xl transition-all duration-300">
-        <div class="absolute top-0 right-0 w-40 h-40 bg-primary-100 rounded-full transform translate-x-1/3 -translate-y-1/3 opacity-50"></div>
-
-        <div class="relative z-10 text-center">
-          <h1 class="text-xl font-bold text-gray-800 mb-4">Nuestro Impacto</h1>
-          <p class="text-gray-600 mb-6 text-lg">
-            En CEMAPO transformamos el potencial humano en resultados excepcionales con metodologías prácticas y acompañamiento personalizado.
+          <p class="mb-6 sm:mb-8">
+            También puedes contactarnos directamente a través de WhatsApp o correo electrónico para una respuesta más rápida.
           </p>
 
-          <div class="grid grid-cols-2 gap-4">
-            <div class="text-center p-4 bg-primary-50 rounded-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md border border-primary-100">
-              <span class="text-3xl font-bold text-primary-600 block mb-1">Empresas</span>
-              <span class="text-sm text-gray-600">Nacionales e Internacionales</span>
+          <div class="space-y-4 mb-6 sm:mb-8">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-10 w-10 bg-white/20 rounded-full flex items-center justify-center mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold">Email</h4>
+                <a href="mailto:psicologia@cemapoedu.ec" class="text-white/90 hover:text-white transition-colors">psicologia@cemapoedu.ec</a>
+              </div>
             </div>
-            <div class="text-center p-4 bg-primary-50 rounded-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md border border-primary-100">
-              <span class="text-3xl font-bold text-primary-600 block mb-1">+850</span>
-              <span class="text-sm text-gray-600">Profesionales formados</span>
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-10 w-10 bg-white/20 rounded-full flex items-center justify-center mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold">Teléfono / WhatsApp</h4>
+                <a href="tel:+593982121145" class="text-white/90 hover:text-white transition-colors">+593 98 212 1145</a>
+              </div>
             </div>
           </div>
+
+          <a href="https://wa.me/593982121145" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            Contactar por WhatsApp
+          </a>
         </div>
       </div>
-
     </div>
   </div>
-</section>
+</div>
 
+<script is:inline>
+  // Esperar a que el DOM esté completamente cargado
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM cargado completamente - Inicializando formulario');
 
+    // Obtener referencias a los elementos del formulario
+    const contactForm = document.getElementById('contacto-form');
+    const nombreInput = document.getElementById('nombre');
+    const emailInput = document.getElementById('email');
+    const telefonoInput = document.getElementById('telefono');
+    const servicioSelect = document.getElementById('servicio');
+    const mensajeInput = document.getElementById('mensaje');
+    const submitButton = document.getElementById('submit-button');
+    const formStatus = document.getElementById('form-status');
 
+    // Asegurarnos de que todos los elementos existen
+    if (!contactForm || !nombreInput || !emailInput || !telefonoInput || !servicioSelect || !submitButton || !formStatus) {
+      console.error('No se pudieron encontrar todos los elementos del formulario');
+      return;
+    }
 
+    console.log('Elementos del formulario encontrados correctamente');
 
+    // Función para actualizar el estado del formulario
+    function updateFormStatus(message, isSuccess) {
+      formStatus.textContent = message;
+      formStatus.style.display = 'block';
 
-  <style>
-    .text-shadow {
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      // Resetear clases
+      formStatus.className = 'mt-4 p-3 rounded-lg text-center';
+
+      if (isSuccess === true) {
+        formStatus.classList.add('bg-green-100');
+        formStatus.classList.add('text-green-800');
+      } else if (isSuccess === false) {
+        formStatus.classList.add('bg-red-100');
+        formStatus.classList.add('text-red-800');
+      }
     }
-    
-    @keyframes pulse {
-      0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); }
-      50% { box-shadow: 0 0 20px rgba(47, 212, 242, 0.5); }
-      100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); }
-    }
-    
-    .pulse-animation {
-      animation: pulse 1.5s ease-in-out;
-    }
-    
-    @keyframes wave {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(1px); }
-      100% { transform: translateY(0); }
-    }
-    
-    /* Efecto ondulante para los elementos del fondo */
-    svg path:nth-child(1) {
-      animation: wave 15s ease-in-out infinite;
-    }
-    
-    svg path:nth-child(2) {
-      animation: wave 12s ease-in-out infinite;
-      animation-delay: -5s;
-    }
-    
-    svg path:nth-child(3) {
-      animation: wave 10s ease-in-out infinite;
-      animation-delay: -2s;
-    }
-    
-    /* Efecto de brillo para elementos con hover */
-    .backdrop-blur-xl:hover {
-      transition: all 0.3s ease;
-    }
-  </style>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Animación de contadores
-      const counters = document.querySelectorAll('.stat-counter');
-      const options = {
-        threshold: 0.5
+
+    // Manejar el envío del formulario
+    contactForm.addEventListener('submit', function(e) {
+      console.log('Evento submit capturado');
+
+      // Detener INMEDIATAMENTE el comportamiento predeterminado
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Validar formulario
+      if (!nombreInput.value || !emailInput.value || !telefonoInput.value || !servicioSelect.value) {
+        updateFormStatus('Por favor complete todos los campos requeridos', false);
+        return false;
+      }
+
+      console.log('Validación del formulario exitosa - Preparando para enviar');
+
+      // Deshabilitar botón mientras se procesa
+      submitButton.disabled = true;
+      const originalButtonText = submitButton.innerHTML;
+      submitButton.innerHTML = '<svg class="animate-spin h-5 w-5 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
+
+      // Preparar datos
+      const formData = {
+        nombre: nombreInput.value,
+        email: emailInput.value,
+        telefono: telefonoInput.value,
+        servicio: servicioSelect.value,
+        mensaje: mensajeInput ? mensajeInput.value : ''
       };
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const counter = entry.target;
-            const target = parseInt(counter.getAttribute('data-target'));
-            let count = 0;
-            const duration = 2000; // ms
-            const frameDuration = 1000 / 60; // 60fps
-            const totalFrames = Math.round(duration / frameDuration);
-            const increment = target / totalFrames;
-            
-            const timer = setInterval(() => {
-              count += increment;
-              
-              if (count >= target) {
-                counter.textContent = target;
-                clearInterval(timer);
-              } else {
-                counter.textContent = Math.floor(count);
-              }
-            }, frameDuration);
-            
-            observer.unobserve(counter);
-          }
-        });
-      }, options);
-      
-      counters.forEach(counter => {
-        observer.observe(counter);
-      });
 
-      
-      // Efecto de pulso para elementos destacados
-      const addPulseEffect = () => {
-        const elements = document.querySelectorAll('.shadow-[0_0_15px_rgba(255,255,255,0.3)]');
-        elements.forEach(el => {
-          el.classList.add('pulse-animation');
-          setTimeout(() => {
-            el.classList.remove('pulse-animation');
-          }, 1500);
-        });
-        
-        setTimeout(addPulseEffect, 5000);
-      };
-      
-      // Iniciar el efecto de pulso después de 3 segundos
-      setTimeout(addPulseEffect, 3000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      console.log('Datos del formulario preparados', formData);
+// https://corsproxy.io/?url=https://example.com
+
+      fetch('https://corsproxy.io/?key=89253a6e&url=http://cemapoedu.ec.softlatam.com/api/submit-psicologia\n', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+          // // Usar fetch con promesas
+          // fetch('http://cemapoedu.ec.softlatam.com/api/submit-psicologia', {
+          //     method: 'POST',
+          //     headers: {
+          //         'Content-Type': 'application/json'
+          //     },
+          //     body: JSON.stringify(formData)
+          .then(response => {
+            console.log('Respuesta recibida', response);
+            if (!response.ok) {
+              throw new Error('Error en la respuesta del servidor');
+            }
+            return response.json();
+          })
+          .then(result => {
+            console.log('Datos procesados correctamente', result);
+            // Mostrar mensaje de éxito
+            updateFormStatus('¡Gracias! Recibimos tu solicitud y nos pondremos en contacto contigo muy pronto.', true);
+            // Limpiar formulario
+            contactForm.reset();
+          })
+          .catch(error => {
+            console.error('Error al enviar solicitud:', error);
+            updateFormStatus(`Error: No se pudo enviar la solicitud. Intenta de nuevo más tarde.`, false);
+          })
+          .finally(() => {
+            // Restaurar botón
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonText;
+          });
+
+// Retornar false para asegurarnos de que no se procese el submit del formulario
+      return false;
     });
+
+// Opcional: Validaciones en tiempo real
+    nombreInput.addEventListener('blur', function() {
+      if (!this.value) {
+        this.classList.add('border-red-500');
+      } else {
+        this.classList.remove('border-red-500');
+      }
+    });
+
+    emailInput.addEventListener('blur', function() {
+      if (!this.value) {
+        this.classList.add('border-red-500');
+      } else {
+        this.classList.remove('border-red-500');
+      }
+    });
+
+    telefonoInput.addEventListener('blur', function() {
+      if (!this.value) {
+        this.classList.add('border-red-500');
+      } else {
+        this.classList.remove('border-red-500');
+      }
+    });
+
+    servicioSelect.addEventListener('change', function() {
+      if (!this.value) {
+        this.classList.add('border-red-500');
+      } else {
+        this.classList.remove('border-red-500');
+      }
+    });
+  });
+</script>
