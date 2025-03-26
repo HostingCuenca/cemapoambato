@@ -4,7 +4,7 @@
   "outputDirectory": ".vercel/output",
   "framework": "astro",
   "functions": {
-    "api/**/*.js": {
+    "pages/api/**/*.js": {
       "runtime": "@vercel/node@2.15.2"
     }
   }
