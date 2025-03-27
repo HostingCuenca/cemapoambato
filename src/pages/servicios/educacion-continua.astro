@@ -470,7 +470,7 @@ import Layout from '../../layouts/Layout.astro';
 </Layout>
 
 <!-- Script corregido para los CTAs de WhatsApp -->
-<script>
+<script is:inline>
 document.addEventListener('DOMContentLoaded', function() {
     // 1. Manejar el botón de WhatsApp directo (sin formulario)
     const whatsappDirectBtn = document.getElementById('whatsappDirectBtn');
