@@ -31,41 +31,113 @@ const relatedArticles = allArticles
     .slice(0, 3);
 
 // Función para formatear el contenido en HTML
+// Función para formatear el contenido en HTML
 function formatContentToHtml(content) {
     if (!content) return '';
 
-    // Dividir el contenido en párrafos por saltos de línea dobles
+    // Normalizar saltos de línea
+    content = content.replace(/\r\n/g, '\n');
+
+    // Dividir el contenido en párrafos (grupos separados por líneas en blanco)
     const paragraphs = content.split(/\n\s*\n/);
 
-    // Convertir cada párrafo a HTML
-    return paragraphs.map(paragraph => {
-        // Si el párrafo comienza con un número y un punto, tratarlo como título de sección
-        if (/^\d+\.\s/.test(paragraph)) {
-            const title = paragraph.split('\n')[0];
-            const rest = paragraph.split('\n').slice(1).join('\n');
+    let html = '';
 
-            return `<h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">${title}</h2>
-              <p class="mb-4 text-gray-700">${rest}</p>`;
+    for (let i = 0; i < paragraphs.length; i++) {
+        const paragraph = paragraphs[i].trim();
+
+        if (paragraph === '') continue;
+
+        // Dividir el párrafo en líneas para analizar su estructura
+        const lines = paragraph.split('\n');
+
+        // Si la primera línea parece un título numerado (1. Título)
+        if (/^\d+\.\s+[A-Z]/.test(lines[0])) {
+            html += `<h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">${lines[0]}</h2>`;
+
+            // Procesar el resto de las líneas del párrafo si existen
+            if (lines.length > 1) {
+                const remainingContent = lines.slice(1).join('\n');
+                // Verificar si el contenido restante contiene elementos de lista
+                if (remainingContent.match(/^[\-\*\•]/m)) {
+                    html += processListContent(remainingContent);
+                } else {
+                    html += `<p class="mb-4 text-gray-700">${remainingContent}</p>`;
+                }
+            }
+            continue;
         }
 
-        // Si comienza con un asterisco o punto, convertirlo en una lista
-        if (paragraph.includes('\n•') || paragraph.includes('\n*')) {
-            const items = paragraph.split(/\n\s*[\•\*]\s*/);
+        // Detectar Conclusión/Resumen como párrafo independiente
+        if (lines[0].toLowerCase().startsWith('conclusión') || lines[0].toLowerCase().startsWith('conclusion')) {
+            html += `<h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Conclusión</h2>`;
 
-            return `<ul class="list-disc pl-5 mb-4 text-gray-700">
-                ${items.filter(item => item.trim()).map(item => `<li class="mb-2">${item.trim()}</li>`).join('')}
-              </ul>`;
+            // Procesar el resto de las líneas del párrafo si existen
+            if (lines.length > 1) {
+                html += `<p class="mb-4 text-gray-700">${lines.slice(1).join(' ')}</p>`;
+            }
+            continue;
         }
 
-        // Buscar si hay un título (podría ser la conclusión)
-        if (paragraph.toLowerCase().includes('conclusión')) {
-            return `<h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Conclusión</h2>
-              <p class="mb-4 text-gray-700">${paragraph.replace(/conclusión/i, '')}</p>`;
+        // Verificar si el párrafo contiene elementos de lista
+        if (paragraph.match(/^[\-\*\•]/m)) {
+            html += processListContent(paragraph);
+            continue;
         }
 
         // Párrafo normal
-        return `<p class="mb-4 text-gray-700">${paragraph}</p>`;
-    }).join('');
+        html += `<p class="mb-4 text-gray-700">${paragraph}</p>`;
+    }
+
+    return html;
+}
+
+// Función auxiliar para procesar contenido con listas
+function processListContent(content) {
+    const lines = content.split('\n');
+    let html = '<ul class="list-disc pl-5 mb-6 text-gray-700">';
+    let inList = false;
+    let buffer = '';
+
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+
+        // Si es una línea de lista
+        if (line.startsWith('-') || line.startsWith('•') || line.startsWith('*')) {
+            // Si ya teníamos contenido en el buffer, añadirlo como párrafo antes de la lista
+            if (!inList && buffer) {
+                html = `<p class="mb-4 text-gray-700">${buffer}</p>` + html;
+                buffer = '';
+            }
+
+            inList = true;
+            // Añadir elemento de lista, quitando el marcador inicial
+            const listContent = line.substring(1).trim();
+            html += `<li class="mb-2">${listContent}</li>`;
+        } else if (inList) {
+            // Si ya no estamos en un elemento de lista pero estamos procesando una lista,
+            // agregar esta línea al último elemento de la lista (asumiendo que es continuación)
+            // Esto maneja líneas que continúan un elemento de lista
+            html = html.substring(0, html.lastIndexOf('</li>'));
+            html += ` ${line}</li>`;
+        } else {
+            // Acumular líneas que no son de lista en el buffer
+            if (buffer) {
+                buffer += ' ' + line;
+            } else {
+                buffer = line;
+            }
+        }
+    }
+
+    html += '</ul>';
+
+    // Si quedó contenido en el buffer y no entramos a la lista, añadirlo como párrafo
+    if (!inList && buffer) {
+        html = `<p class="mb-4 text-gray-700">${buffer}</p>`;
+    }
+
+    return html;
 }
 
 // Contenido HTML formateado
@@ -181,7 +253,7 @@ const formattedContent = formatContentToHtml(article.content);
                                 </div>
                                 <div class="ml-4">
                                     <div class="text-lg font-semibold text-gray-900">{article.author}</div>
-                                    <div class="text-gray-600">Especialistas en Talento Humano</div>
+                                    <div class="text-gray-600">Experto en Talento Humano</div>
                                 </div>
                             </div>
                         </div>
