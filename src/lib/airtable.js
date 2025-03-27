@@ -208,18 +208,6 @@ export async function getAllDepartments() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * Obtiene todos los artículos publicados desde Airtable
  */

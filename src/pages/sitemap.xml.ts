@@ -1,14 +1,13 @@
----
 // src/pages/sitemap.xml.ts
 import type { APIRoute } from 'astro';
-import { getAllArticles } from '../lib/airtable'; // Asegúrate que esta ruta sea correcta
+import { getAllArticles } from '../lib/airtable';
 
 export const GET: APIRoute = async ({ site }) => {
     if (!site) {
         return new Response('Configuración del sitio no encontrada', { status: 500 });
     }
 
-    // Define las páginas estáticas del sitio (obtenidas del menú de navegación)
+    // Define las páginas estáticas del sitio
     const staticPages = [
         { url: '/' },
         { url: '/servicios' },
@@ -24,7 +23,7 @@ export const GET: APIRoute = async ({ site }) => {
     let dynamicArticles = [];
     try {
         const articles = await getAllArticles();
-        dynamicArticles = articles.map(article => ({
+        dynamicArticles = articles.map((article: any) => ({
             url: `/articulos/${article.slug}`,
             lastmod: article.updatedAt || article.createdAt || new Date().toISOString().split('T')[0]
         }));
@@ -36,7 +35,7 @@ export const GET: APIRoute = async ({ site }) => {
     const allPages = [
         ...staticPages.map(page => ({
             url: page.url,
-            lastmod: new Date().toISOString().split('T')[0] // Fecha actual como lastmod para páginas estáticas
+            lastmod: new Date().toISOString().split('T')[0]
         })),
         ...dynamicArticles
     ];
