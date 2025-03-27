@@ -68,9 +68,43 @@ function formatDate(dateString) {
 /**
  * Obtiene todos los cursos desde Airtable
  */
+// export async function getAllCourses() {
+//   try {
+//     const data = await fetchFromAirtable(COURSES_TABLE_ID);
+//
+//     // Transformar los registros de Airtable al formato que espera tu aplicación
+//     return data.records.map(record => ({
+//       id: record.id,
+//       title: record.fields['Nombre del Curso'] || 'Sin título',
+//       // Manejar el formato específico de las imágenes en Airtable
+//       imageUrl: record.fields['Imagen'] && record.fields['Imagen'][0] ?
+//           record.fields['Imagen'][0].url :
+//           'https://via.placeholder.com/600x400?text=Imagen+no+disponible',
+//       whatsappUrl: record.fields['URL de WhatsApp'] ||
+//           `https://wa.me/593982121145?text=Hola,%20estoy%20interesado%20en%20el%20curso%20de%20${encodeURIComponent(record.fields['Nombre del Curso'] || 'Sin título')}`,
+//       category: record.fields['Categoría'] || 'General'
+//     }));
+//   } catch (error) {
+//     console.error('Error al obtener cursos desde Airtable:', error);
+//     // En caso de error, devuelve un array vacío para que tu aplicación no se rompa
+//     return [];
+//   }
+// }
+
+/**
+ * Obtiene todos los cursos desde Airtable, ordenados del ID más alto al más bajo
+ */
+/**
+ * Obtiene todos los cursos desde Airtable, ordenados por fecha (del más reciente al más antiguo)
+ */
 export async function getAllCourses() {
   try {
-    const data = await fetchFromAirtable(COURSES_TABLE_ID);
+    // Usamos la opción de ordenación por el campo "Date" en orden descendente
+    const data = await fetchFromAirtable(COURSES_TABLE_ID, {
+      sort: [
+        { field: 'Date', direction: 'desc' }
+      ]
+    });
 
     // Transformar los registros de Airtable al formato que espera tu aplicación
     return data.records.map(record => ({
@@ -82,7 +116,9 @@ export async function getAllCourses() {
           'https://via.placeholder.com/600x400?text=Imagen+no+disponible',
       whatsappUrl: record.fields['URL de WhatsApp'] ||
           `https://wa.me/593982121145?text=Hola,%20estoy%20interesado%20en%20el%20curso%20de%20${encodeURIComponent(record.fields['Nombre del Curso'] || 'Sin título')}`,
-      category: record.fields['Categoría'] || 'General'
+      category: record.fields['Categoría'] || 'General',
+      // Opcionalmente puedes incluir la fecha en el objeto retornado si la necesitas para mostrarla
+      date: record.fields['Date'] || null
     }));
   } catch (error) {
     console.error('Error al obtener cursos desde Airtable:', error);
@@ -90,6 +126,7 @@ export async function getAllCourses() {
     return [];
   }
 }
+
 
 /**
  * Obtiene solo los cursos destacados
