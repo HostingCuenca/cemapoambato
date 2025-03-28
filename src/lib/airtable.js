@@ -260,9 +260,7 @@ export async function getAllArticles() {
       slug: record.fields['Slug'] || `articulo-${record.id}`, // Fallback para slug
       summary: record.fields['Resumen'] || 'No hay resumen disponible para este artículo.',
       content: record.fields['Contenido'] || 'El contenido de este artículo no está disponible en este momento.',
-      imageUrl: record.fields['Imagen'] && record.fields['Imagen'][0] ?
-          record.fields['Imagen'][0].url :
-          '/images/placeholder-article.jpg',
+      imageUrl: record.fields['url-img'] || '/images/placeholder-article.jpg',
       category: record.fields['Categoría'] || 'General',
       author: record.fields['Autor'] || 'Equipo CEMAPO',
       publishDate: record.fields['Fecha Publicación'] || null,
@@ -303,9 +301,7 @@ export async function getArticleById(articleId) {
       slug: record.fields['Slug'] || `articulo-${record.id}`,
       summary: record.fields['Resumen'] || 'No hay resumen disponible para este artículo.',
       content: record.fields['Contenido'] || 'El contenido de este artículo no está disponible en este momento.',
-      imageUrl: record.fields['Imagen'] && record.fields['Imagen'][0] ?
-          record.fields['Imagen'][0].url :
-          '/images/placeholder-article.jpg',
+      imageUrl: record.fields['url-img'] || '/images/placeholder-article.jpg',
       category: record.fields['Categoría'] || 'General',
       author: record.fields['Autor'] || 'Equipo CEMAPO',
       publishDate: record.fields['Fecha Publicación'] || null,
