@@ -110,9 +110,8 @@ export async function getAllCourses() {
     return data.records.map(record => ({
       id: record.id,
       title: record.fields['Nombre del Curso'] || 'Sin título',
-      // Manejar el formato específico de las imágenes en Airtable
-      imageUrl: record.fields['Imagen'] && record.fields['Imagen'][0] ?
-          record.fields['Imagen'][0].url :
+      // Ahora obtenemos la imagen desde el campo "url-img" que contiene URLs estáticas
+      imageUrl: record.fields['url-img'] ||
           'https://via.placeholder.com/600x400?text=Imagen+no+disponible',
       whatsappUrl: record.fields['URL de WhatsApp'] ||
           `https://wa.me/593982121145?text=Hola,%20estoy%20interesado%20en%20el%20curso%20de%20${encodeURIComponent(record.fields['Nombre del Curso'] || 'Sin título')}`,
