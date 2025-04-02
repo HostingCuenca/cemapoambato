@@ -3,7 +3,6 @@
  * Funciones para interactuar con la API de Airtable
  */
 
-// Constantes de configuración
 const AIRTABLE_BASE_ID = import.meta.env.AIRTABLE_BASE_ID;
 const AIRTABLE_PERSONAL_TOKEN = import.meta.env.AIRTABLE_PERSONAL_TOKEN;
 
