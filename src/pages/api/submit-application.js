@@ -3,7 +3,6 @@ export const prerender = false;
 
 import nodemailer from 'nodemailer';
 
-// Configuración del transportador de correo
 const transporter = nodemailer.createTransport({
     host: 'premium246.web-hosting.com',
     port: 465,
