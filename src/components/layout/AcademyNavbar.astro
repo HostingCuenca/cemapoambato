@@ -1,0 +1,49 @@
+---
+// Academy specific navigation items
+const academyNavItems = [
+    { label: 'Inicio Academy', url: '/academy' },
+    { label: 'Nuestra Metodología', url: '/academy#metodologia' },
+    { label: 'Beneficios', url: '/academy#beneficios' },
+    { label: 'Contacto', url: '/academy#contacto' }
+];
+
+// Get current path
+const currentPath = Astro.url.pathname;
+---
+
+<div class="hidden md:flex items-center">
+    <nav class="hidden md:flex items-center space-x-8 mr-8">
+        {academyNavItems.map((item) => (
+            <div class="relative">
+                <a
+                    href={item.url}
+                    class:list={[
+                        'font-medium transition-colors text-base hover:text-primary-600 inline-flex items-center hover:underline decoration-primary-500 decoration-2 underline-offset-8',
+                        currentPath === item.url || (item.url !== '/' && currentPath.startsWith(item.url))
+                            ? 'text-primary-600 font-semibold'
+                            : 'text-gray-700'
+                    ]}
+                >
+                    {item.label}
+                </a>
+            </div>
+        ))}
+    </nav>
+    <a href="/login" target="_blank" class="bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-md transition-all duration-300 text-sm font-medium shadow-md hover:shadow-lg transform hover:-translate-y-1">
+        Aula Virtual
+    </a>
+</div>
+
+<style>
+    nav a, nav button {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    nav {
+        padding: 1rem 0;
+    }
+
+    nav a {
+        padding: 0.5rem 0;
+    }
+</style>

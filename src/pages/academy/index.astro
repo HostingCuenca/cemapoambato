@@ -1,0 +1,319 @@
+---
+import AcademyLayout from '../../layouts/AcademyLayout.astro';
+---
+
+<AcademyLayout 
+    title="CEMAPO ACADEMY - Tu futuro universitario comienza aquí"
+    description="Preparación universitaria personalizada con orientación vocacional, desarrollo de liderazgo y pensamiento crítico."
+>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                    <g fill="currentColor" fill-opacity="0.4">
+                        <circle cx="12" cy="12" r="2"/>
+                        <circle cx="48" cy="12" r="2"/>
+                        <circle cx="12" cy="48" r="2"/>
+                        <circle cx="48" cy="48" r="2"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <h1 class="text-4xl md:text-6xl font-bold font-heading leading-tight">
+                            Tu futuro universitario 
+                            <span class="text-yellow-300">comienza aquí</span>
+                        </h1>
+                        <div class="text-xl md:text-2xl font-medium text-blue-100">
+                            CEMAPO ACADEMY te da la bienvenida
+                        </div>
+                    </div>
+                    
+                    <p class="text-lg md:text-xl text-blue-100 leading-relaxed max-w-lg">
+                        Sabemos que estás a punto de tomar una de las decisiones más importantes de tu vida: tu ingreso a la universidad. 
+                        Aquí no solo te preparamos para el examen, te acompañamos a construir tu futuro.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-yellow-400 hover:bg-yellow-500 text-primary-900 font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            Acceder al Aula Virtual
+                        </button>
+                        <a href="#beneficios" class="border-2 border-white text-white hover:bg-white hover:text-primary-700 font-bold px-8 py-4 rounded-lg transition-all duration-300 text-center">
+                            Conocer Más
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative z-10">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Estudiantes universitarios" 
+                             class="rounded-2xl shadow-2xl w-full h-96 object-cover">
+                    </div>
+                    <div class="absolute -top-6 -left-6 w-full h-full bg-yellow-400 rounded-2xl opacity-30"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-heading">
+                    Beneficios que obtendrás con 
+                    <span class="text-primary-600">CEMAPO ACADEMY</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Desarrollamos las habilidades fundamentales que necesitas para destacar en tu vida universitaria y profesional
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Orientación Vocacional -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-heading">Orientación Vocacional</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Te ayudamos a descubrir tu verdadera pasión y elegir la carrera que mejor se adapte a tus talentos e intereses.
+                    </p>
+                </div>
+
+                <!-- Liderazgo -->
+                <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-heading">Liderazgo</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Desarrollamos tus habilidades de liderazgo para que puedas destacar y guiar equipos en tu futuro profesional.
+                    </p>
+                </div>
+
+                <!-- Adaptabilidad -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-green-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-heading">Adaptabilidad</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Fortalecemos tu capacidad de adaptación a nuevos entornos y desafíos universitarios.
+                    </p>
+                </div>
+
+                <!-- Trabajo en Equipo -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-purple-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-heading">Trabajo en Equipo</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Aprendes a colaborar efectivamente con otros, una habilidad esencial en el ámbito universitario y profesional.
+                    </p>
+                </div>
+
+                <!-- Pensamiento Crítico -->
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-red-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-heading">Pensamiento Crítico</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Desarrollamos tu capacidad de análisis y evaluación crítica de información para tomar mejores decisiones.
+                    </p>
+                </div>
+
+                <!-- Comunicación Asertiva -->
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-indigo-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 font-heading">Comunicación Asertiva</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Perfeccionamos tus habilidades de comunicación para expresarte con claridad y confianza.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="metodologia" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-heading">
+                    Nuestra <span class="text-primary-600">Metodología</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Educación personalizada para cada estudiante, potenciando su desarrollo académico
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+                         alt="Metodología de enseñanza" 
+                         class="rounded-2xl shadow-xl w-full h-96 object-cover">
+                </div>
+
+                <div class="space-y-8">
+                    <div class="prose prose-lg text-gray-600">
+                        <p class="text-xl leading-relaxed">
+                            En CEMAPO Academy implementamos una metodología integral que se enfoca en tres pilares fundamentales para el éxito académico:
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Atención -->
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2 font-heading">Atención</h3>
+                                <p class="text-gray-600">
+                                    Desarrollamos técnicas para mejorar la concentración y el enfoque durante el estudio, 
+                                    maximizando el aprovechamiento del tiempo de aprendizaje.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Retención -->
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2 font-heading">Retención</h3>
+                                <p class="text-gray-600">
+                                    Utilizamos métodos probados para consolidar el conocimiento en la memoria a largo plazo, 
+                                    asegurando que lo aprendido perdure en el tiempo.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Razonamiento -->
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2 font-heading">Razonamiento</h3>
+                                <p class="text-gray-600">
+                                    Fortalecemos las habilidades de pensamiento lógico y analítico, preparándote para 
+                                    resolver problemas complejos con confianza y efectividad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Classroom & Social Media Section -->
+    <section id="contacto" class="py-20 bg-primary-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 font-heading">
+                    Conecta con <span class="text-yellow-300">CEMAPO Academy</span>
+                </h2>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                    Accede a nuestras plataformas virtuales y síguenos en redes sociales para estar siempre conectado con tu educación
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Aula Virtual -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center mr-6">
+                            <svg class="w-8 h-8 text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2 font-heading">Aula Virtual</h3>
+                            <p class="text-blue-100">Accede a tu contenido educativo 24/7</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 mb-6">
+                        Nuestra plataforma virtual te permite estudiar a tu ritmo, acceder a material didáctico, 
+                        realizar evaluaciones y mantener contacto directo con tus instructores.
+                    </p>
+                    <button class="bg-yellow-400 hover:bg-yellow-500 text-primary-900 font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 w-full">
+                        Acceder al Aula Virtual
+                    </button>
+                </div>
+
+                <!-- Redes Sociales -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-500 rounded-xl flex items-center justify-center mr-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 4v10a2 2 0 002 2h6a2 2 0 002-2V8M7 8H5a2 2 0 00-2 2v8a2 2 0 002 2h14a2 2 0 002-2v-8a2 2 0 00-2-2h-2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2 font-heading">Redes Sociales</h3>
+                            <p class="text-blue-100">Síguenos en nuestras plataformas oficiales</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 mb-6">
+                        Mantente al día con noticias, tips de estudio, eventos especiales y conecta con otros estudiantes 
+                        de la comunidad CEMAPO Academy.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4">
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 p-4 rounded-lg transition-colors text-center">
+                            <svg class="w-6 h-6 text-white mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                            <span class="text-xs font-medium">Twitter</span>
+                        </a>
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 p-4 rounded-lg transition-colors text-center">
+                            <svg class="w-6 h-6 text-white mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            <span class="text-xs font-medium">LinkedIn</span>
+                        </a>
+                        <a href="#" class="bg-pink-600 hover:bg-pink-700 p-4 rounded-lg transition-colors text-center">
+                            <svg class="w-6 h-6 text-white mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.098.119.112.224.083.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.758-1.378l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001.017 0z"/>
+                            </svg>
+                            <span class="text-xs font-medium">Pinterest</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</AcademyLayout>

@@ -14,6 +14,7 @@ const navItems = [
     { label: 'Educación Continua', url: '/servicios/educacion-continua' },
     { label: 'Empresas', url: '/servicios/empresas' },
     { label: 'Salud Mental', url: '/servicios/psicologia-clinica' },
+        { label: 'Cemapo Academy', url: '/academy', target: '_blank' },
     ]
     },
 { label: 'Nosotros', url: '/nosotros' },
@@ -63,6 +64,7 @@ const currentPath = Astro.url.pathname;
                                                 {item.dropdownItems.map((dropdownItem) => (
                                                         <a
                                                                 href={dropdownItem.url}
+                                                                target={dropdownItem.target || undefined}
                                                                 class:list={[
                                                                     'block px-4 py-3 text-sm hover:bg-primary-50 transition-colors',
                                                                     currentPath === dropdownItem.url || currentPath.startsWith(dropdownItem.url)
@@ -119,6 +121,7 @@ const currentPath = Astro.url.pathname;
                                             {item.dropdownItems.map((dropdownItem) => (
                                                     <a
                                                             href={dropdownItem.url}
+                                                            target={dropdownItem.target || undefined}
                                                             class:list={[
                                                                 'block py-3 px-8 border-b text-sm hover:text-primary-600 hover:bg-gray-100 transition-colors',
                                                                 currentPath === dropdownItem.url || currentPath.startsWith(dropdownItem.url)
